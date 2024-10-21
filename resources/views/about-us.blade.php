@@ -335,40 +335,53 @@
       <h3>Meet our <span class="color-orange">people</span></h3>
       <p>Our team has diverse backgrounds, deep knowledge, and the skils to support innovation at place</p>
     </div>
-    <div class="row colums_team_details">
+
+    <div class="row colums_team_details slick-slider">
       <!-- box-team-01 -->
       <div class="col-md-3">
         <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}">
+          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
           <h2>Alejandro romano</h2>
-          <p>founder</p>
+          <p>Founder</p>
         </div>
       </div>
       <!-- box-team-02 -->
       <div class="col-md-3">
         <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}">
+          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
           <h2>Alejandro romano</h2>
-          <p>founder</p>
+          <p>Founder</p>
         </div>
       </div>
       <!-- box-team-03 -->
       <div class="col-md-3">
         <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}">
+          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
           <h2>Alejandro romano</h2>
-          <p>founder</p>
+          <p>Founder</p>
         </div>
       </div>
       <!-- box-team-04 -->
       <div class="col-md-3">
         <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}">
+          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
           <h2>Alejandro romano</h2>
-          <p>founder</p>
+          <p>Founder</p>
         </div>
       </div>
+
+      <!-- box-team-04 -->
+      <div class="col-md-3">
+        <div class="box-team-member">
+          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
+          <h2>Alejandro romano</h2>
+          <p>Founder</p>
+        </div>
+      </div>
+
+
     </div>
+
   </div>
 </section>
 
@@ -397,6 +410,7 @@
     </div>
   </div>
 </section>
+
 
 
 
