@@ -755,3 +755,37 @@ section.our_company {
     font-family: Nunito Sans;
 }
 
+.colums_team_details .slick-prev {
+    left: -93px;
+    background: #fff;
+    top: 50%;
+    padding: 28px;
+    border-radius: 50%;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.07);
+}
+.colums_team_details .slick-prev:before {
+    background: url(../images/slider-left-i.png);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    right: 12px;
+    top: -12px;
+}
+.colums_team_details .slick-next {
+    right: -93px;
+    background: #fff;
+    top: 50%;
+    padding: 28px;
+    border-radius: 50%;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.07);
+}
+.colums_team_details .slick-next:before {
+    background: url(../images/slider-right-i.png);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    right: 12px;
+    top: -12px;
+}
