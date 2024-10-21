@@ -14670,10 +14670,10 @@ p.color-black {
 	width: auto !important;
 }
 
-
-
 .product-slider-2 {
-	display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	width: 100%;
 	position: relative;
 }
@@ -16931,7 +16931,6 @@ label.error {
 	font-size: 20px;
 	font-weight: 900;
 	text-transform: uppercase;
-	font-family: 'Helvetica Rounded LT Std';
 }
 .my-rewards-righ .small-logo {
 	width: auto;
@@ -16959,12 +16958,16 @@ label.error {
 	font-family: "Nunito Sans";
 }
 .product-logo {
-	top: 28px !important;
-	left: -15px !important;
-	right: 0 !important;
-	margin: 0 auto !important;
-	width: 80% !important;
-	text-align: center;
+    top: 0;
+    left: 0;
+    right: 0 !important;
+    margin: 0 auto !important;
+    width: 75% !important;
+    text-align: center;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .product-logo img {
 	width: 63% !important;
