@@ -326,9 +326,8 @@
   </div>
 </section>
 
-
-
-<section class="our_team_member">
+@if($all_members)
+<section class="our_team_member" id="our-team">
   <div class="container">
     <div class="team_headings">
       <span>Our Programs</span>
@@ -337,55 +336,22 @@
     </div>
 
     <div class="row colums_team_details slick-slider">
-      <!-- box-team-01 -->
-      <div class="col-md-3">
-        <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
-          <h2>Alejandro romano</h2>
-          <p>Founder</p>
+      @foreach($all_members as $member)
+        <div class="col-md-3">
+          <div class="box-team-member">
+            <img src="{{ url('public/uploads/teams/'.$member->profile_image) }}" alt="{{ $member->profile_image }}">
+            <h2>{{ $member->name }}</h2>
+            <p>{{ $member->designation ?? "" }}</p>
+          </div>
         </div>
-      </div>
-      <!-- box-team-02 -->
-      <div class="col-md-3">
-        <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
-          <h2>Alejandro romano</h2>
-          <p>Founder</p>
-        </div>
-      </div>
-      <!-- box-team-03 -->
-      <div class="col-md-3">
-        <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
-          <h2>Alejandro romano</h2>
-          <p>Founder</p>
-        </div>
-      </div>
-      <!-- box-team-04 -->
-      <div class="col-md-3">
-        <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
-          <h2>Alejandro romano</h2>
-          <p>Founder</p>
-        </div>
-      </div>
-
-      <!-- box-team-04 -->
-      <div class="col-md-3">
-        <div class="box-team-member">
-          <img src="{{ url('public/images/photo_team.png') }}" alt="Alejandro romano">
-          <h2>Alejandro romano</h2>
-          <p>Founder</p>
-        </div>
-      </div>
-
-
+        @endforeach
     </div>
-
   </div>
 </section>
+@endif
 
 
+@if($logos)
 <section class="our_company">
   <div class="container">
     <div class="team_headings">
@@ -395,23 +361,12 @@
     </div>
     <div class="slider_logo_about">
       <ul class="all-logo-slider">
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-1.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-2.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-3.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-4.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-5.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-6.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-7.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-8.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-9.png') }}"> </li>
-        <li class="logo-slider logo-10"> <img src="{{ url('public/images/logo-icon-10.png') }}"> </li>
-        <li class="logo-slider"> <img src="{{ url('public/images/logo-icon-11.png') }}"> </li>
+      @foreach ($logos as $logo)
+        <li class="logo-slider"> <img src="{{ url('public/uploads/brands-logos/' . $logo['main_logo']) }}"> </li>
+        @endforeach
       </ul>
     </div>
   </div>
 </section>
-
-
-
-
+@endif 
 @endsection

@@ -58,7 +58,9 @@ class FrontEndController extends Controller
 
     //Function for the watchdog report page
     public function about_us(){
-        return view('about-us');
+        $all_members = Team::orderBy('id', 'DESC')->get(); 
+        $logos = BrandLogos::Where('type', 'Logo')->get()->ToArray();
+        return view('about-us',compact('all_members','logos'));
     }
 
     //Function for careers opportunities page
