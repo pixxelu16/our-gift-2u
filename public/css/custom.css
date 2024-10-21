@@ -1,0 +1,757 @@
+
+
+@font-face {
+	font-family: 'helvetica_rounded_lt_stdblack';
+	src: url('../fonts/helvetica_rounded_lt_std_black-webfont.woff2') format('woff2'),
+		url('../fonts/helvetica_rounded_lt_std_black-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	margin: 0;
+	background-color: #f5f5f5 !important;
+	font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+section.help_center_banner {
+    padding-top: 50px;
+}
+.looping_Content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    text-align: left;
+    color: #fff;
+    letter-spacing: 1px;
+	margin: 0 !important;
+}
+.looping_Content {
+    background: #0738F9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+	gap: 20px;
+}
+
+.Content_looping h3 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 50.6px;
+    text-align: left;
+    width: 90%;
+    font-family: 'helvetica_rounded_lt_stdblack';
+}
+.Content_looping span {
+    font-size: 25px;
+    text-align: left;
+    display: block;
+    margin-top: 29px;
+    font-weight: 700;
+    color: #f35800;
+	font-family: 'helvetica_rounded_lt_stdblack';
+}
+.redeem-main.btn_help_center {
+    padding: 20px 0 70px;
+}
+
+.btn_help_center a {
+    display: flex;
+    width: fit-content;
+}
+
+
+.something_Current_job h2 {
+    text-align: center;
+}
+
+.carees_options_tabs .tabs button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.carees_options_tabs .tabs {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button.tab-button.active {
+    background: #1746FF;
+    color: #fff;
+}
+.carees_options_tabs .tab-content {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.carees_options_tabs .tab-content p {
+    font-size: 20px;
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+section.banner_about_sec_code {
+    background: url(../images/about_banner.png);
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 150px 0;
+}
+.about_content_oprate h2 {
+    color: #282828;
+    font-size: 42px;
+    font-weight: 700;
+    font-family: 'helvetica_rounded_lt_stdblack' !important;
+}
+
+.info-sectionbg {
+    background: #F3F4F8;
+    padding: 25px 30px 10px;
+    border-radius: 10px;
+}
+
+.info-sectionbg h3 {
+    color: var(--Black, #282828);
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    font-weight: 700;
+}
+.degree_content h2 {
+    color: var(--Black, #282828);
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'helvetica_rounded_lt_stdblack' !important;
+    text-align: left;
+}
+.degree_content {
+    margin: 0 !important;
+}
+section.clientslogoes {
+    padding: 120px 0;
+}
+body .gtt-content {
+    margin-top: 0 !important;
+}
+
+body .gtt-content .col-md-12 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+.row.text-center.g-4.logo-grid {
+    margin: 0 !important;
+}
+
+.row.text-center.g-4.logo-grid .col-6 {
+    margin: 0;
+    padding: 0;
+}
+
+.row.text-center.g-4.logo-grid .col-4 {
+    margin: 0;
+    padding: 0;
+}
+section.clientslogoes .row {
+    align-items: center;
+    --bs-gutter-x: 2.5rem !important; 
+}
+
+
+/* about us css Start*/
+
+.industry_experiences .info-box {
+    padding: 32px;
+    transition: box-shadow 0.3s ease;
+    border-radius: 11px;
+    background: #FFF;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.07);
+    text-align: left !important;
+    height: 375px;
+}
+
+section.industry_experiences {
+    background: #F3F4F8;
+    padding: 120px 0;
+}
+.content_experience_ftt span {
+    font-family: "Nunito Sans";
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.content_experience_ftt h3 {
+    color: #282828;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'helvetica_rounded_lt_stdblack' !important;
+    margin-top: 15px;
+}
+.content_experience_ftt p {
+    color: #282828;
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.info-box.text-center h4 {
+    color: var(--Black, #282828);
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.content_box_program {
+    border-radius: 7px;
+    background: #F3F4F8;
+    padding: 35px;
+    margin-top: 20px;
+}
+section.our-programs {
+    padding: 70px 0 0;
+}
+.content_box_program h3 {
+    color: var(--Black, #282828);
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.content_box_program ul li {
+    color: #282828;
+    font-family: "Nunito Sans";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.three_box_qtt {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.box_number_code {
+    border-radius: 11px;
+    background: #FFF;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    padding: 30px;
+}
+.box_number_code ul {
+    padding: 0 25px;
+    margin-top: 12px;
+}
+
+.three_box_qtt {
+    margin-bottom: 28px;
+}
+.box_number_code_ttt {
+    width: 100%;
+    padding: 30px;
+}
+.overall_impression h3 {
+    color: #282828;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'helvetica_rounded_lt_stdblack' !important;
+}
+.overall_impression {
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+section.our_team_member {
+    background: #F3F4F8;
+    padding: 100px 0;
+}
+
+.team_headings {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team_headings span {
+    font-family: "Nunito Sans";
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.team_headings h3 {
+    color: #282828;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'helvetica_rounded_lt_stdblack' !important;
+}
+
+.box-team-member {
+    border-radius: 11px;
+    background: #FFF;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    padding: 40px;
+}
+.box-team-member p {
+    color: #7D7D7D;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.box-team-member h2 {
+    color: #37393F;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+section.our_company {
+    padding: 100px 0;
+}
+.top-right {
+    text-align: center;
+}
+.two_columns_box_logo {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.two_columns_box_logo img {
+    box-shadow: 0px 8px 20px 0px #00000012;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+/* about us css End*/
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+	.looping_Content {
+		padding: 15px 20px;
+	}
+	.looping_Content h2 {
+		font-size: 16px;
+		line-height: 24.74px;
+	}
+	.Content_looping h3 {
+		font-size: 20px;
+		line-height: 30px;
+		width: 100%;
+	}
+	.Content_looping span {
+		font-size: 16px;
+		margin-top: 18px;
+	}
+	.redeem-main.btn_help_center {
+		padding: 15px 0 50px;
+	}
+	section.help_center_banner {
+		padding-top: 30px;
+	}
+	.carees_options_tabs .tabs {
+		margin-top: 40px;
+		display: grid;
+		gap: 10px;
+		grid-template-columns: repeat(2, 2fr);
+	}
+	.carees-opport-saction {
+		padding: 40px 0;
+	}
+	.carees_options_tabs .tab-content {
+		padding: 50px 0;
+		text-align: center;
+	}
+
+	section.banner_about_sec_code {
+		height: auto;
+		background-size: cover;
+		padding: 50px 0;
+		background-position: center;
+	}
+	.about_content_oprate h2 {
+		font-size: 30px;
+	}
+	body .color-orange {
+		font-size: 30px !important;
+	}
+	section.clientslogoes {
+		padding: 40px 0;
+	}
+
+	.degree_content h2 {
+		font-size: 30px;
+	}
+	.degree_content {
+		margin-bottom: 1rem !important;
+	}
+
+	.degree_content h2 {
+		margin-top: 30px;
+		text-align: center;
+	}
+	section.industry_experiences {
+		padding: 50px 0;
+	}
+	.content_experience_ftt h3 {
+		font-size: 30px;
+	}
+	.content_experience_ftt span {
+		font-size: 15px;
+	}
+
+	.content_experience_ftt p {
+		font-size: 16px;
+	}
+	.industry_experiences .info-box {
+		padding: 20px;
+	}
+	section.our-programs {
+		padding: 40px 0 0;
+	}
+
+	.content_box_program {
+		padding: 20px;
+	}
+
+	.content_program {
+		text-align: center;
+	}
+
+	.three_box_qtt {
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+    .box_number_code_ttt {
+        padding: 0;
+    }
+    section.our_team_member {
+        padding: 40px 0;
+    }
+    .team_headings h3 {
+        font-size: 30px;
+    }
+    .three_box_qtt {
+        margin-bottom: 20px;
+    }
+    .overall_impression {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .box-team-member {
+        padding: 30px;
+        margin-bottom: 15px;
+    }
+    .overall_impression h3 {
+        font-size: 30px;
+    }
+    .foundation {
+        padding: 40px 0 0;
+    }
+
+
+    .redeem-main h2 {
+        font-size: 30px;
+        font-weight: 700;
+        font-family: 'helvetica_rounded_lt_stdblack';
+        margin: 0;
+        width: 100%;
+    }
+    
+    input::placeholder {
+        font-size: 16px;
+        font-weight: 600;
+    }
+  
+    .full-text-box .form-control {
+        margin-top: 30px;
+        height: 150px;
+    }
+    
+    textarea::placeholder {
+        font-size: 16px;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+    }
+    
+    .button-full-box {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .help-childern-saction h2 {
+        margin: 10px 0 0 0;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+    
+    .help-childern-saction span {
+        font-size: 15px;
+        text-transform: capitalize;
+    }
+    
+    .help-childern-saction a {
+        font-size: 16px;
+        margin: 30px 0 0 0;
+        font-weight: 700;
+    }
+    
+    .footer-box h4 {
+        color: #fff;
+        font-size: 16px;
+        padding-top: 12px;
+    }
+    .padding-less-contact {
+        padding: 20px;
+    }
+
+    .padding-less {
+        padding: 40px 0px 0;
+    }
+    .contact-page-saction {
+        margin: 1rem 0 0;
+    }
+    .redeem-form-main input.form-control {
+        border: 2px solid #ffffff;
+        margin-bottom: 15px;
+    }
+    .right-side-contact {
+        padding-top: 20px;
+    }
+    .right-side-contact h2 {
+        margin: 20px 0 0 0;
+        font-size: 20px;
+    }
+
+    .login-all-screen .login-all-inner {
+        width: 100%;
+        padding: 20px 20px 20px;
+        box-shadow: 0 5px 10px #f1f1f1;
+        border: 1px solid #f1f1f1;
+    }
+
+    .login-all-screen {
+        margin: 3rem 0;
+    }
+
+    .join-with-click-saction {
+        background-position: 70% 100%;
+    }
+
+    .box-right-join-with.two-box {
+        position: inherit;
+    }
+
+    .category-banner-main h2 {
+        font-size: 30px;
+    }
+    .category-banner {
+        background-position: 30% 20%;
+    }
+    .category-banner-main span {
+        font-size: 20px;
+    }
+    .category-banner-main p {
+        font-size: 16px;
+    }
+    .category-banner-main {
+        padding: 40px 0px;
+    }
+
+    .redeem-main {
+        padding: 40px 0px;
+    }
+
+    .redeem-form {
+        padding: 10px 20px;
+    }
+    .redeem-form-main select {
+        margin-bottom: 15px;
+    }
+    .text-end {
+        text-align: left!important;
+    }
+    .menu {
+        width: 100%;
+        margin-bottom: 22px;
+        padding: 20px;
+    }
+    .category {
+        padding: 20px 0px 0;
+    }
+    .breadcrumb-text {
+        font-size: 16px;
+    }
+    .menu-item > a {
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .my-account-saction {
+        margin: 40px 0;
+    }
+    body .two_columns_box_logo img {
+        width: 30%;
+    }
+    .two_columns_box_logo:first-child img {
+        width: 48%;
+    }
+    .overall_impression {
+        text-align: center;
+    }
+    .about-image.aos-init.aos-animate {
+        margin-top: 40px;
+    }
+    .about-image img.small-logo {
+        width: 50%;
+    }
+    a.banner-tow-button {
+        display: inherit;
+    }
+    .custom-accordion-header:after {
+        background-size: 9px !important;
+    }
+    .custom-accordion-item.active .custom-accordion-header:after {
+        background-size: 10px!important;
+    }
+    button.custom-accordion-button {
+        font-size: 16px !important;
+    }
+
+
+
+
+}
+
+
+.wps_wpr_apply_custom_points input {
+    border: 1px solid #ddd;
+    outline: none;
+    padding: 10px 10px;
+    font-size: 12px;
+    width: 280px;
+}
+
+.wps_wpr_apply_custom_points button.button.disable-button {
+    background: #ddd;
+    border: none !important;
+    padding: 10px 10px;
+    font-size: 12px;
+}
+.wps_wpr_apply_custom_points label#coupon_code-error {
+    position: absolute;
+    left: 0;
+    top: 45px;
+    font-size: 12px;
+}
+
+.wps_wpr_apply_custom_points {
+    position: relative;
+}
+.custom-accordion {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  .custom-accordion-item {
+    box-shadow: 0px 8px 20px 0px #00000012;
+    border-radius: 11px;
+    padding: 10px 20px ;
+    margin-bottom: 34px;
+    cursor: pointer !important;
+}
+  
+  .custom-accordion-header {
+    background-color: #fff;
+    position: relative;
+  }
+  button.custom-accordion-button {
+    z-index: 99;
+    position: relative;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27.28px;
+}
+.custom-accordion-body p {
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21.82px;
+}
+  .custom-accordion-header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/arrow_faq_close.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.custom-accordion-item.active .custom-accordion-header:after {
+    background: url(../images/arrow_faq.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+
+  .custom-accordion-button {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .custom-accordion-button:focus {
+    outline: none;
+  }
+  
+  .custom-accordion-body {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .custom-accordion-item.active .custom-accordion-body {
+    display: block;
+  }
+  .title_faq_btm {
+        margin: 50px 0;
+  }
+
+.title_faq_btm h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 57.6px;
+    font-family: Nunito Sans;
+}
+
