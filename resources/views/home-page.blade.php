@@ -37,7 +37,7 @@
                     <div class="slide__content">
                         <div class="slide__content--headings">
                             <img src="{{ url('public/images/banner-logo-2.png') }}" class="banner-new-logo-2 animated"  data-animation-in="fadeInRight">
-                            <h2 class="animated color-black" data-animation-in="fadeInUp"><span>1,000,000
+                            <h2 class="animated color-black" data-animation-in="fadeInUp"><span class="color-orange">1,000,000
                                 </span><br>
                                 Dollars in Gift <br>
                                 Vouchers give<br>
