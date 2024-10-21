@@ -7,7 +7,7 @@
     font-display: swap;
 }
 
-span, h1, h2, h3, h4, h5, h6 {
+span, h1, h2, h3, h4, h5 {
 	font-family: 'Helvetica Rounded LT Std' !important;
 }
 
@@ -6703,10 +6703,6 @@ p.color-black {
 	position: relative;
 }
 
-.logo-icon-row ul li img {
-	width: 100%;
-}
-
 .position-40 {
 	position: absolute;
 	top: 40px;
@@ -6845,13 +6841,6 @@ img.banner-one-img {
 	bottom: 0px;
 	left: 60px;
 	z-index: 11;
-}
-
-.cetagory-product-slider img {
-	width: 90px;
-	height: 129px;
-	object-fit: none;
-	padding-bottom: 10px;
 }
 
 .get-up-product ul li {
@@ -14386,20 +14375,17 @@ img.img-position {
 	font-weight: 900;
 	font-family: "Nunito Sans", sans-serif;
 }
-
-.logo-icon-row {
-	display: inline-block;
-	width: 100%;
-	margin: 20px 0 20px 0;
-}
-
 .logo-icon-row ul {
 	padding: 0;
 	margin: 0;
 	text-align: center;
 	width: 100%;
 }
-
+.logo-icon-row {
+    display: inline-block;
+    width: 100%;
+    margin: 40px 0;
+}
 .logo-icon-row ul li {
 	display: inline-block;
 	width: auto;
@@ -14557,7 +14543,7 @@ img.img-position {
 }
 
 .logo-icon-row ul li img {
-	width: 65%;
+	width: 80%;
 }
 
 
@@ -14676,11 +14662,6 @@ p.color-black {
 	position: relative;
 }
 
-.logo-icon-row ul li img {
-	width: 100%;
-}
-
-
 a.fashion-circle {
 	text-decoration: none;
 	color: black;
@@ -14748,14 +14729,12 @@ img.banner-one-img{
 	left: 60px;
 	z-index: 11;
 }
-
 .cetagory-product-slider img {
-    width: 90px;
-    height: 129px;
-    object-fit: none;
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
     padding-bottom: 10px;
 }
-
 .get-up-product ul li {
 	list-style: none;
 	width: 109px;
@@ -16201,15 +16180,10 @@ img.card_img_gift {
 	font-weight: bold;
 	margin-top: 40px;
 }
-.video-placeholder {
-	background-color: #000;
-	width: 100%;
-	height: 600px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #fff;
-	font-size: 24px;
+.video-placeholder video {
+    width: 100%;
+    height: 590px;
+    object-fit: cover;
 }
 .foundation-section h4 {
 	font-size: 24px;
@@ -16545,11 +16519,20 @@ img.card_img_gift {
 	font-family: "Nunito Sans";
 }
 .gift-cards-saction-box .flex-quientity.buton-ehat {
-	width: 50%;
-	text-align: right;
-	float: right;
-	display: inline-block !important;
-	margin: 4px 0 0 0;
+    width: 37%;
+    text-align: center;
+    display: inline-block !important;
+    margin: 0px 0 0 auto;
+    background: #F2F2F2;
+    border-radius: 6px;
+    padding: 6px 0px;
+}
+.flex-quientity.buton-ehat input {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    left: 7px;
 }
 .gift-cards-saction-box button {
 	border-radius: 50%;
@@ -16923,12 +16906,13 @@ label.error {
 	margin: 0;
 }
 .logo-icon-row h2 {
-	display: inline-block;
-	margin: 0;
-	color: #282828;
-	font-size: 20px;
-	font-weight: 900;
-	text-transform: uppercase;
+    display: inline-block;
+    margin: 0;
+    color: #282828;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 .my-rewards-righ .small-logo {
 	width: auto;
@@ -16968,7 +16952,7 @@ label.error {
     justify-content: center;
 }
 .product-logo img {
-	width: 63% !important;
+	width: 100% !important;
 	display: inline-block !important;
 }
 .cart_area_section-promo {

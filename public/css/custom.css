@@ -36,7 +36,7 @@ section.help_center_banner {
     background: #0738F9;
     border-radius: 10px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     padding: 30px 40px;
 	gap: 20px;
 }
