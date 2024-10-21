@@ -220,7 +220,7 @@ class DashboardController extends Controller
         $currentDate = Carbon::now(); 
         $expire_date = $currentDate->addDays(5)->format('Y-m-d');
         $is_refer_code = Str::random(25);
-        $url = url('/')."/redeem-center&is_refer_code=".$is_refer_code;
+        $url = url('/')."/redeem-center?=is_refer_code=".$is_refer_code;
 
         //Create Refer Code
         $is_insert = ReferCode::create([
