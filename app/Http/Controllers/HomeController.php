@@ -29,7 +29,7 @@ class HomeController extends Controller
         } elseif (Auth::user()->user_type === 'Admin') {
             return redirect('admin/all-orders');
         } elseif (Auth::user()->user_type === 'Company') {
-            return redirect('company/my-account');
+            return redirect('company/corporate-gift-cards');
         } else {
             return view('home');
         }
