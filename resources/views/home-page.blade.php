@@ -265,11 +265,13 @@
                 <ul class="slider-cetageory cetagory-product-slider">
                     @foreach ($home_products as $product)
                         <li class="logo-slider">
-                            <div class="cetagory-box">
-                                <img src="{{ url('public/uploads/products/' . $product['image']) }}"
-                                    class="home-product-image">
-                                <span>${{ number_format($product['product_price'], 2, '.', ',') }}</span>
-                            </div>
+                            <a href="{{ url('product/' . $product['product_slug']) }}">
+                                <div class="cetagory-box">
+                                    <img src="{{ url('public/uploads/products/' . $product['image']) }}"
+                                        class="home-product-image">
+                                    <span>${{ number_format($product['product_price'], 2, '.', ',') }}</span>
+                                </div>
+                            </a>
                         </li>
                     @endforeach
                 </ul>
