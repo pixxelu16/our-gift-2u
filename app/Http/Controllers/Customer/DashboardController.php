@@ -260,9 +260,9 @@ class DashboardController extends Controller
         $login_user_id = Auth::id();
 
         //Get Order Detail
-        $my_coupon_list = VerifyCoupon::where('user_id', $login_user_id)->with('coupon_detail')->first();
+        $my_coupon_list = VerifyCoupon::where('user_id', $login_user_id)->with('coupon_detail')->get()->ToArray();
 
-        // echo "<pre>"; print_r($my_coupon_list); exit;
+        //echo "<pre>"; print_r($my_coupon_list); exit;
         return view('customer.my-gift-card',compact('my_coupon_list'));
     }
 

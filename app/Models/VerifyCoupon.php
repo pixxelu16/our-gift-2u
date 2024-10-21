@@ -11,4 +11,9 @@ class VerifyCoupon extends Model
     protected $table = 'customer_verify_coupon_codes';
 
     protected $fillable = ['user_id','coupon_id'];
+
+    //Define the relationship with the CouponCodes model.
+    public function coupon_detail(){
+        return $this->belongsTo(CouponCodes::class,'coupon_id');
+    }
 }

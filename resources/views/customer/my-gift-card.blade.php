@@ -8,33 +8,27 @@
       <div class="col-md-9">
         <div class="my-account-right-box my-order-page">
           <div class="table-order">
-            @if(count($all_orders) >= 1)
+            @if(count($my_coupon_list) >= 1)
               <table>
                 <thead>
                   <tr>
-                    <th>Order</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Total</th>
-                    <th>Actions</th>
+                    <th>Coupon Code</th>
+                    <th>Expire Date</th>
+                    <th>Price</th>
+                    <th>Is Used</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($all_orders as $order)
+                  @foreach($my_coupon_list as $coupon)
                     <tr>
-                      <td><a href="{{ url('customer/my-order-detail',$order->id) }}" class="color-orenge">#{{ $order->id }}</a></td>
-                      <td>{{ Carbon\Carbon::parse($order->created_at)->format('F j, Y') }}</td>
-                      <td>{{ $order->status }}</td>
-                      <td><span class="color-orenge">${{ $order->order_amount }}</span> </td>
-                      <td><a href="{{ url('customer/my-order-detail',$order->id) }}" class="button-table">View</a></td>
+                      <td>{{ $coupon['coupon_detail']['code'] ?? "" }}</a></td>
+                      <td>{{ Carbon\Carbon::parse($coupon['coupon_detail']['expire_date'])->format('F j, Y') }}</td>
+                      <td>${{ number_format($coupon['coupon_detail']['price'], 2, '.', ',') }}</span> </td>
+                      <td>{{ $coupon['coupon_detail']['is_used'] }}</td>
                     </tr>
                   @endforeach
                 </tbody>
               </table>
-              @else
-                <div class="order-box-row no-found">
-                  <p>No Order Found.</p>
-                </div>
               @endif
           </div>
         </div>

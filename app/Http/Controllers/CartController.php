@@ -11,6 +11,7 @@ use App\Models\BillingAddress;
 use App\Models\UserAddress;
 use App\Models\OtherSetting;
 use App\Models\CouponCodes;
+use App\Models\VerifyCoupon;
 
 use Auth;
 use Session;
@@ -224,70 +225,84 @@ class CartController extends Controller
     
     //Function to submit apply from cart
     public function submit_apply_gift_card_coupon_code(Request $request) {
+        //Get Login user id
+        $login_user_id = Auth::id();
         $coupon_code = $request->coupon_code;
-        // Check if the coupon code exists and is valid
-        $coupon = CouponCodes::where('code', $coupon_code)
-            ->where('status', 'Active')
-            ->first();
 
+        // Check if the coupon code exists and is valid
+        $coupon = CouponCodes::where('code', $coupon_code)->where('status', 'Active')->first();
         // Check if the coupon exists
         if (!$coupon) {
             echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
             exit;
         }
 
-        // Check if the coupon is expired
-        if (Carbon::now()->greaterThan($coupon->expire_date)) {
-            echo '<p style="color:red;">Coupon code has expired.</p>';
+        // Check if the coupon code id verifed or not
+        $is_coupon_verified = VerifyCoupon::where('user_id', $login_user_id)->where('coupon_id', $coupon->id)->count();
+        if($is_coupon_verified >= 1){
+            // Check if the coupon is expired
+            if (Carbon::now()->greaterThan($coupon->expire_date)) {
+                echo '<p style="color:red;">Coupon code has expired.</p>';
+                exit;
+            }
+            
+            // Apply the discount (adjust according to your logic)
+            $discount = $coupon->price; 
+
+            // Optionally, store coupon details in the session
+            Session::put('applied_gift_card_coupon', [
+                'code' => $coupon_code,
+                'discount' => $discount,
+                'expire_date' => $coupon->expire_date,
+            ]);
+
+            echo '<p style="color:green;">Coupon Applied Successfully.</p>';
+            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+        } else {
+            echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
             exit;
         }
-        
-        // Apply the discount (adjust according to your logic)
-        $discount = $coupon->price; 
-
-        // Optionally, store coupon details in the session
-        Session::put('applied_gift_card_coupon', [
-            'code' => $coupon_code,
-            'discount' => $discount,
-            'expire_date' => $coupon->expire_date,
-        ]);
-
-        echo '<p style="color:green;">Coupon Applied Successfully.</p>';
-        echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
     }
 
     //Function to submit apply from cart
     public function submit_apply_cart_coupon_code(Request $request) {
+        //Get Login user id
+        $login_user_id = Auth::id();
         $coupon_code = $request->coupon_code;
-        // Check if the coupon code exists and is valid
-        $coupon = CouponCodes::where('code', $coupon_code)
-            ->where('status', 'Active')
-            ->first();
 
+        // Check if the coupon code exists and is valid
+        $coupon = CouponCodes::where('code', $coupon_code)->where('status', 'Active')->first();
         // Check if the coupon exists
         if (!$coupon) {
             echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
             exit;
         }
 
-        // Check if the coupon is expired
-        if (Carbon::now()->greaterThan($coupon->expire_date)) {
-            echo '<p style="color:red;">Coupon code has expired.</p>';
+        // Check if the coupon code id verifed or not
+        $is_coupon_verified = VerifyCoupon::where('user_id', $login_user_id)->where('coupon_id', $coupon->id)->count();
+        if($is_coupon_verified >= 1){
+            // Check if the coupon is expired
+            if (Carbon::now()->greaterThan($coupon->expire_date)) {
+                echo '<p style="color:red;">Coupon code has expired.</p>';
+                exit;
+            }
+            
+            // Apply the discount (adjust according to your logic)
+            $discount = $coupon->price; 
+
+            // Optionally, store coupon details in the session
+            Session::put('applied_cart_coupon', [
+                'code' => $coupon_code,
+                'discount' => $discount,
+                'expire_date' => $coupon->expire_date,
+            ]);
+
+            echo '<p style="color:green;">Coupon Applied Successfully.</p>';
+            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+        } else {
+            echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
             exit;
         }
-        
-        // Apply the discount (adjust according to your logic)
-        $discount = $coupon->price; 
-
-        // Optionally, store coupon details in the session
-        Session::put('applied_cart_coupon', [
-            'code' => $coupon_code,
-            'discount' => $discount,
-            'expire_date' => $coupon->expire_date,
-        ]);
-
-        echo '<p style="color:green;">Coupon Applied Successfully.</p>';
-        echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
     }
 
     //Function to remove gift card item from cart
