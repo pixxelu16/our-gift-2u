@@ -14,4 +14,4 @@ jobs:
         server: ftp.pixxeluclients.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ourgift2u.pixxeluclients.com
+        server-dir: /ourgift2u.pixxeluclients.com/
