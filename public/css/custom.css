@@ -308,7 +308,10 @@ section.our_team_member {
     height: 230px;
     object-fit: cover;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-block !important;
+}
+.slide__content--headings span {
+    font-size: 74px !important;
 }
 .box-team-member p {
     color: #7D7D7D;
