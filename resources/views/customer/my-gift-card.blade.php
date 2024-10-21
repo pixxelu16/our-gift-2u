@@ -29,6 +29,10 @@
                   @endforeach
                 </tbody>
               </table>
+              @else
+                <div class="order-box-row no-found">
+                  <p>No Verified Coupon Found.</p>
+                </div>
               @endif
           </div>
         </div>

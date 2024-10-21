@@ -204,6 +204,7 @@
                            <li><a href="{{ url('/category/boxing') }}">Boxing</a></li>
                            <li><a href="{{ url('/category/bluetooth-speakers') }}">Bluetooth Speakers</a></li>
                            <li><a href="{{ url('/category/baby-toys') }}">Baby Toys</a></li>
+                           <li><a href="{{ url('brands') }}">Brands</a></li>
                         </ul>
                      </div>
                   </div>
