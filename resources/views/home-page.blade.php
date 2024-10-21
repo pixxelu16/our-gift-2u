@@ -78,30 +78,6 @@
                     </div>
                 </div>
             </div>
-            <div class="slide">
-                <div class="slide__img">
-                    <img src="{{ url('public/images/banner-6.png') }}" alt="#" class="full-image animated"
-                        data-animation-in="zoomInImage" />
-                </div>
-                <div class="container">
-                    <div class="slide__content">
-                        <div class="slide__content--headings">
-                            <h2 class="animated" data-animation-in="fadeInRight">❤️ Special Offer <br>
-                                for Mom! ❤️<br>
-                            </h2>
-                            <p class="animated" data-animation-in="fadeInRight" data-delay-in="0.2">With any gift card purchase for Mother’s<br>  Day, you’ll receive a second gift card of <br> the same value for free.<br> 
-                              Get your code today! at the end of road<br>  we all have more done one Mom!<br> 
-                              Mom - grand mom - mother in law ......!
-                            </p>
-                            @if (!Auth::check())
-                                <a href="{{ url('redeem-center') }}" class="green-button"
-                                    data-animation-in="fadeInRight">Join Now <img
-                                        src="{{ url('public/images/slider-right-i.png') }}"></a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
