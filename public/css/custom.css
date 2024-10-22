@@ -315,14 +315,12 @@ section.our_team_member {
 }
 .box-team-member p {
     color: #7D7D7D;
-    font-family: Inter;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
 }
 .box-team-member h2 {
     color: #37393F;
-    font-family: Poppins;
     font-size: 22px;
     font-weight: 600;
     margin-top: 15px;
