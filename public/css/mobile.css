@@ -764,7 +764,31 @@
 .link-page-logo span img {
 	width: 100% !important;
 }
-
+.mobile-logo-our {
+	display: inline-block;
+}
+.mobile-logo-our .small-logo {
+	width: 50%;
+	margin: 0 0 22px 0 !important;
+}
+.small-logo {
+	display: none;
+}
+.desktop-image {
+	display: none;
+}
+.mobile-image-our {
+	display: inline-block;
+	margin: 0 !important;
+}
+.desktop-man-image {
+	display: none;
+}
+.about-card {
+	bottom: 10rem;
+	right: 0;
+	margin-right: 0;
+}
 
 
 
