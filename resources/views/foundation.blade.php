@@ -154,6 +154,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="video-placeholder">
+                    <video autoplay loop muted playsinline>
+                        <source src="{{ url('public/videos/foundation_01.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     </div>
                 </div>
             </div>
@@ -162,7 +166,8 @@
 
     <div class="wrapper-grid">
         <div class="container">
-            <div class="vertical"><img src="{{ url('public/images/clint-image-1.jpg') }}"></div>
+            <div class="vertical">
+            <img src="{{ url('public/images/clint-image-1.jpg') }}"></div>
             <div class=""><img src="{{ url('public/images/clint-image-2.jpg') }}"></div>
             <div><img src="{{ url('public/images/clint-image-3.jpg') }}"></div>
             <div class="big"><img src="{{ url('public/images/clint-image-4.jpg') }}"></div>
