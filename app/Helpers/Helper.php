@@ -97,6 +97,7 @@ class Helper
                 // Check for main categories (parent_category = 0)
                 if ($category->parent_category == 0) {
                     $subcategories = $all_categories->where('parent_category', $category->id);
+                    echo '<div class="mega-menu-box">';
                     echo '<a class="main_category dropdown-item" href="'.url("category")."/".$category->slug.'">'.$category->name.'</a>';
                 
                     // If subcategories exist, display them under the main category
@@ -105,6 +106,7 @@ class Helper
                             echo '<a class="sub_category dropdown-item" href="'.url("category")."/".$subcategory->slug.'">&nbsp;&nbsp;&nbsp;&nbsp;'.$subcategory->name . " (".$category_products_count.") ".'</a>';
                         }
                     }
+                    echo '</div>';
                 }
             }
         }

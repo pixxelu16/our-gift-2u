@@ -82,30 +82,48 @@ jQuery(document).ready(function($) {
 
 
 jQuery(document).ready(function($) {
-    $('.slider-cetageory').slick({
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: true,
-      responsive: [{
-        breakpoint: 600,
+  $('.slider-cetageory').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 7, // Default for large screens
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    arrows: true,
+    responsive: [{
+        breakpoint: 1024, // Tablets and smaller screens
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: true
         }
       },
       {
-         breakpoint: 400,
-         settings: {
-            arrows: false,
-            slidesToShow: 2,
-            slidesToScroll: 1
-         }
-      }]
+        breakpoint: 768, // For smaller tablets
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: true
+        }
+      },
+      {
+        breakpoint: 600, // Mobile phones
+        settings: {
+          slidesToShow: 2, // Show 2 slides on mobile
+          slidesToScroll: 1,
+          arrows: true
+        }
+      },
+      {
+        breakpoint: 400, // Very small devices
+        settings: {
+          slidesToShow: 1, // Still show 2 slides
+          slidesToScroll: 1,
+          arrows: true
+        }
+      }
+    ]
   });
 });
 

@@ -7,6 +7,8 @@
             <div class="slide__img">
                 <img src="{{ url('public/images/banner-1.png') }}" alt="#" class="full-image animated"
                     data-animation-in="zoomInImage" />
+
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-1.jpg') }}"></div>
             </div>
             <div class="container">
                 <div class="slide__content">
@@ -23,9 +25,12 @@
                         <img src="{{ url('public/images/banner-logo.png') }}" class="banner-new-logo animated"
                             data-animation-in="fadeInRight">
                         @if (!Auth::check())
-                            <a href="{{ url('redeem-center') }}" data-animation-in="fadeInRight">Redeem Center <img
-                                    src="{{ url('public/images/join-erow.svg') }}"></a>
+                        <div class="banner-button"><a href="{{ url('redeem-center') }}" data-animation-in="fadeInRight">Redeem Center <img
+                                    src="{{ url('public/images/join-erow.svg') }}"></a></div>
                         @endif
+                        <div class="bnaer-card-image animated" data-animation-in="fadeInRight">
+                            <img src="{{ url('public/images/mobile-banner-card-1.png') }}">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -34,6 +39,7 @@
             <div class="slide__img">
                 <img src="{{ url('public/images/banner-2.png') }}" alt="#" class="full-image animated"
                     data-animation-in="zoomInImage" />
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-2.jpg') }}"></div>
             </div>
             <div class="container">
                 <div class="slide__content">
@@ -52,17 +58,21 @@
                             🎄 Don’t miss out on the fun—<br> register now and join in the celebration!
                         </p>
                         @if (!Auth::check())
-                            <a href="{{ url('redeem-center') }}" class="green-button" data-animation-in="fadeInRight">Join
-                                Now <img src="{{ url('public/images/slider-right-i.png') }}"></a>
+                        <div class="banner-button"><a href="{{ url('redeem-center') }}" class="green-button" data-animation-in="fadeInRight">Join
+                                Now <img src="{{ url('public/images/slider-right-i.png') }}"></a></div>
                         @endif
+                        <div class="bnaer-card-image animated" data-animation-in="fadeInRight">
+                            <img src="{{ url('public/images/mobile-banner-card-2.png') }}">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="slide">
             <div class="slide__img">
-                <img src="{{ url('public/images/banner-4.png') }}" alt="#" class="full-image animated"
+                <img src="{{ url('public/images/banner-3-new.png') }}" alt="#" class="full-image animated"
                     data-animation-in="zoomInImage" />
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-3.jpg') }}"></div>
             </div>
             <div class="container">
                 <div class="slide__content">
@@ -76,9 +86,41 @@
                             Get your code today!
                         </p>
                         @if (!Auth::check())
-                            <a href="{{ url('redeem-center') }}" class="green-button" data-animation-in="fadeInRight">Join
-                                Now <img src="{{ url('public/images/slider-right-i.png') }}"></a>
+                        <div class="banner-button"><a href="{{ url('redeem-center') }}" class="green-button" data-animation-in="fadeInRight">Join
+                                Now <img src="{{ url('public/images/slider-right-i.png') }}"></a></div>
                         @endif
+                        <div class="bnaer-card-image animated" data-animation-in="fadeInRight">
+                            <img src="{{ url('public/images/mobile-banner-card-3.png') }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide__img">
+                <img src="{{ url('public/images/banner-4.png') }}" alt="#" class="full-image animated"
+                    data-animation-in="zoomInImage" />
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-4.jpg') }}"></div>
+            </div>
+            <div class="container">        
+                <div class="slide__content">
+                    <div class="slide__content--headings">
+                        <h2 class="animated" data-animation-in="fadeInRight">❤️ Special Offer<br> for Mom! ❤️
+                        </h2>
+                        <p class="animated" data-animation-in="fadeInRight" data-delay-in="0.2">With any gift card purchase for Mother’ <br>s Day, you’ll receive a second gift card of<br> the same value for free.<br>
+                            Get your code today! at the end of road<br> we all have more done one Mom!<br>
+                            Mom - grand mom - mother in law ......
+                        </p>
+                        @if (!Auth::check())
+                           <div class="banner-button"> <a href="{{ url('redeem-center') }}" class="green-button" data-animation-in="fadeInRight">Join
+                                Now <img src="{{ url('public/images/slider-right-i.png') }}"></a>
+                           </div>
+                        @endif
+
+                        <div class="bnaer-card-image animated" data-animation-in="fadeInRight">
+                            <img src="{{ url('public/images/mobile-banner-card-4.png') }}">
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -451,7 +493,7 @@
 </div>
 
 @if ($bottom_all_categories)
-    <div class="slider-text defrent-slider">
+    <div class="slider-text defrent-slider defrent-slider-mobile">
         <div class="slide-track">
             @foreach ($bottom_all_categories as $categorie)
                 <div class="slide">

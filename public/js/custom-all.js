@@ -166,7 +166,7 @@ jQuery(document).ready(function($) {
         settings: {
           slidesToShow: 1, // Still show 2 slides
           slidesToScroll: 1,
-          arrows: false
+          arrows: true
         }
       }
     ]

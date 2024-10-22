@@ -211,6 +211,7 @@
     }
     .help-childern-saction span {
         font-size: 14px;
+        padding: 0 20px;
     }
     .help-childern-saction h2 {
         margin: 15px 0 0 0;
@@ -317,7 +318,7 @@
         margin: 0 0 0 0;
     }
     .logo-new img {
-        width: 100%;
+        width: auto;
     }
     .header-top-new .col-md-5 {
         float: left;
@@ -386,12 +387,6 @@
     .banner-new-saction {
         margin: 0 0 0 0;
     }
-    .slider, .slide {
-        height: 162px;
-    }
-    .banner-new-saction .slide {
-        height: 162px !important;
-    }
     .banner-new-saction .slick-dots {
         bottom: 7px !important;
     }
@@ -443,6 +438,7 @@
     .box-right-join-with {
         text-align: center;
         width: 32%;
+        margin: 40px 0 0 0;
     }
     .box-right-join-with .icon-join-2 {
         float: inherit;
@@ -512,19 +508,31 @@
         top: 6px;
     }
     .brands-selection-row a {
-        margin: 70px 0 40px 0;
+        margin: 57px 0 34px 0;
+    }
+    .shop-cetageory-slider {
+        padding: 20px 0 0 0;
     }
     .help-childern-saction {
-        margin: 50px 0 20px;
-        padding: 30px 20px;
+        margin: 30px 0 20px;
+        padding: 123px 0 0;
+    }
+    .logo-52-orange {
+        position: absolute;
+        top: 0;
+        z-index: 99;
+        left: 0;
+        right: 0;
     }
     .help-childern-saction h2 {
         margin: 10px 0 0 0;
         font-size: 24px;
+        padding: 0 20px;
     }
     .childer-list li {
         display: inline-block;
-        margin: 0 0 10px;
+        margin: 0 0 20px;
+        width: 36%;
     }
     .logo-icon-row ul li {
         display: inline-block;
@@ -665,6 +673,108 @@
         position: relative;
         margin-top: 190px;
     }
+    .slide__img .full-image {
+        display: none;
+    }
+    .mobile-image {
+	display: none;
+}
+.mobile-image {
+	display: inline-block;
+	width: 100%;
+}
+.banner-new-saction .slide {
+	height: 852px !important;
+}
+.slider, .slide {
+	height: 852px;
+}
+.mobile-image img {
+	width: 100%;
+	height: 100%;
+}
+.slide .slide__content--headings {
+	text-align: center;
+	color: #FFF;
+}
+.slide .slide__content--headings h2 {
+	font-size: 74px;
+	margin: 0 0 0;
+	text-align: center;
+}
+.slide .slide__content--headings h2 {
+	font-size: 32px;
+	line-height: 32px;
+}
+.slide__content p {
+	font-size: 16px;
+	margin: 20px 0 0 0;
+	text-align: center;
+	color: #000;
+}
+.slide__content p br {
+	display: none;
+}
+.slide__content--headings .banner-new-logo-2 {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.banner-new-logo {
+	height: auto !important;
+	width: auto !important;
+	margin: 18px 0 0 0;
+	display: inline-block !important;
+}
+.banner-new-logo-2.fadeInRight.animated {
+	width: 50%;
+	height: auto;
+	margin-bottom: 20px;
+}
+.bnaer-card-image {
+	display: inline-block;
+}
+.bnaer-card-image img {
+	width: 100%;
+	height: 100% !important;
+}
+.banner-button {
+	margin: 18px 0 0 0;
+}
+.logo-icon-row {
+	margin: 20px 0;
+}
+.logo-icon-row h2 {
+	font-size: 17px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.defrent-slider-mobile {
+	margin: 40px 0 0 0;
+}
+.shap-about-image {
+	left: 0;
+	right: 0;
+}
+.link-page-logo span {
+	width: 47%;
+	display: inline-block;
+	margin: 10px 8px 8px 0;
+}
+.link-page-logo span img {
+	width: 100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
@@ -672,14 +782,10 @@
 @media (max-width: 320px) {
 	.slide .slide__img img {
         max-width: 100%;
-        height: 200px;
         object-fit: cover;
     }
-    .banner-new-saction .slide {
-        height: 200px !important;
-    }
     .slide .slide__content {
-        transform: translate(0%, 16%);
+        transform: translate(0%, 7%);
     }
     .box-left-join-with #accordionExample .accordion-item .accordion-button {
         padding: 15px 0;
@@ -693,6 +799,77 @@
     }
     .brands-selection-row a {
         margin: 0 0 0 0;
+    }
+    .slide .slide__content--headings h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .slide__content p {
+        font-size: 14px;
+        margin: 8px 0 0 0;
+    }
+    .slide__content a {
+        margin: 0 0 0 0;
+    }
+    .banner-new-logo {
+        margin: 9px 0 0 0;
+    }
+    .logo-new img {
+        width: 100px;
+    }
+    .button-right-top ul li .register {
+        padding: 6px 10px;
+    }
+    .button-right-top ul li .sign-in {
+        padding: 6px 10px;
+    }
+    .banner-new-saction .slide {
+        height: 695px !important;
+    }
+    .slider, .slide {
+        height: 695px;
+    }
+    .slider-text {
+        margin: -8px 0 0 0;
+    }
+    .about-text h2 {
+        font-size: 20px;
+    }
+    .box-inner-row {
+        padding: 15px;
+        height: auto;
+    }
+    .fashion-content {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+    .fashion-content span {
+        font-size: 10px;
+    }
+    .brands-selection-row {
+        padding: 10px 0 0 0;
+    }
+    .slider-text.defrent-slider {
+        margin: 27px 0 0 0;
+    }
+    .help-childern-saction h2 {
+        margin: 10px 0 0 0;
+        font-size: 17px;
+    }
+    .slider-text.defrent-slider.defrent-slider-mobile {
+        margin: 0;
+    }
+    .link-page-logo span {
+        width: 46%;
+    }
+    .link-page li a {
+        font-size: 12px;
+    }
+    .left-copy-right span {
+        font-size: 10px;
     }
 }
 
