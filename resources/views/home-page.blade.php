@@ -146,11 +146,13 @@
             <div class="col-md-6">
                 <div class="about-image" data-aos="fade-up">
                     <img src="{{ url('public/images/banner-logo-2.png') }}" class="small-logo">
-                    <img src="{{ url('public/images/about-girl.svg') }}">
+                    <img src="{{ url('public/images/about-girl.svg') }}" class="desktop-image">
+                    <img src="{{ url('public/images/young-caucasian-woman.png') }}" class="mobile-image-our">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-text">
+                    <div class="mobile-logo-our"><img src="{{ url('public/images/banner-logo-2.png') }}" class="small-logo"></div>
                     <span>Our Process</span>
                     <h2>So, how does it <em>work?</em></h2>
                     <div class="row-inner-about">
@@ -509,8 +511,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="my-rewards-left">
-                    <img src="{{ url('public/images/man-wearing-t-shirt-gesturing 1.png') }}">
+                    <img src="{{ url('public/images/man-wearing-t-shirt-gesturing 1.png') }}" class="desktop-man-image">
                     <div class="shap-about-image"><img src="{{ url('public/images/shap-imag-about.png') }}"></div>
+                    <img src="{{ url('public/images/medium-shot-man.png') }}" class="mobile-image-our">
                 </div>
             </div>
             <div class="col-md-6">
@@ -524,7 +527,9 @@
                         <a href="{{ url('redeem-center') }}">Redeem center<img
                                 src="{{ url('public/images/join-erow.svg') }}"></a>
                     @endif
-                    <div class="about-card"><img src="{{ url('public/images/red-about-card.png') }}"></div>
+                    <div class="about-card">
+                        <img src="{{ url('public/images/red-about-card.png') }}">
+                    </div>
                 </div>
             </div>
         </div>

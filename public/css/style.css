@@ -224,7 +224,6 @@ body {
 .text-image-box span {
 	color: #fff;
 	line-height: 17px;
-	font-family: ;
 	letter-spacing: 1px;
 	font-size: 16px;
 	font-weight: 500;
@@ -235,7 +234,6 @@ body {
 .text-image-box h2 {
 	color: #fff;
 	font-weight: 600;
-	font-family: ;
 	font-size: 28px;
 	margin: 10px 0 0 0;
 }
@@ -270,7 +268,6 @@ body {
 	text-decoration: none;
 	color: #fff;
 	text-transform: capitalize;
-	font-family: ;
 	font-size: 12px;
 }
 
@@ -310,7 +307,6 @@ body {
 	color: #999;
 	margin: 0;
 	width: 100%;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -398,7 +394,6 @@ body {
 	width: 100%;
 	text-align: left;
 	margin: 0;
-	font-family: ;
 }
 
 .membership-saction .accordion__answer {
@@ -434,7 +429,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #F8991B;
-	font-family: ;
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: 20px;
@@ -445,7 +439,6 @@ body {
 	width: 100%;
 	margin: 15px 0 0 0;
 	color: #000;
-	font-family: ;
 	font-size: 30px;
 	font-weight: 700;
 }
@@ -467,7 +460,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #000;
-	font-family: ;
 	font-weight: 800;
 	font-size: 16px;
 }
@@ -476,7 +468,6 @@ body {
 	margin: 6px 0 0 0;
 	color: #666;
 	line-height: 20px;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -493,7 +484,6 @@ body {
 	margin: 0 0 10px 0;
 	position: relative;
 	padding: 0 0 0 20px;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -516,7 +506,6 @@ body {
 .button-register button {
 	background-color: #39ff14;
 	border: none;
-	font-family: ;
 	border-radius: 4px;
 	font-size: 18px;
 	display: inline-block;
@@ -530,7 +519,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #F8991B;
-	font-family: ;
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: 20px;
@@ -565,7 +553,6 @@ body {
 
 .serch-box select {
 	font-size: 14px;
-	font-family: ;
 	padding: 10px 15px 10px 10px;
 	background-color: #fff !important;
 }
@@ -592,7 +579,6 @@ body {
 	padding: 0 13px;
 	height: 36px;
 	line-height: 32px;
-	font-family: ;
 	font-size: 14px;
 	margin: 0 0 0;
 	font-weight: 600;
@@ -608,7 +594,6 @@ body {
 .acc-login a {
 	color: #fff;
 	text-decoration: none;
-	font-family: ;
 	font-size: 11px;
 	font-weight: 500;
 	height: 100%;
@@ -649,7 +634,6 @@ body {
 .header-three .navbar ul li a {
 	padding: 0;
 	color: #000;
-	font-family: ;
 	font-weight: 500;
 	font-size: 14px;
 }
@@ -680,7 +664,6 @@ body {
 	display: inline-block;
 	color: #000;
 	text-decoration: none;
-	font-family: ;
 	font-size: 14px;
 	font-weight: 500;
 }
@@ -904,11 +887,7 @@ body {
 	color: #111;
 }
 
-.input-box-input input:invalid {
-	outline: 0;
-	// color: #ff2300;
-	//   border-color: #ff2300;
-}
+
 
 .input-box-input input:focus,
 input:valid {
@@ -7884,11 +7863,6 @@ input:valid {
     margin: 41px 0 0 0;
     transition: all 0.35s;
 }
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-	*{
-	font-family: ;
-}
 
 
 @font-face {
@@ -7908,7 +7882,6 @@ a {
 body {
 	margin: 0;
 	background-color: #f5f5f5 !important;
-	font-family:  !important;
 }
 
 .header-tow.sticky {
@@ -7963,7 +7936,6 @@ body {
 	color: #000;
 	font-size: 14px;
 	font-weight: 600;
-	font-family: ;
 }
 
 .notifaction-green {
@@ -8008,7 +7980,6 @@ body {
 	text-align: center;
 	height: 35px;
 	line-height: 34px;
-	font-family: ;
 }
 
 .banner-saction {
@@ -8031,7 +8002,6 @@ body {
 	color: #000;
 	font-size: 100px;
 	font-weight: bold;
-	font-family: ;
 	line-height: 100px;
 }
 
@@ -8041,7 +8011,6 @@ body {
 	width: 100%;
 	color: #333;
 	font-size: 24px;
-	font-family: ;
 }
 
 .ul-li-list-btn {
@@ -8067,7 +8036,6 @@ body {
 	border-radius: 300px;
 	padding: 14px 30px;
 	display: inline-block;
-	font-family: ;
 	font-size: 14px;
 	font-weight: 600;
 }
@@ -8124,7 +8092,6 @@ body {
 .text-image-box span {
 	color: #fff;
 	line-height: 17px;
-	font-family: ;
 	letter-spacing: 1px;
 	font-size: 16px;
 	font-weight: 500;
@@ -8135,7 +8102,6 @@ body {
 .text-image-box h2 {
 	color: #fff;
 	font-weight: 600;
-	font-family: ;
 	font-size: 28px;
 	margin: 10px 0 0 0;
 }
@@ -8170,7 +8136,6 @@ body {
 	text-decoration: none;
 	color: #fff;
 	text-transform: capitalize;
-	font-family: ;
 	font-size: 12px;
 }
 
@@ -8210,7 +8175,6 @@ body {
 	color: #999;
 	margin: 0;
 	width: 100%;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -8298,7 +8262,6 @@ body {
 	width: 100%;
 	text-align: left;
 	margin: 0;
-	font-family: ;
 }
 
 .membership-saction .accordion__answer {
@@ -8334,7 +8297,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #F8991B;
-	font-family: ;
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: 20px;
@@ -8345,7 +8307,6 @@ body {
 	width: 100%;
 	margin: 15px 0 0 0;
 	color: #000;
-	font-family: ;
 	font-size: 30px;
 	font-weight: 700;
 }
@@ -8367,7 +8328,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #000;
-	font-family: ;
 	font-weight: 800;
 	font-size: 16px;
 }
@@ -8376,7 +8336,6 @@ body {
 	margin: 6px 0 0 0;
 	color: #666;
 	line-height: 20px;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -8393,7 +8352,6 @@ body {
 	margin: 0 0 10px 0;
 	position: relative;
 	padding: 0 0 0 20px;
-	font-family: ;
 	font-size: 14px;
 }
 
@@ -8416,7 +8374,6 @@ body {
 .button-register button {
     background-color: #39ff14;
     border: none;
-    font-family: ;
     border-radius: 4px;
     font-size: 18px;
     display: inline-block;
@@ -8430,7 +8387,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #F8991B;
-	font-family: ;
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: 20px;
@@ -8465,7 +8421,6 @@ body {
 
 .serch-box select {
 	font-size: 14px;
-	font-family: ;
 	padding: 10px 15px 10px 10px;
 	background-color: #fff !important;
 }
@@ -8492,7 +8447,6 @@ body {
 	padding: 0 13px;
 	height: 36px;
 	line-height: 32px;
-	font-family: ;
 	font-size: 14px;
 	margin: 0 0 0;
 	font-weight: 600;
@@ -8508,19 +8462,18 @@ body {
 .acc-login a {
 	color: #fff !important;
 	text-decoration: none;
-	font-size: 14px;
-	font-weight: 500;
+	font-size: 12px;
 	height: 100%;
 	padding-bottom: 30px;
 }
 .acc-login .user-icon {
-	width: 20px;
+	width: 10px;
 	margin: 0 7px 0 0px;
 	filter: brightness(0) invert(1);
 }
 
 .acc-login .errow-drop {
-	width: 16px;
+	width: 10px;
 	margin: 1px 0 0 4px;
 	filter: brightness(0) invert(1);
 }
@@ -8549,7 +8502,6 @@ body {
 .header-three .navbar ul li a {
 	padding: 0;
 	color: #000;
-	font-family: ;
 	font-weight: 500;
 	font-size: 14px;
 }
@@ -8580,7 +8532,6 @@ body {
 	display: inline-block;
 	color: #000;
 	text-decoration: none;
-	font-family: ;
 	font-size: 14px;
 	font-weight: 500;
 }
@@ -11015,7 +10966,7 @@ div.middle {
 	width: 100%;
 	display: inline-block;
 	padding: 6px 12px;
-	font-size: 13px;
+	font-size: 12px;
 	color: #000 !important;
 }
 .acc-login ul li:hover>ul,
@@ -14226,14 +14177,17 @@ img.img-position {
     border-radius: 7px;
     text-decoration: none;
     color: #282828 !important;
-    font-size: 16px;
-    font-weight: 900;
+    font-size: 14px;
+    font-weight: 700;
     font-family: "Nunito Sans", sans-serif;
     margin: 30px 0 0 0;
     transition: all 0.35s;
     background-color: #39ff14;
 }
-
+.brands-selection-row a img {
+	width: 16px;
+	margin: 0 0 0 1px;
+}
 .brands-selection-row a:hover {
 	transform: translateY(-0.25em);
 	border-color: #5e5e5e;
@@ -14314,12 +14268,15 @@ img.img-position {
 	color: #000 !important;
 	text-decoration: none;
 	font-family: "Nunito Sans", sans-serif;
-	font-size: 16px;
-	font-weight: 900;
+	font-size: 14px;
+	font-weight: 700;
 	margin: 41px 0 0 0;
 	transition: all 0.35s;
 }
-
+.help-childern-saction a img {
+	width: 16px;
+	margin: 0 0 0 1px;
+}
 .help-childern-saction a:hover {
 	transform: translateY(-0.25em);
 	border-color: #5e5e5e;
@@ -17097,7 +17054,35 @@ label.error {
 	font-size: 12px;
 }
 .mega-menu-box {
-	float: left;
 	width: 20%;
 	margin: 0 0 25px 0;
+	display: inline-grid;
+}
+.mobile-logo-our {
+	display: none;
+}
+.mobile-image-our {
+	display: none;
+}
+.mobile-logo-our .small-logo {
+	display: inline-block;
+}
+.banner-new-saction button {
+	top: 50%;
+}
+.banner-new-saction .slick-next.slick-arrow {
+	right: 40px !important;
+	z-index: 999;
+	background-image: url('../images/right-chevron.png');
+	background-size: cover;
+	height: 37px;
+	opacity: 0.5;
+}
+.banner-new-saction .slick-prev.slick-arrow {
+	left: 40px;
+	z-index: 999;
+	background-image: url('../images/left-chevron.png');
+	background-size: cover;
+	height: 37px;
+	opacity: 0.5;
 }

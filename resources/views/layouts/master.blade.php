@@ -19,6 +19,8 @@
       <link href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
       <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
       <script> var base_url = '{{ url("/") }}'; </script>
    </head>
@@ -58,8 +60,8 @@
                                     <li>
                                        <a href="javascript:void(0)">
                                           <img src="{{ url('public/images/User.svg') }}" class="user-icon">
-                                          My Account :-
-                                          Hi {{ Auth::user()->name }}!
+                                          
+                                           {{ Auth::user()->name }}
                                           <img src="{{ url('public/images/Drop-Down.svg') }}" class="errow-drop"></a>
                                        <ul class="dropdown">
                                           <li>
@@ -83,8 +85,8 @@
                                     <li>
                                        <a href="javascript:void(0)">
                                           <img src="{{ url('public/images/User.svg') }}" class="user-icon">
-                                          My Account :-
-                                          Hi {{ Auth::user()->name }}!
+                                        
+                                          {{ Auth::user()->name }}
                                           <img src="{{ url('public/images/Drop-Down.svg') }}" class="errow-drop"></a>
                                        <ul class="dropdown">
                                           <li>
@@ -104,8 +106,8 @@
                                     <li>
                                        <a href="javascript:void(0)">
                                           <img src="{{ url('public/images/User.svg') }}" class="user-icon">
-                                          My Account :-
-                                          Hi {{ Auth::user()->name }}!
+                                          
+                                           {{ Auth::user()->name }}
                                           <img src="{{ url('public/images/Drop-Down.svg') }}" class="errow-drop"></a>
                                        <ul class="dropdown">
                                           <li>
@@ -278,12 +280,15 @@
       <script>
          $('.slider').slick({
            autoplay: true,
-           autoplaySpeed: 3000, 
+           autoplaySpeed: 3000,
            speed: 1000,
            lazyLoad: 'progressive',
-           arrows: false,
+           arrows: true, // Enable arrows
            dots: true,
+           prevArrow: '<button class="slick-prev slick-arrow"><i class="fa fa-chevron-left"></i></button>',
+           nextArrow: '<button class="slick-next slick-arrow"><i class="fa fa-chevron-right"></i></button>'
          }).slickAnimation();
-      </script>
+       </script>
+       
    </body>
 </html>
