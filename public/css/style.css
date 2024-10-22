@@ -7416,15 +7416,14 @@ img.card_img_gift {
 .flex-quientity.card_gifting {
 	justify-content: space-between;
 	padding: 16px 50px;
-	border: 1px solid#E5E5E5;
 }
 
 .space_colpasse span {
-	color: #282828;
-	font-size: 12px;
-	font-weight: 800;
-	text-transform: uppercase;
-	padding-right: 10px;
+    color: #282828;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding-right: 4px;
 }
 
 
@@ -15248,7 +15247,7 @@ i.fa.fa-angle-down {
     border: 1px solid #1746FF;
     padding-top: 0px;
     background: #fff;
-    overflow: inherit;
+    overflow: hidden;
 }
 .gift_card_corporate.card-counter {
     display: grid;
@@ -15284,9 +15283,9 @@ img.card_img_gift {
     border: none;
 }
 .flex-quientity.card_gifting {
-	justify-content: space-between;
-	padding: 21px 18px;
-	border: 1px solid#E5E5E5;
+    justify-content: space-between;
+    padding: 21px 18px;
+    border-top: 1px solid#E5E5E5;
 }
 .cart_area_section span {
 	display: inline-block;
@@ -15298,12 +15297,12 @@ img.card_img_gift {
 	margin: 0 0 25px 0;
 }
 .gifting_quient {
-	background-color: #F2F2F2;
-	display: inline-block;
-	width: 138px;
-	text-align: center;
-	border-radius: 7px;
-	padding: 7px 14px;
+    background-color: #F2F2F2;
+    display: inline-block;
+    width: 128px;
+    text-align: center;
+    border-radius: 7px;
+    padding: 7px 14px;
 }
 .gifting_quient button {
 	border: 1px solid #282828;
@@ -15404,21 +15403,14 @@ img.card_img_gift {
   .cart_area_section .cart-field input:focus {
 	outline: none;
   }
-  
   .cart_area_section {
-	  margin: 100px 0;
-  }
-
-
-
-
-
-.payment_section-cart .payment-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+	margin: 50px 0 20px;
 }
-
+.payment_section-cart .payment-form {
+	background-color: #fff;
+	padding: 20px 0;
+	border-radius: 10px;
+}
 .payment_section-cart .payment-form h2 {
     margin-bottom: 20px;
     font-size: 18px;
@@ -17037,7 +17029,7 @@ label.error {
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
 	position: absolute;
-	max-height: 644px !important;
+	max-height: 688px !important;
 	width: 80rem !important;
 }
 .nav-item.dropdown.show .main_category.dropdown-item {
@@ -17085,4 +17077,8 @@ label.error {
 	background-size: cover;
 	height: 37px;
 	opacity: 0.5;
+}
+.space_colpasse {
+    float: left;
+    width: 70%;
 }
