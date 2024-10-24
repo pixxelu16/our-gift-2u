@@ -7,9 +7,34 @@
     font-display: swap;
 }
 
+p {
+	font-family: "Nunito Sans";
+}
+
+span {
+	font-family: "Nunito Sans";
+}
+
 a {
+	font-family: "Nunito Sans";
 	text-decoration: none;
 	color: inherit;
+}
+
+th, td {
+	font-family: "Nunito Sans";
+	font-size: 14px;
+}
+button {
+	font-family: "Nunito Sans" !important;
+}
+
+h3 {
+	font-family: 'Helvetica Rounded LT Std'
+}
+
+h2 {
+	font-family: 'Helvetica Rounded LT Std'
 }
 
 body {
@@ -3072,22 +3097,6 @@ div.middle {
 	padding-left: 0;
 }
 
-.acc-login ul li ul {
-	background: #fff;
-	visibility: hidden;
-	opacity: 0;
-	position: absolute;
-	transition: all 0.5s ease;
-	margin-top: 25px;
-	left: 0;
-	display: none;
-	z-index: 999;
-	width: 180px;
-	border: 1px solid #dcdcdc;
-	border-radius: 5px;
-	text-align: left;
-	box-shadow: 0 0 3px 0 #dcdcdc;
-}
 
 .acc-login ul li ul a {
 	border-bottom: 1px solid #dcdcdc;
@@ -3097,7 +3106,9 @@ div.middle {
 	font-size: 13px;
 	color: black;
 }
-
+.acc-login ul li ul a:last-child {
+	border-bottom: none;
+}
 .acc-login ul li:hover>ul,
 ul li ul:hover {
 	visibility: visible;
@@ -3116,37 +3127,14 @@ ul li ul:hover {
 	margin: 70px 0;
 }
 
-.my-account-side-bar {
-	display: inline-block;
-	width: 100%;
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 7px 0 #dcdcdc;
-	border: 1px solid #dcdcdc;
-	overflow: hidden;
-}
-
 .my-account-side-bar ul {
 	padding: 0 0 0 0;
 	margin: 0;
 	width: 100%;
 }
 
-.my-account-side-bar ul li {
-	display: inline-block;
-	width: 100%;
+.my-account-side-bar ul li:last-child {
 	margin: 0;
-}
-
-.my-account-side-bar ul li a {
-	display: inline-block;
-	width: 100%;
-	text-decoration: none;
-	color: #000;
-	border-bottom: 1px solid #dcdcdc;
-	padding: 15px 20px;
-	font-size: 14px;
-	font-weight: 600;
 }
 
 .my-account-side-bar ul li:last-child a {
@@ -3869,12 +3857,6 @@ p.payment em {
 	width: 100%;
 }
 
-.table-price table td {
-	border: 1px solid #dcdcdc;
-	background-color: #fff;
-	padding: 13px 13px;
-	font-size: 15px;
-}
 
 .table-price table td span {
 	display: inline-block;
@@ -4838,12 +4820,6 @@ html .ui-button.ui-state-disabled:active {
 	margin: 14px 0;
 }
 
-.billing-edite-left {
-	display: inline-block;
-	width: 40%;
-	margin: 20px auto 0;
-	float: inherit !important;
-}
 
 .billing-edite-left label {
 	width: 100%;
@@ -7173,7 +7149,6 @@ h2.shop-offer-heading {
 }
 
 .menu-item>a:hover {
-	font-weight: bold;
 	color: #333;
 	text-decoration: none;
 	display: block;
@@ -7613,6 +7588,14 @@ img.card_img_gift {
 	font-size: 16px;
 	font-weight: 400;
 	font-family: "Nunito Sans", sans-serif;
+	margin: 5px auto 0;
+	width: 70%;
+	display: inline-block;
+}
+
+.button-red-a {
+	display: inline-block;
+	width: 100%;
 }
 
 .redeem-main a {
@@ -7680,8 +7663,9 @@ input:valid {
 .redeem-form-main .form-control {
 	background-color: #f7f7f7;
 	border: none;
-	padding: 15px;
+	padding: 11px 10px;
 	border-radius: 5px;
+	font-size: 14px;
 }
 
 .redeem-form-main .form-control::placeholder {
@@ -7693,7 +7677,7 @@ input:valid {
 }
 
 .padding-less {
-	padding: 60px 0px;
+	padding: 60px 0px 0;
 }
 
 .padding-less-contact {
@@ -9769,25 +9753,30 @@ body {
 	display: inline-block;
 	font-weight: 600;
 	margin: 0 0 15px 0;
+	font-family: 'Helvetica Rounded LT Std';
 }
 
 .right-shop-details .views {
 	display: inline-block;
 	width: auto;
-	margin: 0 30px 0 0;
+	margin: 0 5px 0 0;
 	color: #666;
 	font-weight: inherit !important;
 	font-size: 12px;
+	font-family: "Nunito Sans";
 }
 .sold {
 	font-size: 12px;
+	font-family: "Nunito Sans";
 }
 
 .social-media {
 	display: inline-block;
 	width: auto;
-	margin: 0 0 0 30px;
+	margin: 0px 0 0 15px;
 	padding: 0;
+	position: relative;
+	top: 3px;
 }
 
 .social-media li {
@@ -9817,6 +9806,7 @@ body {
 	margin: 15px 0 0 0;
 	color: #282828;
 	font-size: 29px;
+	font-family: 'Helvetica Rounded LT Std';
 }
 
 .disc {
@@ -9839,6 +9829,7 @@ body {
 	position: relative;
 	margin: 0 0 15px 0;
 	padding: 0 0 0 26px;
+	font-family: "Nunito Sans";
 }
 
 .disc ul li::after {
@@ -9855,8 +9846,9 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #000;
-	font-weight: 600;
+	font-weight: 900;
 	font-size: 14px;
+	font-family: "Nunito Sans";
 }
 
 .avail em {
@@ -9950,6 +9942,8 @@ body {
 	border-radius: 7px;
 	color: #fff;
 	padding: 7px 0;
+	font-family: "Nunito Sans";
+	font-weight: 900;
 }
 
 .sku {
@@ -9958,6 +9952,7 @@ body {
 	margin: 16px 0 0 0;
 	color: #666;
 	font-weight: 600;
+	font-family: "Nunito Sans";
 }
 
 .categories-list {
@@ -9973,6 +9968,7 @@ body {
 	margin: 0 0 0 9px;
 	font-weight: 400;
 	font-size: 14px;
+	font-family: "Nunito Sans";
 }
 
 .tab-shop-details {
@@ -9993,6 +9989,8 @@ body {
 	color: #000;
 	font-size: 14px;
 	margin: 0 30px 0 0px;
+	font-family: "Nunito Sans";
+	font-weight: 900;
 }
 
 .tab.whiteborder {
@@ -10056,8 +10054,9 @@ body {
 	display: inline-block;
 	width: 100%;
 	color: #333;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 600;
+	font-family: "Nunito Sans";
 }
 
 .tabContent h6 {
@@ -10065,6 +10064,7 @@ body {
 	width: 100%;
 	margin: 20px 0 0 0;
 	color: #333;
+	font-family: "Nunito Sans";
 }
 
 .tabContent h6 i {
@@ -10079,6 +10079,7 @@ body {
 	width: 100%;
 	margin: 30px 0 0 0;
 	font-weight: 600;
+	font-family: "Nunito Sans";
 }
 
 .tabContent textarea {
@@ -10088,6 +10089,7 @@ body {
 	border: 1px solid #dcdcdc;
 	border-radius: 7px;
 	height: 170px;
+	font-family: "Nunito Sans";
 }
 
 .tabContent button {
@@ -10109,7 +10111,7 @@ body {
 	margin: 3rem 0 0;
 }
 .full-text-box .form-control {
-	height: 207px;
+	height: 140px;
 }
 
 .contact-page-saction h2 {
@@ -10957,7 +10959,6 @@ div.middle {
 	border: 1px solid #dcdcdc;
 	border-radius: 5px;
 	text-align: left;
-	box-shadow: 0 0 3px 0 #dcdcdc;
 }
 
 .acc-login ul li ul a {
@@ -10983,17 +10984,19 @@ ul li ul:hover {
 .my-account-saction {
 	display: inline-block;
 	width: 100%;
-	margin: 70px 0;
+	margin: 30px 0;
 }
-
+.my-account-saction .container {
+	max-width: 1140px !important;
+}
 .my-account-side-bar {
 	display: inline-block;
 	width: 100%;
 	background-color: #fff;
 	border-radius: 10px;
-	box-shadow: 0 0 7px 0 #dcdcdc;
-	border: 1px solid #dcdcdc;
+	border: 1px solid #E5E5E5;
 	overflow: hidden;
+	padding: 21px 12px;
 }
 
 .my-account-side-bar ul {
@@ -11005,7 +11008,7 @@ ul li ul:hover {
 .my-account-side-bar ul li {
 	display: inline-block;
 	width: 100%;
-	margin: 0;
+	margin: 0 0 10px 0;
 }
 
 .my-account-side-bar ul li a {
@@ -11013,10 +11016,13 @@ ul li ul:hover {
 	width: 100%;
 	text-decoration: none;
 	color: #000;
-	border-bottom: 1px solid #dcdcdc;
-	padding: 15px 20px;
-	font-size: 14px;
-	font-weight: 600;
+	padding: 12px 15px;
+	font-size: 12px;
+	font-weight: 700;
+	border-radius: 10px;
+}
+.my-account-right-box h2 {
+	font-size: 20px;
 }
 
 .my-account-side-bar ul li:last-child a {
@@ -11089,7 +11095,7 @@ ul li ul:hover {
 }
 
 .my-account-side-bar ul li a img {
-	margin: 0 15px 0 0;
+	margin: 0 10px 0 0;
 }
 
 .my-account-side-bar ul li a:hover img {
@@ -11125,9 +11131,11 @@ ul li ul:hover {
 	top: 27px;
 	background-color: #f0f0f0;
 	border-radius: 4px;
-	padding: 6px 20px 8px;
+	padding: 5px 18px;
 	text-transform: capitalize;
-	font-weight: 600;
+	font-weight: 700;
+	font-size: 12px;
+	color: #000;
 }
 
 .cart-page-saction {
@@ -11137,11 +11145,11 @@ ul li ul:hover {
 }
 
 .cart-page-saction h2 {
-	font-size: 16px;
+	font-size: 24px;
 	color: #000;
-	font-weight: 600;
 	width: 100%;
 	display: inline-block;
+	font-family: 'Helvetica Rounded LT Std';
 }
 
 .cart-all-box {
@@ -11182,8 +11190,9 @@ ul li ul:hover {
 	float: right;
 	width: 75%;
 	color: #000;
-	font-size: 11px;
+	font-size: 12px;
 	margin: 7px 0 0 0;
+	font-family: "Nunito Sans";
 }
 
 .left-box-cart td:nth-child(1) {
@@ -11258,7 +11267,7 @@ nav.breadcrumb {
 .box-shoping-continew {
 	display: inline-block;
 	width: 100%;
-	margin: 16px 0 0 0;
+	margin: 16px 0 15px 0;
 }
 
 .box-shoping-continew p {
@@ -11285,13 +11294,13 @@ section.our_team_member .slick-slider .slick-slide {
 	margin-left: -10px;
 	margin-right: -10px;
   }
+
   .wps_wpr_apply_custom_points {
 	display: inline-block;
 	width: 50%;
 	text-align: left;
 	margin: 0 0;
 }
-
 input#wps_cart_points {
 	padding: 8px 5px;
 	max-width: 200px;
@@ -11373,6 +11382,7 @@ input#wps_cart_points {
 	font-size: 12px;
 	padding: 7px 0;
 	font-weight: 500;
+	font-family: "Nunito Sans";
 }
 .cart-totals table td.totle-sub {
 	font-weight: 800;
@@ -11513,7 +11523,7 @@ input#wps_cart_points {
 }
 
 .step-one h3 {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -11525,11 +11535,17 @@ input#wps_cart_points {
 }
 
 .step-one {
-	margin-bottom: 25px;
+	margin: 25px 0 0 0;
+	display: inline-block;
+}
+.step-tow {
+	display: inline-block;
+	width: 100%;
+	margin: 25px 0 0 0;
 }
 
 .step-tow h3 {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -11550,7 +11566,7 @@ input#wps_cart_points {
 	margin-bottom: 15px;
 	border: 1px solid #ddd;
 	outline: none;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .full-checkout-input textarea {
@@ -11560,7 +11576,7 @@ input#wps_cart_points {
 .checkout-box-left textarea {
 	border: 1px solid #ddd;
 	border-radius: 7px;
-	font-size: 14px;
+	font-size: 12px;
 	padding: 14px 0px 0px 14px;
 	outline: none;
 	margin-bottom: 15px;
@@ -11574,6 +11590,7 @@ input#wps_cart_points {
 	padding: 10px 14px;
 	margin-bottom: 15px;
 	cursor: pointer;
+	font-size: 12px;
 }
 
 .checkout-box-left input {
@@ -11630,7 +11647,7 @@ input#wps_cart_points {
 .checkout-box-left .step-three h3 {
 	display: inline-block;
 	width: 100%;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
 	margin: 0 0 0 0;
 }
@@ -11696,11 +11713,12 @@ p.payment em {
 }
 
 .order-summery h3 {
-	font-size: 18px;
+	font-size: 21px;
 	font-weight: 600;
 	margin-bottom: 20px;
 	width: 100%;
 	display: inline-block;
+	font-family: 'Helvetica Rounded LT Std';
 }
 
 .product-left-img img {
@@ -11723,7 +11741,29 @@ p.payment em {
 
 .product-left-img {
 	display: inline-block;
-	width: 20%;
+	width: 100%;
+	background-color: #e3e3e3;
+	padding: 10px;
+	border-radius: 4px;
+}
+.product-left-img img {
+	width: 15%;
+	margin: 0 10px 0 0;
+	float: left;
+}
+.product-left-img span {
+	float: right;
+	width: 82%;
+}
+.product-left-img strong {
+	float: right;
+	width: 82%;
+	margin: 10px 0 0 0;
+}
+.checkout-box-right #submit_cart_coupon_code_form {
+	display: flex;
+	width: 100%;
+	margin-bottom: 15px;
 }
 
 .product-right-name {
@@ -11748,6 +11788,9 @@ p.payment em {
 .table-price {
 	display: inline-block;
 	width: 100%;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	overflow: hidden;
 }
 
 .table-price table {
@@ -11755,10 +11798,12 @@ p.payment em {
 }
 
 .table-price table td {
-	border: 1px solid #dcdcdc;
 	background-color: #fff;
-	padding: 13px 13px;
-	font-size: 15px;
+	padding: 7px 10px;
+	font-size: 12px;
+}
+.table-price table td.totle-sub {
+	font-weight: 800;
 }
 
 .table-price table td span {
@@ -11833,24 +11878,28 @@ p.payment em {
 
 .table-order table th {
 	color: #000;
-	padding: 10px 10px;
-	font-size: 16px;
-	background-color: #f5f5f5;
-}
-
-.table-order table td {
-	padding: 20px 10px;
+	padding: 4px 10px;
 	font-size: 14px;
+	background-color: #f5f5f5;
+	vertical-align: middle;
+}
+.table-order table td {
+	padding: 14px 13px;
+	font-size: 12px;
 }
 
 .table-order table td .button-table {
 	background-color: #39FF14;
 	color: #fff;
-	padding: 9px 20px;
+	padding: 7px 16px;
 	border-radius: 7px;
 	font-weight: 600;
 }
-
+.my-account-right-box p {
+	font-size: 12px;
+	display: inline-block;
+	width: 100%;
+}
 .color-orenge {
     color: #f35800;
 }
@@ -11885,16 +11934,17 @@ p.payment em {
 .billing-edite-address label {
 	display: inline-block;
 	width: 100%;
-	font-size: 14px;
-	font-weight: 600;
+	font-size: 12px;
+	font-weight: 700;
+	font-family: "Nunito Sans";
 }
 
 .billing-edite-address input {
 	width: 100%;
 	border: 1px solid #dcdcdc;
 	border-radius: 7px;
-	padding: 12px 10px;
-	font-size: 14px;
+	padding: 8px 10px;
+	font-size: 12px;
 	color: #000;
 	margin: 5px 0 0 0;
 }
@@ -11912,6 +11962,7 @@ p.payment em {
 	width: 100%;
 	margin: 10px 0;
 	font-weight: 700;
+	font-size: 14px;
 }
 
 .billing-edite-full {
@@ -11929,9 +11980,10 @@ p.payment em {
 	background-color: #39FF14;
 	border: none;
 	border-radius: 7px;
-	color: #fff;
-	padding: 12px 18px;
+	color: #333;
+	padding: 7px 35px;
 	font-weight: 700;
+	font-size: 14px;
 }
 
 .billing-edite-address select {
@@ -12575,10 +12627,10 @@ p.payment em {
 	background-color: #39FF14;
 	border: none;
 	border-radius: 7px;
-	color: #fff;
-	font-size: 16px;
+	color: #333;
+	font-size: 14px;
 	font-weight: 600;
-	padding: 12px 30px;
+	padding: 8px 35px;
 }
 
 .my-account-right-box.upload-invoice {
@@ -12745,24 +12797,9 @@ html .ui-button.ui-state-disabled:active {
 	margin: 14px 0;
 }
 
-.billing-edite-left {
-	display: inline-block;
-	width: 40%;
-	margin: 20px auto 0;
-	float: inherit !important;
-}
-
 .billing-edite-left label {
 	width: 100%;
 	text-align: left;
-}
-
-.billing-edite-left input {
-	width: 100%;
-	border: 1px solid #dcdcdc;
-	border-radius: 6px;
-	margin: 5px 0 0 0;
-	padding: 12px 10px;
 }
 
 .paginaction .px-4 {
@@ -12789,16 +12826,20 @@ html .ui-button.ui-state-disabled:active {
 }
 
 #card-element {
-	border: 1px solid #E5E5E5 !important;
+	border: 1px solid #9C9C9C !important;
 	border-radius: 7px;
 	padding: 14px 10px !important;
+	background-color: #fff;
 }
 
-.credit-card-form {
+.cart-page-saction .credit-card-form {
 	max-width: 100%;
 	text-align: center;
 	display: inline-block;
 	margin: 20px 0 0;
+	background-color: #e3e3e3;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .card-form-right {
@@ -14138,11 +14179,11 @@ img.img-position {
 }
 
 .brands-selection-row {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    padding: 96px 0 60px 0;
-    background-color: #fff;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	padding: 30px 0;
+	background-color: #fff;
 }
 
 .brands-selection-row span {
@@ -14164,7 +14205,7 @@ img.img-position {
 	display: inline-block;
 	width: 100%;
 	margin: 20px 0 0 0;
-	font-size: 48px;
+	font-size: 38px;
 	line-height: 48px;
 	color: #282828;
 	font-family: 'Helvetica Rounded LT Std';
@@ -14597,7 +14638,7 @@ p.color-black {
 }
 
 .product-logo img {
-	width: auto !important;
+	width: 100% !important;
 }
 
 .product-slider-2 {
@@ -14882,6 +14923,14 @@ line-height: 32.74px;
 	position: relative;
 }
 
+.business-register {
+	background-image: url('../images/bus-reg-bg.jpg');
+	background-repeat: no-repeat;
+	position: relative;
+	background-position: 80% 0;
+	background-size: cover;
+}
+
 .category-banner-main {
     padding: 145px 0px;
 }
@@ -15035,7 +15084,6 @@ line-height: 32.74px;
 	padding: 0 0;
 }
 .menu-item > a:hover {
-	font-weight: bold;
 	color: #333;
 	text-decoration: none;
 	display: block;
@@ -15242,17 +15290,18 @@ i.fa.fa-angle-down {
     font-weight: 700;
 }
 .gift-box-card {
-    width: 100%;
-    border-radius: 11px;
-    border: 1px solid #1746FF;
-    padding-top: 0px;
-    background: #fff;
-    overflow: hidden;
+	width: 32%;
+	border-radius: 11px;
+	border: 1px solid #1746FF;
+	padding-top: 0px;
+	background: #fff;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0 15px 15px 0;
 }
 .gift_card_corporate.card-counter {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    gap: 24px;
+	display: inline-block;
+	width: 100%;
 }
 
 .css {
@@ -16231,20 +16280,20 @@ img.card_img_gift {
 .image-eight-grid {
 	float: right;
 	width: 355px;
-	margin: 10px 0 0 0;
+	margin: 5px 0 0 0;
 }
 .image-10-grid {
 	float: right;
 	width: 364px;
 	position: relative;
 	right: 8px;
-	margin: 10px 0 0 0;
+	margin: 5px 0 0 0;
 }
 .image-10-grid img {
 	height: 170px !important;
 }
 .image-eight-grid img {
-	height: 179px !important;
+	height: 171px !important;
 }
 
 
@@ -16275,7 +16324,7 @@ img.card_img_gift {
 	font-weight: 700;
 	color: #282828;
 	font-family: 'Helvetica Rounded LT Std';
-	font-size: 32px;
+	font-size: 28px;
 	display: inline-block;
 	width: 100%;
 }
@@ -16315,7 +16364,7 @@ img.card_img_gift {
 .all-logo-slider button {
 	bottom: 40% !important;
 	background-color: #F7F7F7;
-	border-radius: 30%;
+	border-radius: 50%;
 	width: 60px;
 	height: 60px;
 }
@@ -16339,7 +16388,7 @@ img.card_img_gift {
 	display: inline-block;
 	width: 100%;
 	color: #282828;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 700;
 	font-family: 'Helvetica Rounded LT Std';
 }
@@ -16423,15 +16472,16 @@ img.card_img_gift {
 }
 .buton-ehat button {
 	border: 1px solid #282828 !important;
-	width: 30px !important;
-	height: 30px !important;
+	width: 25px !important;
+	height: 25px !important;
 	display: inline-block !important;
-	padding: 0 0 0 0;
+	padding: 0;
+	line-height: 20px;
 }
 .banner-gift-card {
 	display: inline-block;
 	width: 100%;
-	background: url("../../public/images/gift-banner-card.png");
+	background: url("../../public/images/gift-cards-banner.jpg");
 	background-size: cover;
 	background-position: 100%;
 	padding: 192px 0;
@@ -16475,14 +16525,14 @@ img.card_img_gift {
 .gift-cards-saction-tow {
 	display: inline-block;
 	width: 100%;
-	padding: 80px 0 0 0;
+	padding: 30px 0 0 0;
 }
 .gift-cards-saction-tow h2 {
 	display: inline-block;
 	width: 100%;
 	margin: 0;
 	color: #282828;
-	font-size: 48px;
+	font-size: 28px;
 	font-weight: 700;
 	font-family: 'Helvetica Rounded LT Std';
 }
@@ -16490,7 +16540,7 @@ img.card_img_gift {
 	color: #F35800;
 }
 .gift-cards-saction-tow .row {
-	margin-top: 64px;
+	margin-top: 30px;
 }
 .gift-cards-saction-box {
 	display: inline-block;
@@ -16498,13 +16548,13 @@ img.card_img_gift {
 	border: 1px solid #E5E5E5;
 	border-radius: 11px;
 	text-align: center;
-	padding: 50px 0 0 0;
+	padding: 30px 0 0 0;
 }
 .gift-cards-saction-box .price-amount {
-	padding: 29px 50px 0;
+	padding: 10px 50px 0;
 	text-align: left;
 	color: #282828;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 800;
 	font-family: "Nunito Sans";
 }
@@ -16525,26 +16575,35 @@ img.card_img_gift {
 	border-radius: 7px;
 	background-color: #39FF14;
 	color: #282828 !important;
-	font-size: 16px;
-	font-weight: 800;
+	font-size: 14px;
+	font-weight: 600;
 	text-decoration: none;
 	font-family: "Nunito Sans";
 }
+.add-button-card a img {
+	width: 19px;
+}
 .gift-cards-saction-box .flex-quientity.buton-ehat {
-    width: 37%;
-    text-align: center;
-    display: inline-block !important;
-    margin: 0px 0 0 auto;
-    background: #F2F2F2;
-    border-radius: 6px;
-    padding: 6px 0px;
+	width: 30%;
+	text-align: center;
+	display: inline-block !important;
+	margin: 0px 0 0 auto;
+	background: #F2F2F2;
+	border-radius: 6px;
+	padding: 6px 0px;
 }
 .flex-quientity.buton-ehat input {
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    position: relative;
-    left: 7px;
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	position: relative;
+	left: 0;
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
 }
 .gift-cards-saction-box button {
 	border-radius: 50%;
@@ -16554,7 +16613,7 @@ img.card_img_gift {
 	width: 20% !important;
 	display: inline-block;
 	text-align: center;
-	font-weight: 900;
+	font-weight: 600;
 	color: #000;
 	font-size: 22px;
 }
@@ -16574,15 +16633,9 @@ img.card_img_gift {
 .gift-cards-saction-tow.donation-card-gift {
 	padding: 70px 0 0 0;
 }
-.christmas-sale-saction {
-	display: inline-block;
+.christmas-sale-saction img {
 	width: 100%;
-	background: url("../../public/images/christmas-sale-bg.jpg");
-	background-size: cover;
-	background-position: 100%;
-	margin: 90px 0 0 0;
-	height: 422px;
-	position: relative;
+	margin: 30px 0 0 0;
 }
 .christmas-sale-saction h2 {
 	display: inline-block;
@@ -16628,12 +16681,15 @@ img.card_img_gift {
 .christmas-promotion-saction h2 {
 	display: inline-block;
 	width: 100%;
-	margin: 45px 0 0 0;
+	margin: 28px 0 0 0;
 	color: #282828;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 700;
-	line-height: 43px;
+	line-height: 30px;
 	font-family: 'Helvetica Rounded LT Std';
+}
+.logo-52-orange img {
+	width: 100% !important;
 }
 .christmas-promotion-saction span {
 	color: #F35800;
@@ -16701,21 +16757,23 @@ img.card_img_gift {
 #exampleModalToggle .modal-body {
 	text-align: center;
 	font-family: "Nunito Sans";
-	font-weight: 900;
+	font-weight: 600;
 }
 #exampleModalToggle .btn.btn-primary {
 	background-color: #39FF14 !important;
 	border: none;
 	color: #000 !important;
-	font-weight: 900;
-	font-size: 16px;
+	font-weight: 600;
+	font-size: 12px;
 	font-family: "Nunito Sans";
 }
 .redeem-form-main label.error {
 	color: #f00 !important;
-	font-size: 14px !important;
+	font-size: 12px !important;
 	width: 100%;
 	margin: 0 0 7px 0;
+	position: relative;
+	top: -7px;
 }
 .redeem-form-main .col-md-6 {
 	position: relative;
@@ -17081,4 +17139,63 @@ label.error {
 .space_colpasse {
     float: left;
     width: 70%;
+}
+.box-team::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	background: linear-gradient(to bottom, rgba(34, 34, 34, 0), #222);
+	height: 38%;
+}
+.image-six-grid img {
+	height: 321px !important;
+}
+.image-nine-grid video {
+	height: 486px;
+}
+.image-five-grid video {
+	height: 320px;
+}
+.image-six-grid video {
+	height: 320px;
+}
+.image-nine-grid video {
+	height: 486px;
+}
+.redeem-main h2 span {
+	color: #F35800;
+}
+.redeem-form-main .check-button-row label {
+	color: #282828;
+	font-size: 12px;
+	font-family: "Nunito Sans";
+}
+.redeem-form-main .check-button-row {
+	display: inline-block;
+	margin: 0;
+}
+.redeem-form-main select.error {
+	margin: 0 0 7px 0;
+}
+.disc span {
+	font-family: "Nunito Sans" !important;
+}
+.redme-gift-card {
+	display: inline-block;
+	margin: 20px auto auto;
+	width: 40%;
+}
+.redme-gift-card input {
+	width: 100%;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	padding: 13px 10px;
+	font-size: 14px;
+	background-color: #dcdcdc;
+	text-align: center;
+	font-weight: 800;
+	font-family: "Nunito Sans";
 }

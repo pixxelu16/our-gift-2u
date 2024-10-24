@@ -22,22 +22,22 @@
         </li>
         <li class="{{ Request::is('customer/my-gift-cards') ? 'active' : '' }}">
             <a href="{{ url('/customer/my-gift-cards') }}">
-                <img src="{{ url('public/images/account-details.svg') }}" />My Gift Cards
+                <img src="{{ url('public/images/my-gifts-cards.svg') }}" />My Gift Cards
             </a>
         </li>
         <li class="{{ Request::is('customer/redeem-gift-cards') ? 'active' : '' }}">
             <a href="{{ url('/customer/redeem-gift-cards') }}">
-                <img src="{{ url('public/images/account-details.svg') }}" />Redeem Gift Cards
+                <img src="{{ url('public/images/redeem-gift-cards.svg') }}" />Redeem Gift Cards
             </a>
         </li>
         <li class="{{ Request::is('customer/refer-to-friends') ? 'active' : '' }}">
             <a href="{{ url('/customer/refer-to-friends') }}">
-                <img src="{{ url('public/images/account-details.svg') }}" />Refer To Friends
+                <img src="{{ url('public/images/refer-friends.svg') }}" />Refer To Friends
             </a>
         </li> 
         <li class="{{ Request::is('customer/my-wishlist') ? 'active' : '' }}">
             <a href="{{ url('/customer/my-wishlist') }}">
-                <img src="{{ url('public/images/account-details.svg') }}" />My Wishlist
+                <img src="{{ url('public/images/my-wishlist.svg') }}" />My Wishlist
             </a>
         </li> 
         <li>

@@ -17,11 +17,9 @@
 <div class="redeem">
    <div class="container">
       <div class="redeem-main">
-         <h2>Welcome to the Redeem Centre</h2>
-         <p>Hi and welcome to the Redeem Centre! To redeem your gift card, you will need to register and enter your
-            gift card code in order to purchase products on this website. If already register please Sign In.
-         </p>
-         <a href="{{ url('login') }}">Log In</a>
+         <h2>Welcome to the <span>Redeem Centre</span></h2>
+         <p>Hi and welcome to the Redeem Centre! To redeem your gift card, you will need to register and enter your gift card code in order to purchase products on this website. If already register please Sign In.</p>
+        <div class="button-red-a"> <a href="{{ url('login') }}">Log In</a></div>
       </div>
    </div>
 </div>
@@ -78,8 +76,18 @@
                <div class="col-md-6">
                   <input type="text" id="postal_code" class="form-control" name="postal_code" value="" placeholder="ZIP / Postal Code*" onkeypress="return onlyNumber(event)" required />
                </div>
+
+               <div class="custom-check-button">
+                  <div class="check-button-row">
+                     <div class="form-group">
+                        <input type="checkbox" name="is_same_as_billing_address" id="is_same_as_billing_address" value="Yes">
+                        <label>In accordance with our <a href="{{ url('privacy-policy') }}">Privacy  Policy</a> ,you permit us to store the data you have entered into this form for the purposes of sending you the information you have requested.</label>
+                     </div>
+                  </div>
+               </div>
+
                <div class="form-row">
-                  <div class="col-md-12 text-end">
+                  <div class="col-md-12">
                      <button type="submit" class="disable-button submit-btn">Submit</button>
                      <div class="custom_register_form_res"></div>
                   </div>
@@ -112,6 +120,8 @@
             <h6>Volunteer</h6>
          </li>
       </ul>
+      <div class="logo-52-orange"><a href="{{ url('/') }}"><img
+         src="{{ url('public/images/52-logo-small.png') }}"></a></div>
     </div>
 
     @if ($home_logos)

@@ -37,13 +37,8 @@
             <div class="col-md-7">
                <div class="right-shop-details">
                   <h2>{{ $product_detail->product_name }}</h2>
-                  <span class="views"><i class="fa fa-eye" aria-hidden="true"></i> {{ $product_detail->view_count }} Views</span> <span class="sold">Sold: 6,370</span>
-                  <ul class="social-media">
-                     <li><a href="javascript:void(0)"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-                     <li><a href="javascript:void(0)"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                     <li><a href="javascript:void(0)"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                     <li><a href="javascript:void(0)"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                  </ul>
+                  <span class="views"><i class="fa fa-eye" aria-hidden="true"></i> {{ $product_detail->view_count }} Views</span>
+                  
                   <div class="price-detalis">${{ number_format($product_detail->product_price, 2, '.', ',') }}</div>
                   <div class="disc">
                      {!! $product_detail->description !!}

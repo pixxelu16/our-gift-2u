@@ -5,12 +5,11 @@
       window.location = "{{ url('company/my-account') }}";
    </script>
 @endif
-    <div class="category-banner">
+    <div class="category-banner business-register">
         <div class="container">
             <div class="category-banner-main">
-                <span>Your Next Adventure Starts Here</span>
-                <h2>Grab <span class="color-orange">Camping Gear</span><br> at Great Prices</h2>
-                <p>Limited Time. T&C apply.</p>
+                <h2>When you Purchase <br> <span class="color-orange"> Gift Card,</span> you'll be <br> giving a gift, too.</h2>
+                <p>“When your company purchases a gift card on our website, we <br>will donate an equal amount to the 52 Degree Foundation,<br>helping support children and their families. Together, let's make <br>every purchase meaningful!”</p>
             </div>
         </div>
     </div>
@@ -18,10 +17,9 @@
     <div class="redeem">
         <div class="container">
             <div class="redeem-main">
-                <h2>Welcome to the Redeem Centre</h2>
-                <p>Hi and welcome to the Redeem Centre! To redeem your gift card, you will need to register and enter your
-                    gift card code in order to purchase products on this website. If already register please Sign In.</p>
-                <a href="{{ url('login') }}">Log In</a>
+                <h2>Welcome to the<span> Business Centre </span></h2>
+                <p>Hi and welcome to the Redeem Centre! To redeem your gift card, you will need to register and enter your gift card code in order to purchase products on this website. If already register please Sign In.</p>
+                    <div class="button-red-a"> <a href="{{ url('login') }}">Log In</a></div>
             </div>
         </div>
     </div>
@@ -68,18 +66,7 @@
                             <input type="email" class="form-control" id="email" name="email" value="" placeholder="Email*" required/>
                         </div>
                         <div class="col-md-6">
-                           <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password*" required />
-                              @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                              @enderror
-                        </div>
-                        <div class="col-md-6">
                            <input type="email" class="form-control" id="email_confirmation" name="email_confirmation" value="" placeholder="Confirm Email" required/>
-                        </div>
-                        <div class="col-md-6">
-                           <input id="password-confirm" class="form-control" type="password" name="password_confirmation" autocomplete="new-password" placeholder="Confirm password*" required>
                         </div>
                         <div class="col-md-6">
                             <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="Contact Person">
@@ -87,8 +74,19 @@
                         <div class="col-md-6">
                           <input type="text" class="form-control" id="department" name="department" placeholder="Department">
                         </div>
+
+                        <div class="custom-check-button">
+                            <div class="check-button-row">
+                               <div class="form-group">
+                                  <input type="checkbox" name="is_same_as_billing_address" id="is_same_as_billing_address" value="Yes">
+                                  <label>In accordance with our <a href="{{ url('privacy-policy') }}">Privacy  Policy</a> ,you permit us to store the data you have entered into this form for the purposes of sending you the information you have requested.</label>
+                               </div>
+                            </div>
+                         </div>
+          
+
                         <div class="form-row">
-                            <div class="col-md-12 text-end">
+                            <div class="col-md-12">
                                 <button type="submit" class="disable-button submit-btn">Submit</button>
                             <div class="custom_register_form_res"></div>
                             </div>
@@ -122,6 +120,8 @@
                     <h6>Volunteer</h6>
                 </li>
             </ul>
+            <div class="logo-52-orange"><a href="{{ url('/') }}"><img
+                src="{{ url('public/images/52-logo-small.png') }}"></a></div>
         </div>
 
         @if($logos)

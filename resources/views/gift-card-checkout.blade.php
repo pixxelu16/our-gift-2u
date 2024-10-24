@@ -53,9 +53,9 @@
 @endphp
 <div class="cart-page-saction">
    <div class="container">
-      <h2>Checkout</h2>
       <div class="row">
-         <div class="col-md-7">
+         <div class="col-md-8">
+            <h2>Checkout</h2>
             <form action="#" method="POST" id="submit_gift_card_checkout_form">
                <div class="checkout-box-left">
                   <div class="step-one">
@@ -184,42 +184,40 @@
                </div>
             </form>
          </div>
-         <div class="col-md-5">
+         <div class="col-md-4">
                <div class="checkout-box-right">
                   <div class="order-summery">
                      <h3>Order summary</h3>
                      @foreach(session('gift_card_cart', []) as $key => $item)
                         <div class="product-left-img">
                            <img src="{{ url('public/uploads/products/'.$item['image']) }}" alt="{{ $item['image'] }}">
-                        </div>
-                        <div class="product-right-name">
+                        
                            <span>{{ $item['product_name'] }}</span>
                            <strong>${{ number_format($item['price'], 2, '.', ',') }}</strong>
-                           <span>{!! Str::words($item['short_description'], 20, '...') !!}</span>
                         </div>
                      @endforeach
-                     <form action="#" method="POST" id="submit_gift_card_coupon_code_form">
-                        <div class="box-shoping-continew">
-                           <div class="wps_wpr_apply_custom_points">
-                              <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon Code">
-                              <button type="submit" class="button disable-button">Apply Coupon Code</button>
-                              <div class="submit_gift_card_coupon_code_form_res"></div>
-                           </div>
-                        </div>
-                     <form>
                   </div> 
+                  <form action="#" method="POST" id="submit_gift_card_coupon_code_form">
+                     <div class="box-shoping-continew">
+                        <div class="wps_wpr_apply_custom_points">
+                           <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon Code">
+                           <button type="submit" class="button disable-button">Apply Coupon Code</button>
+                           <div class="submit_gift_card_coupon_code_form_res"></div>
+                        </div>
+                     </div>
+                  <form>
                   <!--<div class="add-coupn"><a href="#">Add a coupon</a></div>-->
                   <div class="table-price">
                      <table>
                         <tbody>
                            <tr>
                               <td>Item Price</td>
-                              <td><strong>${{ number_format($cart_sub_total_amount, 2, '.', ',') }}</strong></td>
+                              <td>${{ number_format($cart_sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
                            @if($cart_points_total_amount >= 1)
                            <tr>
                               <td>Points</td>
-                              <td><strong>-${{ number_format($cart_points_total_amount, 2, '.', ',') }} </strong></td>
+                              <td>-${{ number_format($cart_points_total_amount, 2, '.', ',') }} </td>
                            </tr>
                            @endif
                            <!--<tr>
@@ -231,29 +229,29 @@
                            </tr>-->
                            <tr>
                               <td>International And Local Insurance</td>
-                              <td><strong>${{ number_format($international_local_insurance, 2, '.', ',') }} </strong></td>
+                              <td>${{ number_format($international_local_insurance, 2, '.', ',') }} </td>
                            </tr>
                            <tr>
                               <td>Admin Fees</td>
-                              <td><strong>${{ $table_admin_fee; }} </strong></td>
+                              <td>${{ $table_admin_fee; }} </td>
                            </tr>
                            @if(session()->has('applied_gift_card_coupon'))
                               <tr>
                                  <td>Coupon Amount</td>
-                                 <td><strong>-${{ $applied_gift_card_amount }}</strong></td>
+                                 <td>-${{ $applied_gift_card_amount }}</td>
                               </tr>
                            @endif
                            <tr>
-                              <td>Sub Total</td>
-                              <td><strong>${{ number_format($sub_total_amount, 2, '.', ',') }}</strong></td>
+                              <td class="totle-sub">Sub Total</td>
+                              <td class="totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
                            <tr>
-                              <td>GST <span class="inc">Incl<span></td>
-                              <td><strong>${{ $tax_total_amount; }}</strong></td>
+                              <td>GST Incl</td>
+                              <td>${{ $tax_total_amount; }}</td>
                            </tr>
                            <tr>
-                              <td>Total</td>
-                              <td><strong>${{ number_format($total_amount, 2, '.', ',') }}</strong></td>
+                              <td class="totle-sub">Total</td>
+                              <td class="totle-sub">${{ number_format($total_amount, 2, '.', ',') }}</td>
                            </tr>
                         </tbody>
                      </table>

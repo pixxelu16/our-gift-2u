@@ -68,6 +68,8 @@
                     <h6>Volunteer</h6>
                 </li>
             </ul>
+            <div class="logo-52-orange"><a href="{{ url('/') }}"><img
+                src="{{ url('public/images/52-logo-small.png') }}"></a></div>
         </div>
 
         @if ($logos)

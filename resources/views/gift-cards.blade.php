@@ -56,10 +56,7 @@
 @endif
 
 <div class="christmas-sale-saction">
-  <div class="container">
-    <h2>Don't Forget this celebration!</h2>
-    <span>Christmas</span>
-  </div>
+    <img src="{{ url('public/images/chirs-bg-image.jpg') }}">
 </div>
 
 <div class="christmas-promotion-saction">
@@ -90,6 +87,8 @@
           <h6>Volunteer</h6>
         </li>
       </ul>
+      <div class="logo-52-orange"><a href="{{ url('/') }}"><img
+        src="{{ url('public/images/52-logo-small.png') }}"></a></div>
     </div>
   </div>
 </div>

@@ -170,11 +170,29 @@
             <img src="{{ url('public/images/clint-image-1.jpg') }}">
         </div>
             <div class="image-tow-grid"><img src="{{ url('public/images/clint-image-2.jpg') }}"></div>
-            <div class="image-nine-grid"><img src="{{ url('public/images/clint-image-3.jpg') }}"></div>
+            <div class="image-nine-grid">
+                <div class="video-placeholder">
+                    <video autoplay loop muted playsinline>
+                        <source src="{{ url('public/videos/video-one.mp4') }}" type="video/mp4">
+                    </video>
+                    </div>
+            </div>
             <div class="image-three-grid"><img src="{{ url('public/images/clint-image-4.jpg') }}"></div>
             <div class="image-four-grid"><img src="{{ url('public/images/clint-image-5.jpg') }}"></div>
-            <div class="image-five-grid"><img src="{{ url('public/images/clint-image-6.jpg') }}"></div>
-            <div class="image-six-grid"><img src="{{ url('public/images/clint-image-7.jpg') }}"></div>
+            <div class="image-five-grid">
+                <div class="video-placeholder">
+                    <video autoplay loop muted playsinline>
+                        <source src="{{ url('public/videos/video-tow.mp4') }}" type="video/mp4">
+                    </video>
+                    </div>
+            </div>
+            <div class="image-six-grid">
+                <div class="video-placeholder">
+                    <video autoplay loop muted playsinline>
+                        <source src="{{ url('public/videos/video-three.mp4') }}" type="video/mp4">
+                    </video>
+                    </div>
+            </div>
             <div class="image-saven-grid"><img src="{{ url('public/images/clint-image-8.jpg') }}"></div>
             <div class="image-eight-grid"><img src="{{ url('public/images/clint-image-10.jpg') }}"></div>
             <div class="image-10-grid"><img src="{{ url('public/images/clint-image-9.jpg') }}"></div>
