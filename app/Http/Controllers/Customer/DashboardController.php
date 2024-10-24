@@ -271,14 +271,28 @@ class DashboardController extends Controller
         return view('customer.redeem-gift-card');
     }
 
+    //Function to show my balance page
+    public function my_balance(){
+        // Get logged-in user
+        $user = Auth::user();
+        $login_user_id = $user->id;
+
+        //Get oder detail with  use order id
+        $my_points_logs = UserPointsLog::Where('user_id',$login_user_id)->with('points_log_list')->get()->groupBy('tab_type');  
+
+        //echo "<pre>"; print_r($my_points_logs->ToArray()); exit;
+        return view('customer.my-balance', compact('my_points_logs'));
+    }
+
     //Function to show page
     public function submit_verify_coupon_code(Request $request){
         //Get Login user id
         $login_user_id = Auth::id();
+        
         $coupon_code = $request->coupon_code;
 
         // Check if the coupon code exists and is valid
-        $coupon_detail = CouponCodes::where('code', $coupon_code)->where('status', 'Active')->first();
+        $coupon_detail = CouponCodes::where('code', $coupon_code)->where('status', 'Active')->where('is_used', 'No')->first();
 
         // Check if the coupon exists
         if (!$coupon_detail) {
@@ -294,11 +308,21 @@ class DashboardController extends Controller
         
         // Apply the discount (adjust according to your logic)
         $coupon_id = $coupon_detail->id; 
+        $coupon_price = $coupon_detail->price;
         
         //Insert verify coupon cide
         $verify_coupon = VerifyCoupon::create(['user_id' => $login_user_id, 'coupon_id' => $coupon_id]);
         //chekck if added or not 
         if($verify_coupon){
+            //Update Coupon Status
+           CouponCodes::Where('id', $coupon_id)->update(['is_used'=>'Yes']);
+           //Call helper to manage user points
+           $tab_type = "apply_coupon";
+           $new_points = $coupon_price;
+           $point_type = 'Plus';
+           $name = $coupon_code;
+           Helper::manage_user_points($login_user_id,$tab_type,$new_points,$point_type,$name);
+
             echo '<p style="color:green;">Coupon code verified successfully.</p>';
             echo  '<script>
                     jQuery(document).ready(function($) {

@@ -7,19 +7,19 @@
         </li>
         <li class="{{ Request::is('company/my-corporate-gift-cards') ? 'active' : '' }}">
             <a href="{{ url('/company/my-corporate-gift-cards') }}">
-                <img src="{{ url('public/images/dashboard.svg') }}" />My Corporate Gift Cards
+                <img src="{{ url('public/images/dashboard.svg') }}" />My Gift Cards
             </a>
         </li>
         @if(Auth::user()->is_user_payble == "No")
             <li class="{{ Request::is('company/management-gift-cards') ? 'active' : '' }}">
                 <a href="{{ url('/company/management-gift-cards') }}">
-                    <img src="{{ url('public/images/dashboard.svg') }}" />Management Gift Cards
+                    <img src="{{ url('public/images/dashboard.svg') }}" />Purchase Gift Cards
                 </a>
             </li>
         @else 
             <li class="{{ Request::is('company/corporate-gift-cards') ? 'active' : '' }}">
                 <a href="{{ url('/company/corporate-gift-cards') }}">
-                    <img src="{{ url('public/images/dashboard.svg') }}" />Corporate Gift Cards
+                    <img src="{{ url('public/images/dashboard.svg') }}" />Purchase Gift Cards
                 </a>
             </li>
         @endif

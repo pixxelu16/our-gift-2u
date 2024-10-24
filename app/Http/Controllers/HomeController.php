@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->user_type === 'Customer') {
-            return redirect('customer/my-account');
+            return redirect('shop');
         } elseif (Auth::user()->user_type === 'Admin') {
             return redirect('admin/all-orders');
         } elseif (Auth::user()->user_type === 'Company') {

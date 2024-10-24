@@ -11,11 +11,14 @@ use App\Models\UserAddress;
 use App\Models\OtherSetting;
 use App\Models\BrandLogos;
 use Carbon\Carbon;
+use App\Helpers\Helper;
 
 class ShopController extends Controller
 {
     //Function for shop page
     public function shop(){
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
         //Get All Products
         $all_categories = ProductCategory::Where('status', 'Active')->get();
         $all_brands = BrandLogos::Where('type', 'Brand')->get();
@@ -27,6 +30,9 @@ class ShopController extends Controller
 
 	//Function for shopdetails page
     public function shopdetails(Request $request, $slug){
+        //Call Redirection Url
+        Helper::redirect_check_login_user(); 
+
         $product_detail = Product::Where('product_slug',$slug)->Where('status', 'Active')->with('product_category','product_image')->first();
        // echo "<pre>"; print_r($product_detail->ToArray()); exit;
         return view('shop-details', compact('product_detail'));
@@ -45,95 +51,51 @@ class ShopController extends Controller
 
     //Function for cart page
     public function cart(){
-        // Check if the user is authenticated
-        if (!auth()->check()) {
-            // If the user is not authenticated, redirect to the home page or login page
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-            exit; // Make sure to exit after the redirect
-        }
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
 
-        //Check if Compnay is exist or not
-        if(auth()->user()->user_type == "Company"){
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-        } else {
-            $other_setting = OtherSetting::first()->ToArray();
+        $other_setting = OtherSetting::first()->ToArray();
 
-            return view('cart', compact('other_setting'));
-        }
+        return view('cart', compact('other_setting'));
     }
 
     //Function for gift cart cart page
     public function gift_cart_cart(){
-        // Check if the user is authenticated
-        if (!auth()->check()) {
-            // If the user is not authenticated, redirect to the home page or login page
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-            exit; // Make sure to exit after the redirect
-        }
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
 
-        //Check if Compnay is exist or not
-        if(auth()->user()->user_type == "Company"){
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-        } else {
-            $other_setting = OtherSetting::first()->ToArray();
+        $other_setting = OtherSetting::first()->ToArray();
 
-            return view('gift-card-cart', compact('other_setting'));
-        }
+        return view('gift-card-cart', compact('other_setting'));
     }
     
 
     //Function for checkout page
     public function checkout(){
-        // Check if the user is authenticated
-        if (!auth()->check()) {
-            // If the user is not authenticated, redirect to the home page or login page
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-            exit; // Make sure to exit after the redirect
-        }
-        
-        //Check if Compnay is exist or not
-        if(auth()->user()->user_type == "Company"){
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-        } else {
-            //Get login user id
-            $user_id = auth()->user()->id;
-            $all_country_list = CountryList::WhereIn('name',['Australia','United States of America'])->get(); 
-            $user_address_detail = UserAddress::Where('user_id',$user_id)->first(); 
-            $other_setting = OtherSetting::first()->ToArray();
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
 
-            return view('checkout', compact('all_country_list','user_address_detail','other_setting'));
-        }
+        //Get login user id
+        $user_id = auth()->user()->id;
+        $all_country_list = CountryList::WhereIn('name',['Australia','United States of America'])->get(); 
+        $user_address_detail = UserAddress::Where('user_id',$user_id)->first(); 
+        $other_setting = OtherSetting::first()->ToArray();
+
+        return view('checkout', compact('all_country_list','user_address_detail','other_setting'));
     }
 
     //Function for gift_card_checkout page
     public function gift_card_checkout(){
-        // Check if the user is authenticated
-        if (!auth()->check()) {
-            // If the user is not authenticated, redirect to the home page or login page
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-            exit; // Make sure to exit after the redirect
-        }
-        
-        //Check if Compnay is exist or not
-        if(auth()->user()->user_type == "Company"){
-            $home_url = url('/');
-            echo '<script> window.location = "' . $home_url . '";</script>';
-        } else {
-            //Get login user id
-            $user_id = auth()->user()->id;
-            $all_country_list = CountryList::WhereIn('name',['Australia','United States of America'])->get(); 
-            $user_address_detail = UserAddress::Where('user_id',$user_id)->first(); 
-            $other_setting = OtherSetting::first()->ToArray();
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
 
-            return view('gift-card-checkout', compact('all_country_list','user_address_detail','other_setting'));
-        }
+        //Get login user id
+        $user_id = auth()->user()->id;
+        $all_country_list = CountryList::WhereIn('name',['Australia','United States of America'])->get(); 
+        $user_address_detail = UserAddress::Where('user_id',$user_id)->first(); 
+        $other_setting = OtherSetting::first()->ToArray();
+
+        return view('gift-card-checkout', compact('all_country_list','user_address_detail','other_setting'));
     }
 
     // Function for searching top header products
@@ -178,6 +140,9 @@ class ShopController extends Controller
 
     //search products
     public function search_products(Request $request){
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
+
         $product_cat = $request->query('product_cat');
         $main_cat_slug = $request->query('main_cat');
         $stock = $request->query('stock');

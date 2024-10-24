@@ -94,6 +94,7 @@ Route::group(['middleware' => ['auth', 'customer']], function () {
     Route::get('customer/my-gift-cards', [App\Http\Controllers\Customer\DashboardController::class, 'my_gift_card']);
     Route::get('customer/redeem-gift-cards', [App\Http\Controllers\Customer\DashboardController::class, 'redeem_gift_cards']);
     Route::post('customer/submit-verify-coupon-code', [App\Http\Controllers\Customer\DashboardController::class, 'submit_verify_coupon_code']);
+    Route::get('customer/my-balance', [App\Http\Controllers\Customer\DashboardController::class, 'my_balance']);
     Route::post('customer/add-to-wishlist', [App\Http\Controllers\Customer\WishlistController::class, 'add_to_wishlist']);
     Route::get('customer/my-wishlist', [App\Http\Controllers\Customer\WishlistController::class, 'view_my_wishlist']);
     Route::post('customer/remove-my-wishlist', [App\Http\Controllers\Customer\WishlistController::class, 'remove_wishlist_product']);

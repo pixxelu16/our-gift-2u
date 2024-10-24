@@ -7,6 +7,8 @@
         @include('customer.sidebar') </div>
       <div class="col-md-9">
         <div class="my-account-right-box my-order-page">
+        <p><strong>My Balance: </strong> ${{ number_format(Auth::user()->total_points, 2, '.', ',') }}  </p>
+        <br>
           <div class="table-order">
             @if(count($my_coupon_list) >= 1)
               <table>

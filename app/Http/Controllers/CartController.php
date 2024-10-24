@@ -39,45 +39,51 @@ class CartController extends Controller
         // Get current cartSession
         $cartItems = session('cart', []);
 
-        //Check if only 1 item is added in the cart
-        if(count($cartItems) >= 1){
-            echo "<p style='color:red;'>You Can't Add More Item In Cart.</p>";
+        //Check if gift card cart session is aleady exist
+        if(count(session('gift_card_cart', [])) >= 1){
+            echo "<p style='color:red;'>Sorry you have already added Gift Card item in cart.</p>";
+            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
         } else {
-            //Get Product Details
-            $product_detail = Product::Where('id',$product_id)->first();
-            $product_price = $product_detail->product_price ?? 0;
-
-            // Check if the item is already in the cart
-            if (array_key_exists($product_id, $cartItems)) {
-                // If it exists, update the quantity
-                $cartItems[$product_id]['quantity'] += $quantity;
-                $cartItems[$product_id]['product_price'] = $product_price * $cartItems[$product_id]['quantity'];
+            //Check if only 1 item is added in the cart
+            if(count($cartItems) >= 1){
+                echo "<p style='color:red;'>You Can't Add More Item In Cart.</p>";
             } else {
-                // If it doesn't exist, add it to the cart with its attributes and quantity
-                $cartItems[$product_id] = [
-                    'itemId' => $product_id,
-                    'product_name' => $product_detail->product_name ?? "",
-                    'product_slug' => $product_detail->product_slug ?? "", 
-                    'description' => $product_detail->description ?? "",
-                    'short_description' => $product_detail->short_description ?? "",
-                    'product_sku' => $product_detail->product_sku ?? "",
-                    'meta_title' => $product_detail->meta_title ?? "",
-                    'meta_description' => $product_detail->meta_description ?? "",
-                    'price' => $product_price * $quantity,
-                    'shipping_price' => $product_detail->shipping_price ?? 0,
-                    'quantity' => $quantity,
-                    'image' => $product_detail->image ?? "", 
-                    'is_cart_type' => 'pre_order',
-                    'is_points_apply' => $is_points_apply, 
-                ];
+                //Get Product Details
+                $product_detail = Product::Where('id',$product_id)->first();
+                $product_price = $product_detail->product_price ?? 0;
+
+                // Check if the item is already in the cart
+                if (array_key_exists($product_id, $cartItems)) {
+                    // If it exists, update the quantity
+                    $cartItems[$product_id]['quantity'] += $quantity;
+                    $cartItems[$product_id]['product_price'] = $product_price * $cartItems[$product_id]['quantity'];
+                } else {
+                    // If it doesn't exist, add it to the cart with its attributes and quantity
+                    $cartItems[$product_id] = [
+                        'itemId' => $product_id,
+                        'product_name' => $product_detail->product_name ?? "",
+                        'product_slug' => $product_detail->product_slug ?? "", 
+                        'description' => $product_detail->description ?? "",
+                        'short_description' => $product_detail->short_description ?? "",
+                        'product_sku' => $product_detail->product_sku ?? "",
+                        'meta_title' => $product_detail->meta_title ?? "",
+                        'meta_description' => $product_detail->meta_description ?? "",
+                        'price' => $product_price * $quantity,
+                        'shipping_price' => $product_detail->shipping_price ?? 0,
+                        'quantity' => $quantity,
+                        'image' => $product_detail->image ?? "", 
+                        'is_cart_type' => 'pre_order',
+                        'is_points_apply' => $is_points_apply, 
+                    ];
+                }
+                //Store the updated cart items in the session
+                session(['cart' => $cartItems]); 
+                
+                echo '<p style="color:green;">Pre Order Item Added In Cart Successfully</p>';
+                // Url here
+                $url = url('/cart');
+                echo '<script>setTimeout(function() { window.location.href = "'.$url.'"; }, 2000);</script>';
             }
-            //Store the updated cart items in the session
-            session(['cart' => $cartItems]); 
-            
-            echo '<p style="color:green;">Pre Order Item Added In Cart Successfully</p>';
-            // Url here
-            $url = url('/cart');
-            echo '<script>setTimeout(function() { window.location.href = "'.$url.'"; }, 2000);</script>';
         }
     }
 
@@ -95,9 +101,68 @@ class CartController extends Controller
         // Get current cartSession
         $cartItems = session('cart', []);
 
-        //Check if only 1 item is added in the cart
-        if(count($cartItems) >= 1){
-            echo "<p style='color:red;'>You Can't Add More Item In Cart.</p>";
+        //Check if gift card cart session is aleady exist
+        if(count(session('gift_card_cart', [])) >= 1){
+            echo "<p style='color:red;'>Sorry you have already added Gift Card item in cart.</p>";
+            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+        } else {
+            //Check if only 1 item is added in the cart
+            if(count($cartItems) >= 1){
+                echo "<p style='color:red;'>You Can't Add More Item In Cart.</p>";
+            } else {
+                //Get Product Details
+                $product_detail = Product::Where('id',$product_id)->first();
+                $product_price = $product_detail->product_price ?? 0;
+
+                // Check if the item is already in the cart
+                if (array_key_exists($product_id, $cartItems)) {
+                    // If it exists, update the quantity
+                    $cartItems[$product_id]['quantity'] += $quantity;
+                    $cartItems[$product_id]['product_price'] = $product_price * $cartItems[$product_id]['quantity'];
+                } else {
+                    // If it doesn't exist, add it to the cart with its attributes and quantity
+                    $cartItems[$product_id] = [
+                        'itemId' => $product_id,
+                        'product_name' => $product_detail->product_name ?? "",
+                        'product_slug' => $product_detail->product_slug ?? "", 
+                        'description' => $product_detail->description ?? "",
+                        'short_description' => $product_detail->short_description ?? "",
+                        'product_sku' => $product_detail->product_sku ?? "",
+                        'meta_title' => $product_detail->meta_title ?? "",
+                        'meta_description' => $product_detail->meta_description ?? "",
+                        'price' => $product_price * $quantity,
+                        'shipping_price' => $product_detail->shipping_price ?? 0,
+                        'quantity' => $quantity,
+                        'image' => $product_detail->image ?? "", 
+                        'is_cart_type' => 'simple_order',
+                        'is_points_apply' => $is_points_apply,
+                    ];
+                }
+                //Store the updated cart items in the session
+                session(['cart' => $cartItems]); 
+                
+                echo '<p style="color:green;">Item Added In Cart Successfully</p>';
+                // Url here
+                $url = url('/cart');
+                echo '<script>setTimeout(function() { window.location.href = "'.$url.'"; }, 2000);</script>';
+            }
+        }
+    }
+
+    //Function to gift card add to cart
+    public function gift_card_add_to_cart(Request $request) {
+        //echo "<pre>"; print_r(session('cart', [])); exit;  
+        //Get Request
+        $product_id = $request->product_id;
+        $quantity = $request->quantity;
+        
+        // Get current cartSession
+        $cartItems = session('gift_card_cart', []);
+
+        //Check if gift card cart session is aleady exist
+        if(count(session('cart', [])) >= 1){
+            echo "<p style='color:red;'>Sorry you have already added Product item in cart.</p>";
+            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
         } else {
             //Get Product Details
             $product_detail = Product::Where('id',$product_id)->first();
@@ -119,68 +184,19 @@ class CartController extends Controller
                     'product_sku' => $product_detail->product_sku ?? "",
                     'meta_title' => $product_detail->meta_title ?? "",
                     'meta_description' => $product_detail->meta_description ?? "",
-                    'price' => $product_price * $quantity,
+                    'price' => $product_price,
                     'shipping_price' => $product_detail->shipping_price ?? 0,
                     'quantity' => $quantity,
                     'image' => $product_detail->image ?? "", 
-                    'is_cart_type' => 'simple_order',
-                    'is_points_apply' => $is_points_apply,
+                    'is_cart_type' => 'gift_card_order',
                 ];
             }
             //Store the updated cart items in the session
-            session(['cart' => $cartItems]); 
+            session(['gift_card_cart' => $cartItems]); 
             
             echo '<p style="color:green;">Item Added In Cart Successfully</p>';
-            // Url here
-            $url = url('/cart');
-            echo '<script>setTimeout(function() { window.location.href = "'.$url.'"; }, 2000);</script>';
+            echo '<script>setTimeout(function() { window.location.href = ""; }, 2000);</script>';
         }
-    }
-
-    //Function to gift card add to cart
-    public function gift_card_add_to_cart(Request $request) {
-        //echo "<pre>"; print_r(session('cart', [])); exit;  
-        //Get Request
-        $product_id = $request->product_id;
-        $quantity = $request->quantity;
-        
-        // Get current cartSession
-        $cartItems = session('gift_card_cart', []);
-
-        //Get Product Details
-        $product_detail = Product::Where('id',$product_id)->first();
-        $product_price = $product_detail->product_price ?? 0;
-
-        // Check if the item is already in the cart
-        if (array_key_exists($product_id, $cartItems)) {
-            // If it exists, update the quantity
-            $cartItems[$product_id]['quantity'] += $quantity;
-            $cartItems[$product_id]['product_price'] = $product_price * $cartItems[$product_id]['quantity'];
-        } else {
-            // If it doesn't exist, add it to the cart with its attributes and quantity
-            $cartItems[$product_id] = [
-                'itemId' => $product_id,
-                'product_name' => $product_detail->product_name ?? "",
-                'product_slug' => $product_detail->product_slug ?? "", 
-                'description' => $product_detail->description ?? "",
-                'short_description' => $product_detail->short_description ?? "",
-                'product_sku' => $product_detail->product_sku ?? "",
-                'meta_title' => $product_detail->meta_title ?? "",
-                'meta_description' => $product_detail->meta_description ?? "",
-                'price' => $product_price,
-                'shipping_price' => $product_detail->shipping_price ?? 0,
-                'quantity' => $quantity,
-                'image' => $product_detail->image ?? "", 
-                'is_cart_type' => 'gift_card_order',
-            ];
-        }
-        //Store the updated cart items in the session
-        session(['gift_card_cart' => $cartItems]); 
-        
-        echo '<p style="color:green;">Item Added In Cart Successfully</p>';
-        // Url here
-        $url = url('/gift-card-cart');
-        echo '<script>setTimeout(function() { window.location.href = "'.$url.'"; }, 2000);</script>';
     }
 
     //Function to remove item from cart
