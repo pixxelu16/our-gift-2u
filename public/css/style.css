@@ -13894,6 +13894,8 @@ img.img-position {
 .how-many-right h2 em {
 	font-style: normal;
 	color: #F35800;
+	font-family: 'Helvetica Rounded LT Std';
+	font-size: 43px;
 }
 
 .how-many-right img {
@@ -15743,7 +15745,7 @@ img.card_img_gift {
 	display: inline-block;
 	width: 100%;
 	margin: 0;
-	color: #282828;
+	color: #fff;
 	font-size: 74px;
 	font-weight: 700;
 	font-family: 'Helvetica Rounded LT Std';
@@ -15751,7 +15753,7 @@ img.card_img_gift {
 }
 .corporate-business-banner p {
 	display: inline-block;
-	color: #282828;
+	color: #fff;
 	font-size: 24px;
 	font-weight: 600;
 	font-family: "Nunito Sans";
@@ -15760,9 +15762,9 @@ img.card_img_gift {
 	margin: 35px 0 0 0;
 }
 .banner-buton {
-	display: inline-block;
 	width: 100%;
 	margin: 20px 0 0 0;
+	display: none;
 }
 .banner-buton a {
 	display: inline-block;
@@ -15787,7 +15789,7 @@ img.card_img_gift {
 .corporate-business-saction-2 {
 	display: inline-block;
 	width: 100%;
-	padding: 110px 0 0 0;
+	padding: 50px 0 0 0;
 }
 .corporate-business-saction-2 h2 {
 	display: inline-block;
@@ -15805,15 +15807,15 @@ img.card_img_gift {
 .corporate-business-saction-2 p {
 	display: inline-block;
 	width: 90%;
-	margin: 20px 0 0 0;
+	margin: 15px 0 0 0;
 	color: #282828;
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: 600;
 	font-family: "Nunito Sans";
-	line-height: 38px;
+	line-height: 23px;
 }
 .corporate-business-saction-2 .row {
-	margin-top: 74px;
+	margin-top: 50px;
 }
 .corporate-business-saction-2-box {
 	display: inline-block;
@@ -15823,20 +15825,23 @@ img.card_img_gift {
 	display: inline-block;
 	width: 100%;
 	color: #000000;
-	font-size: 32px;
+	font-size: 24px;
 	font-weight: 700;
 	font-family: 'Helvetica Rounded LT Std';
-	margin: 25px 0 0 0;
+	margin: 15px 0 0 0;
+}
+.corporate-business-saction-2-box img {
+	width: 16%;
 }
 .corporate-business-saction-2-box h6 {
 	display: inline-block;
 	width: 100%;
 	color: #282828;
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: 600;
 	font-family: "Nunito Sans";
 	margin: 25px 0 0 0;
-	line-height: 33px;
+	line-height: 22px;
 }
 .corporate-business-slider {
 	margin: 10px 0 0 0;
@@ -15845,7 +15850,7 @@ img.card_img_gift {
 	display: inline-block;
 	text-align: center;
 	width: 100%;
-	margin: 20px 0 0 0;
+	margin: 30px 0;
 }
 .button-canetr a {
 	display: inline-block;
@@ -15860,38 +15865,60 @@ img.card_img_gift {
 	text-transform: capitalize;
 	font-weight: 900;
 }
+
 .the-totle-saction {
 	display: inline-block;
 	width: 100%;
-	padding: 110px 0 30px;
+	padding: 50px 0;
 }
+
 .the-totle-saction h2 {
 	display: inline-block;
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	color: #000000;
 	font-size: 48px;
 	font-weight: 700;
 	font-family: 'Helvetica Rounded LT Std';
 }
+.the-totle-saction h3 {
+	display: inline-block;
+	width: 100%;
+	font-size: 32px;
+	font-weight: 800;
+	margin: 30px 0 0 0;
+	color: #000;
+	font-family: "Nunito Sans";
+	text-align: left;
+	overflow: hidden;
+	height: 75px;
+}
 .the-totle-saction h2 span {
 	color: #F35800;
 }
-.the-totle-saction .row {
-	margin-top: 57px;
+.the-totle-saction span {
+	color: #282828;
+	font-weight: 700;
+}
+.how-many-right p {
+	margin: 5px 0 20px 0;
 }
 .the-totle-saction p {
 	display: inline-block;
 	width: 100%;
 	color: #282828;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 33px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 28px;
 	font-family: "Nunito Sans";
-	margin: 0 0 25px 0;
+	margin: 30px 0 0 0;
+	text-align: left;
 }
 .the-totle-saction-box-left {
-	padding-top: 65px;
+	padding-top: 0;
+	text-align: left;
+	width: 100%;
+	display: inline-block;
 }
 .img-soon {
 	display: inline-block;
@@ -15934,7 +15961,7 @@ img.card_img_gift {
 .reward-saction h2 {
 	margin: 0;
 	color: #000;
-	font-size: 48px;
+	font-size: 40px;
 	font-weight: 700;
 	font-family: 'Helvetica Rounded LT Std';
 }
@@ -15951,9 +15978,7 @@ img.card_img_gift {
 	font-weight: 400;
 	font-family: "Nunito Sans";
 }
-.company-logo-slider .container {
-	max-width: 98%;
-}
+
 .all-logo-slider {
 	margin: 79px 0 0 0;
 	padding: 0;
@@ -15982,7 +16007,7 @@ img.card_img_gift {
 	color: #F35800;
 }
 .partners-logo {
-	margin: 60px 0 0 0;
+	margin: 60px 0 0;
 }
 .partners-logo h2 {
 	text-transform: uppercase;
@@ -16363,7 +16388,7 @@ img.card_img_gift {
 	display: inline-block;
 }
 .all-logo-slider button {
-	bottom: 40% !important;
+	bottom: 57% !important;
 	background-color: #F7F7F7;
 	border-radius: 50%;
 	width: 60px;
@@ -17246,4 +17271,10 @@ label.error {
 	width: 35%;
 	height: auto !important;
 	margin-bottom: 30px;
+}
+.all-logo-slider li.logo-slider img {
+	width: 100%;
+}
+.all-logo-slider .logo-slider {
+	margin: 0 10px;
 }

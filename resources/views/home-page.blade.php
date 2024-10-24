@@ -11,7 +11,7 @@
                     <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-1.jpg') }}"></div>
             </div>
             <div class="container">
-                <div class="slide__content">
+                <div class="slide__content slider-content-1">
                     <div class="slide__content--headings">
                         <h2 class="animated" data-animation-in="fadeInRight"> When you redeem<br>
                             your gift card, you’ll <br>
@@ -39,7 +39,7 @@
             <div class="slide__img">
                 <img src="{{ url('public/images/banner-2.png') }}" alt="#" class="full-image animated"
                     data-animation-in="zoomInImage" />
-                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-2.jpg') }}"></div>
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-2.png') }}"></div>
             </div>
             <div class="container">
                 <div class="slide__content">
@@ -71,10 +71,10 @@
             <div class="slide__img">
                 <img src="{{ url('public/images/banner-3-new.png') }}" alt="#" class="full-image animated"
                     data-animation-in="zoomInImage" />
-                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-3.jpg') }}"></div>
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-3.png') }}"></div>
             </div>
             <div class="container">
-                <div class="slide__content">
+                <div class="slide__content slider-content-3">
                     <div class="slide__content--headings">
                         <h2 class="animated" data-animation-in="fadeInRight">We are in <br>
                             love! ❤️
@@ -99,10 +99,10 @@
             <div class="slide__img">
                 <img src="{{ url('public/images/banner-4.png') }}" alt="#" class="full-image animated"
                     data-animation-in="zoomInImage" />
-                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-4.jpg') }}"></div>
+                    <div class="mobile-image"><img src="{{ url('public/images/mobile-banner-4.png') }}"></div>
             </div>
             <div class="container">        
-                <div class="slide__content">
+                <div class="slide__content slider-content-3">
                     <div class="slide__content--headings">
                         <h2 class="animated" data-animation-in="fadeInRight">❤️ Special Offer<br> for Mom! ❤️
                         </h2>
