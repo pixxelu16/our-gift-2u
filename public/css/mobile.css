@@ -1,7 +1,7 @@
 
 @media  (max-width: 1650px) {
     .header-top-new {
-        padding: 10px 0;
+        padding: 6px 0;
     }
     .logo-new {
         margin: 0 30px 0 0;
@@ -24,6 +24,11 @@
     .logo-new img {
         width: 100%;
     }
+    .slide__content a {
+        padding: 5px 9px;
+        font-size: 12px;
+        margin: 25px 0 0 0;
+    }
     .button-right-top ul li .register {
         padding: 6px 10px;
         font-size: 12px;
@@ -36,7 +41,7 @@
         font-size: 12px;
     }
     .navigaction-new ul li {
-        margin: 0 27px 0 0;
+        margin: 0 17px 0 0;
     }
     .slide .slide__img {
         position: absolute;
@@ -50,16 +55,36 @@
     .slide .slide__content {
         position: absolute;
         top: 50%;
-        left: 65px;
-        transform: translate(0%, 38%);
+        left: 130px;
+        transform: translate(0%, 15%);
     }
     .slide .slide__content--headings h2 {
-        font-size: 50px;
-        line-height: 50px;
+        font-size: 25px;
+        line-height: 25px;
     }
     .slide__content p {
-        font-size: 17px;
-        margin: 20px 0 0 0;
+        font-size: 14px;
+        margin: 15px 0 0 0;
+    }
+    .banner-new-saction .banner-new-logo-2 {
+        width: 20% !important;
+        height: auto !important;
+    }
+    .slide__content--headings span {
+        font-size: 40px !important;
+        margin-bottom: 20px !important;
+        display: inline-block;
+    }
+    .slide__content a {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin: 0px 0 0 0;
+    }
+    .banner-button {
+        margin: 0 0 0 0;
+    }
+    .slide__content a img {
+        width: 16px !important;
     }
     .slide__content a {
         padding: 10px 20px;
@@ -85,21 +110,21 @@
         padding: 60px 0 0;
     }
     .about-text h2 {
-        margin: 10px 0 0 0;
-        font-size: 35px;
+        margin: 6px 0 0 0;
+        font-size: 30px;
     }
     .box-inner-row p {
-        font-size: 12px;
+        font-size: 11px;
     }
     .box-inner-row h3 {
-        font-size: 16px;
+        font-size: 14px;
     }
     .box-inner-row img {
         width: 24%;
     }
     .box-inner-row {
-        padding: 30px;
-        height: auto;
+        padding: 15px;
+        height: 185px;
     }
     .join-with-click-saction {
         padding: 60px 60px;
@@ -108,7 +133,7 @@
         font-size: 12px;
     }
     .box-left-join-with h2 {
-        font-size: 35px;
+        font-size: 28px;
     }
     .box-left-join-with #accordionExample {
         display: inline-block;
@@ -116,21 +141,46 @@
     }
     .box-left-join-with #accordionExample .accordion-item .accordion-button {
         padding: 15px 0;
-        font-size: 20px;
+        font-size: 16px;
     }
     .box-left-join-with .accordion-body {
         padding: 0px 0 15px 0;
     }
     .box-left-join-with .accordion-body p {
-        font-size: 14px;
+        font-size: 12px;
     }
     .box-left-join-with .accordion-body a {
         margin: 15px 0 0 0;
-        padding: 7px 10px;
-        font-size: 14px;
+        padding: 8px 10px;
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+    .box-left-join-with .accordion-body a img {
+        width: 18px !important;
+        margin: 0 0 0 4px;
     }
     .box-right-join-with img {
-        width: 18%;
+        width: 100%;
+    }
+    .box-right-join-with {
+        display: inline-block;
+        width: 120px;
+        position: relative;
+        height: 126px;
+        overflow: hidden;
+    }
+    img.banner-one-img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .fashion-content {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        left: 0;
+    }
+    .box-right-join-with.two-box {
+        left: 24px;
     }
     .box-right-join-with .icon-join-3 {
         position: absolute;
@@ -143,11 +193,11 @@
         height: 30px;
     }
     .shop-cetageory-slider .slick-prev.slick-arrow {
-        left: 4px;
+        left: -28px;
         z-index: 1;
     }
     .shop-cetageory-slider .slick-next.slick-arrow {
-        right: 0;
+        right: -35px;
     }
     .how-many-ponits {
         padding: 50px 0 0;
@@ -188,15 +238,15 @@
         width: 100%;
     }
     .brands-selection-row {
-        padding: 50px 0 0 0;
+        padding: 30px 0;
     }
     .brands-selection-row span {
         color: #282828;
         font-size: 14px;
     }
     .brands-selection-row h2 {
-        font-size: 30px;
-        line-height: 35px;
+        font-size: 24px;
+        line-height: 24px;
     }
     .brands-selection-row h2 >br {
         display: none;
@@ -215,11 +265,16 @@
     }
     .help-childern-saction h2 {
         margin: 15px 0 0 0;
-        font-size: 35px;
+        font-size: 24px;
     }
     .help-childern-saction a {
-        font-size: 14px;
+        font-size: 12px;
         margin: 30px 0 0 0;
+        padding: 10px 10px;
+    }
+    .logo-52-orange {
+        position: absolute;
+        top: 0;
     }
     .childer-list li h6 {
         font-size: 14px;
@@ -245,10 +300,10 @@
         font-size: 14px;
     }
     .my-rewards-left img {
-        width: 100%;
+        width: 70%;
     }
     .footer-saction-home {
-        padding: 60px;
+        padding: 30px 0;
     }
     .footer-box h4 {
         color: #fff;
@@ -264,20 +319,29 @@
         margin: 15px 0 0 0;
     }
     .footer-copy-right {
-        padding: 15px 60px 15px;
+        padding: 15px 0px 15px;
+    }
+    .banner-new-saction .banner-new-logo {
+        width: auto !important;
     }
     .left-copy-right span {
         font-size: 11px;
     }
     .my-rewards-righ {
-        padding: 10rem 0 0 0;
+        padding: 20px 0 0 0;
+    }
+    .about-logo-new {
+        margin-bottom: 15px;
+    }
+    .about-logo-new .small-logo {
+        width: auto !important;
     }
     .slider-text .slide {
         font-size: 12px;
     }
     .about-image img {
         margin: 0 0 0 0;
-        width: 100%;
+        width: 79%;
     }
     .new-home-page-all {
         overflow: hidden;
@@ -286,10 +350,15 @@
         margin: 0 0 0 0;
     }
     .row-inner-about a {
-        padding: 8px 14px;
-        font-size: 14px;
+        padding: 10px 10px;
+        font-size: 12px;
     }
-
+    .row-inner-about a img {
+        width: 20px;
+        margin: 0 0 0 5px;
+        position: relative;
+        bottom: 1px;
+    }
     .gift-card-reward h2 {
         font-size: 48px;
     }
@@ -301,12 +370,155 @@
         width: 100%;
         font-size:20px  ;
     }
+    .navigaction-new {
+        background-color: #39FF14;
+        padding: 2px 0;
+    }
+    .about-image {
+        text-align: center;
+    }
+    .small-logo {
+        width: 240px !important;
+        margin: 0 0 30px 0 !important;
+    }
+    .new-home-page-all .container {
+        max-width: 100%;
+        padding: 0 50px !important;
+    }
+    .shop-cetageory-slider {
+        padding: 30px 0 0 0;
+    }
+    .slick-slide img {
+        width: 100% !important;
+    }
+    .logo-icon-row {
+        margin: 0 0;
+    }
+    .my-rewards-saction {
+        padding: 30px 0 0;
+    }
+    .my-rewards-left {
+        text-align: center;
+    }
+    .about-card img {
+        width: 50%;
+    }
+    .about-card {
+        bottom: 55px;
+        margin-right: 3rem;
+    }
+    .our-commanies img {
+        width: 100%;
+    }
+    .link-page-logo span {
+        width: 36%;
+        display: inline-block;
+    }
+    .link-page-logo span img {
+        width: 100% !important;
+    }
+    section.banner_about_sec_code {
+        padding: 100px 0;
+    }
+    section.clientslogoes {
+        padding: 30px 0;
+    }
+    .degree_content h2 {
+        color: var(--Black, #282828);
+        font-size: 24px;
+    }
+    .color-orange {
+        font-size: 24px !important;
+    }
+    .info-sectionbg {
+        padding: 15px;
+    }
+    .info-sectionbg h3 {
+        font-size: 16px;
+    }
+    .info-sectionbg p {
+        font-size: 14px;
+        margin: 0;
+    }
+    section.industry_experiences {
+        padding: 30px 0;
+    }
+    .content_experience_ftt span {
+        font-family: "Nunito Sans";
+        font-size: 18px;
+    }
+    .content_experience_ftt h3 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    .content_experience_ftt p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .industry_experiences .info-box {
+        padding: 15px;
+        height: 275px;
+    }
+    .info-box.text-center h4 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .info-box p {
+        display: inline-block;
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    section.our-programs {
+        padding: 30px 0 0;
+    }
+    .content_experience_ftt span {
+        font-size: 14px;
+    }
+    .content_experience_ftt span {
+        font-size: 24px !important;
+    }
+    .content_box_program {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .content_box_program ul li {
+        color: #282828;
+        font-family: "Nunito Sans";
+        font-size: 13px;
+        width: 100%;
+    }
+    .foundation {
+        padding: 30px 0 0;
+    }
+    .foundation span {
+        font-size: 14px;
+    }
+    .foundation h2 {
+        display: inline-block;
+        margin: 22px 0 0 0;
+        font-size: 30px;
+    }
+    .foundation-logo-slider {
+        margin: 0px 0 40px;
+    }
+
+
+
+
+
+
+
 	
 }
 
 
 
 @media (max-width: 767px) {
+    .new-home-page-all .container {
+        max-width: 100%;
+        padding: 0 15px !important;
+    }
    
     .top-nev-left {
         display: none;
@@ -335,7 +547,7 @@
     }
     .navigaction-new .navbar-toggler {
         position: absolute;
-        top: 16px;
+        top: 12px;
         right: 13px;
         padding: 0;
         border: none;
@@ -508,14 +720,14 @@
         top: 6px;
     }
     .brands-selection-row a {
-        margin: 57px 0 34px 0;
+        margin: 0px 0 30px 0;
     }
     .shop-cetageory-slider {
         padding: 20px 0 0 0;
     }
     .help-childern-saction {
         margin: 30px 0 20px;
-        padding: 123px 0 0;
+        padding: 115px 0 0;
     }
     .logo-52-orange {
         position: absolute;
@@ -526,7 +738,7 @@
     }
     .help-childern-saction h2 {
         margin: 10px 0 0 0;
-        font-size: 24px;
+        font-size: 16px;
         padding: 0 20px;
     }
     .childer-list li {
@@ -559,7 +771,7 @@
         padding: 15px;
     }
     .link-page li a {
-        font-size: 14px;
+        font-size: 12px;
     }
     .footer-box ul {
         margin: 15px 0 15px 0;
@@ -621,8 +833,8 @@
         margin: 40px 0 0 0;
     }
     .shop-cetageory-slider ul {
-        padding: 0 0 0 0;
-        margin: 0 0 0 0;
+        padding: 0 0 50px 0;
+        margin: 0 0 30px 0;
     }
     .our-commanies li img {
         width: 100%;
@@ -683,10 +895,10 @@
 	width: 100%;
 }
 .banner-new-saction .slide {
-	height: 852px !important;
+	height: 569px !important;
 }
 .slider, .slide {
-	height: 852px;
+	height: 570px;
 }
 .mobile-image img {
 	width: 100%;
@@ -702,33 +914,52 @@
 	text-align: center;
 }
 .slide .slide__content--headings h2 {
-	font-size: 32px;
-	line-height: 32px;
+	font-size: 18px;
+	line-height: 20px;
+}
+.slide .slide__content--headings h2 br {
+	display: none;
 }
 .slide__content p {
-	font-size: 16px;
-	margin: 20px 0 0 0;
+	font-size: 12px;
+	margin: 5px 0 0 0;
 	text-align: center;
 	color: #000;
 }
 .slide__content p br {
 	display: none;
 }
-.slide__content--headings .banner-new-logo-2 {
-	display: inline-block;
-	width: 100%;
-	text-align: center;
-}
-.banner-new-logo {
-	height: auto !important;
-	width: auto !important;
-	margin: 18px 0 0 0;
+.bnaer-card-image img {
+	width: 50% !important;
 	display: inline-block !important;
 }
 .banner-new-logo-2.fadeInRight.animated {
-	width: 50%;
+	width: 130px;
 	height: auto;
 	margin-bottom: 20px;
+}
+.banner-new-saction .banner-new-logo-2 {
+	width: 35% !important;
+	height: auto !important;
+	margin-bottom: 20px;
+	display: inline-block !important;
+}
+.banner-new-saction .slick-prev.slick-arrow {
+	left: 10px;
+	height: 35px;
+	opacity: 0.5;
+	width: 19px;
+}
+.banner-new-saction .slick-next.slick-arrow {
+	right: 10px !important;
+	height: 31px;
+	width: 17px;
+}
+.banner-new-logo-2.fadeInRight.animated {
+	width: 39% !important;
+	height: auto;
+	margin-bottom: 20px;
+	display: inline-block;
 }
 .bnaer-card-image {
 	display: inline-block;
@@ -741,7 +972,7 @@
 	margin: 18px 0 0 0;
 }
 .logo-icon-row {
-	margin: 20px 0;
+	margin: 0 0 35px;
 }
 .logo-icon-row h2 {
 	font-size: 17px;
@@ -749,7 +980,7 @@
 	text-align: center;
 }
 .defrent-slider-mobile {
-	margin: 40px 0 0 0;
+	margin: 0px 0 0 0;
 }
 .shap-about-image {
 	left: 0;
@@ -767,8 +998,14 @@
 	display: inline-block;
 }
 .mobile-logo-our .small-logo {
-	width: 50%;
+	width: 100%;
 	margin: 0 0 22px 0 !important;
+}
+.banner-new-logo-2 {
+	display: inline-block !important;
+	width: auto !important;
+	height: auto !important;
+	margin-bottom: 20px;
 }
 .small-logo {
 	display: none;
@@ -784,7 +1021,7 @@
 	display: none;
 }
 .about-card {
-	bottom: 10rem;
+	bottom: 7rem;
 	right: 0;
 	margin-right: 0;
 }
@@ -797,12 +1034,6 @@
 	position: absolute;
 	max-height: 100vh !important;
 	width: 100% !important;
-}
-.banner-new-saction .slick-prev.slick-arrow {
-	display: none;
-}
-.banner-new-saction .slick-next.slick-arrow {
-	display: none;
 }
 .banner-shop-saction {
 	padding: 50px 0;
@@ -886,7 +1117,10 @@
 	font-size: 24px;
 }
 .foundation-logo-slider {
-	margin: 0 0 50px 0 !important;
+	margin: 0 0 90px 0 !important;
+}
+.foundation-logo-slider .all-logo-slider.slick-initialized.slick-slider.slick-dotted {
+	margin: 20px 0 0 0;
 }
 .foundation-at-main {
 	background: rgba(255, 249, 245, 1);
@@ -1312,7 +1546,7 @@ img.card_img_gift {
 }
 
 .slider-cetageory button {
-	bottom: -45% !important;
+	bottom: 0 !important;
 	width: 30px;
 	height: 30px;
 }
@@ -1326,16 +1560,313 @@ img.card_img_gift {
 	margin: 0 auto;
 	left: 0;
 }
-
-
-
-
-
-
-
-
-
-
+.slider-cetageory .slick-next.slick-arrow::before {
+	background: url('../images/slider-right-i.png');
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+}
+.slider-cetageory .slick-prev.slick-arrow::before {
+	background: url('../images/slider-left-i.png');
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+}
+.slider-cetageory button {
+	bottom: 0 !important;
+	background-color: #F7F7F7;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+}
+.looping_Content img {
+	width: 30%;
+}
+.category-card-img {
+	padding: 15px 0px;
+}
+.category-card-img a {
+	display: inline-block;
+	width: 100%;
+}
+.category-card-img img {
+	width: 150px;
+	height: 150px;
+}
+.category-card-content span {
+	height: auto;
+	overflow: hidden;
+}
+.price {
+	margin: 0 0 0 0;
+}
+.product-logo {
+	width: 100% !important;
+	height: 100%;
+}
+.brand-logo-box {
+	margin-bottom: 0;
+}
+.redeem-form-main .form-control {
+	font-size: 12px;
+}
+.padding-less-contact .col-md-6:nth-child(1) {
+	order: 2;
+	margin-top: 30px;
+}
+.padding-less-contact .col-md-6:nth-child(2) {
+	order: 1;
+}
+.right-side-contact img {
+	width: 40%;
+}
+.shop-details-saction-all {
+	margin: 15px 0 0 0;
+}
+.shop-details-saction-inner {
+	padding: 0;
+}
+.left-shop-details {
+	text-align: center;
+}
+.left-shop-details img {
+	width: 60%;
+}
+.right-shop-details h2 {
+	color: #000;
+	font-size: 18px;
+	margin: 0 0 0px 0;
+}
+.price-detalis {
+	padding: 5px 0 0 0;
+	margin: 5px 0 0 0;
+	font-size: 20px;
+}
+.right-shop-details .disc p {
+	font-size: 12px !important;
+}
+.button-detalis-box {
+	display: inline-block;
+	width: 100%;
+	margin: 15px 0 0 0;
+}
+.button-2 {
+	width: 50%;
+	margin: 0 0 0 0;
+	float: right;
+}
+.quantity {
+	width: 40%;
+}
+.avail {
+	margin: 10px 0 0 0;
+}
+.sku {
+	font-size: 14px;
+}
+.tab-shop-details {
+	margin: 15px 0;
+	padding: 0;
+}
+.tab-shop-details #tabs .tab {
+	padding: 5px 0;
+	font-size: 12px;
+	margin: 0 10px 0 0px;
+}
+.tabContent p {
+	font-size: 12px;
+	line-height: 20px;
+	margin: 0 0 10px 0;
+}
+.tabContent h5 {
+	font-size: 12px;
+	margin: 0;
+}
+.tabContent span {
+	font-size: 12px;
+}
+.tabContent label {
+	margin: 10px 0 0 0;
+}
+.tabContent textarea {
+	display: inline-block;
+	width: 100%;
+	margin: 5px 0 0 0;
+	height: 100px;
+}
+.tabContent button {
+	margin: 15px 0 0 0;
+	padding: 10px 28px;
+	font-size: 14px;
+}
+.tabContent.show {
+	margin-bottom: 20px;
+}
+.cart-page-saction {
+	padding: 15px 0;
+}
+.cart-page-saction h2 {
+	font-size: 20px;
+}
+.cart-all-box {
+	padding: 10px 0;
+}
+.product-image-td {
+	width: 100%;
+	text-align: left;
+}
+.product-image-td img {
+	width: 50%;
+}
+.product-name-td {
+	float: right;
+	width: 100%;
+	font-size: 12px;
+	margin: 3px 0 0 0;
+	font-weight: 600;
+	line-height: 15px;
+}
+.left-box-cart td {
+	vertical-align: top;
+}
+.left-box-cart .quantity {
+	width: 100%;
+}
+.wps_wpr_apply_custom_points {
+	display: flex;
+	width: 100%;
+	text-align: left;
+}
+.box-shoping-continew .update-cart {
+	width: 100%;
+	margin: 0 0 15px 0;
+	text-align: left;
+}
+.wps_wpr_apply_custom_points button.button.disable-button {
+	padding: 10px 7px;
+	font-size: 12px;
+	font-weight: 600;
+}
+.wps_wpr_apply_custom_points input {
+	border: 1px solid #ddd;
+	outline: none;
+	padding: 10px 10px;
+	font-size: 12px;
+	width: 67%;
+	border-radius: 4px 0 0 4px;
+}
+.cart-right-box {
+	padding: 0 0 0 0;
+}
+.cart-totals table td {
+	padding: 5px 0;
+}
+.cart-totals button {
+	width: 100%;
+	margin: 15px 0 0 0;
+	padding: 10px 0;
+}
+.price-td {
+	font-weight: 700;
+}
+.left-box-cart table th {
+	font-weight: 700;
+}
+.step-one {
+	margin: 15px 0 0 0;
+}
+.step-one h3 {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.step-one p {
+	font-size: 12px;
+}
+.step-tow {
+	margin: 15px 0 0 0;
+}
+.left-checkout-input {
+	float: left;
+	width: 100%;
+}
+.right-checkout-input {
+	float: right;
+	width: 100%;
+}
+.check-button-row {
+	margin-top: 15px;
+	display: inline-block;
+	width: 100%;
+}
+.check-button-row .form-group label::before {
+	padding: 8px;
+	margin-right: 10px;
+	margin-bottom: 7px;
+	margin-top: 10px;
+}
+.check-button-row label {
+	font-size: 12px !important;
+}
+.step-three {
+	margin: 15px 0 0 0;
+}
+.place-order-btn button {
+	padding: 10px 88px;
+	width: 100%;
+}
+.checkout-box-right {
+	margin: 15px 0 0 0;
+}
+.order-summery h3 {
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+.product-left-img span {
+	font-size: 14px;
+}
+.product-left-img strong {
+	margin: 5px 0 0 0;
+    width: 80%;
+}
+.check-button-row .form-group input:checked + label::after {
+	top: 13px;
+	left: 8px;
+	width: 5px;
+	height: 13px;
+}
+#order_note_desc {
+	margin: 0;
+}
+.ElementsApp, .ElementsApp .InputElement {
+	font-size: 14px !important;
+}
+.step-tow p {
+	font-size: 12px;
+}
+.mini-cart-box {
+	top: 11%;
+	width: 130px !important;
+	padding: 5px 0px !important;
+}
+.cart-image {
+	width: 50px;
+	height: 50px;
+	padding: 13px 0;
+}
+.cart-image img {
+	width: 16px;
+}
+.my-account-side-bar ul li a {
+	padding: 8px 12px;
+	font-size: 12px;
+}
+.my-account-side-bar {
+	padding: 12px;
+	margin-bottom: 15px;
+}
+.button-right-top {
+	margin: 4px 0 0 0;
+}
 
 
 
@@ -1346,6 +1877,10 @@ img.card_img_gift {
 }
 
 @media (max-width: 320px) {
+    .new-home-page-all .container {
+        max-width: 100%;
+        padding: 0 15px !important;
+    }
 	.slide .slide__img img {
         max-width: 100%;
         object-fit: cover;
@@ -1413,7 +1948,7 @@ img.card_img_gift {
         margin: 0 auto;
     }
     .fashion-content span {
-        font-size: 10px;
+        font-size: 12px;
     }
     .brands-selection-row {
         padding: 10px 0 0 0;
@@ -1437,6 +1972,135 @@ img.card_img_gift {
     .left-copy-right span {
         font-size: 10px;
     }
+    .product-left-img span {
+        float: right;
+        width: 80%;
+    }
+    .wps_wpr_apply_custom_points input {
+        width: 63% !important;
+    }
+    .wps_wpr_apply_custom_points button.button.disable-button {
+        font-size: 10px;
+    }
+    .price-td button {
+        float: inherit;
+        padding: 10px 0 0;
+    }
+    .price-td {
+        text-align: center;
+    }
+    .wps_wpr_apply_custom_points input {
+        width: 66%;
+    }
+    .cart-totals button {
+        padding: 8px 0;
+    }
+    .button-2 {
+        width: 46%;
+    }
+    .quantity {
+        width: 50%;
+    }
+    .tab-shop-details #tabs .tab {
+        margin: 0 7px 0 0px;
+    }
+    .categories-list i {
+        font-size: 12px;
+    }
+    .tabContent table td {
+        padding: 0 10px !important;
+        font-size: 10px;
+    }
+    .tabContent .tab-table {
+        margin: 0 0 0 0;
+    }
+    .right-shop-details h2 {
+        font-size: 16px;
+    }
+    .price-detalis {
+        font-size: 18px;
+    }
+    .category-banner-main h2 {
+        font-size: 18px;
+    }
+    .category-banner-main span {
+        font-size: 15px;
+    }
+    .category-banner-main p {
+        font-size: 12px;
+    }
+    .category-home-main {
+        margin-top: 15px;
+    }
+    .category {
+        padding: 15px 0px 0;
+    }
+    .logo-icon-row {
+        margin: 0 0 10px;
+    }
+    .mini-cart-box {
+        top: 11%;
+        width: 130px !important;
+        padding: 5px 0px !important;
+    }
+    .cart-image {
+        width: 50px;
+        height: 50px;
+        padding: 13px 0;
+    }
+    .cart-image img {
+        width: 16px;
+    }
+    .button-right-top ul li {
+        margin: 0 0 0 0;
+    }
+    .navigaction-new .navbar-toggler {
+        position: absolute;
+        top: 11px;
+    }
+    .slide .slide__content--headings h2 {
+        font-size: 22px;
+    }
+    .join-with-click-saction .col-md-6:nth-child(2) {
+        text-align: center;
+    }
+    .box-right-join-with {
+        text-align: center;
+        width: 42%;
+        margin: 10px 12px 0;
+    }
+    img.banner-one-img {
+        width: 65px !important;
+        height: 63px !important;
+        border-radius: 50%;
+    }
+    .banner-new-saction .slick-prev.slick-arrow {
+        display: none !important;
+    }
+    .banner-new-saction .slick-next.slick-arrow {
+        display: none !important;
+    }
+    .shop-cetageory-slider ul {
+        padding: 0 0 39px 0;
+        margin: 0 0 22px 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 @media (max-width: 375px) {
@@ -1505,18 +2169,18 @@ img.card_img_gift {
         position: absolute;
         top: 36%;
         left: 0;
-        transform: translate(0%, 28%);
+        transform: translate(0%, 6%);
         right: 0;
         margin: 0 auto;
         text-align: center;
         padding: 0 30px;
     }
     .slide .slide__content--headings h2 {
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 28px;
     }
     .slide__content p {
-        font-size: 16px;
+        font-size: 14px;
         margin: 8px 0 0 0;
     }
     .slide__content a {
@@ -1524,15 +2188,21 @@ img.card_img_gift {
         font-size: 16px;
         margin: 4px 0 0 0;
     }
+    .slide__content--headings span {
+        font-size: 24px !important;
+    }
     .banner-new-saction {
         margin: 0 0 0 0;
         overflow: hidden;
     }
     .slider, .slide {
-        height: 300px;
+        height: 340px;
     }
     .slider, .slide {
-        height: 300px;
+        height: 340px;
+    }
+    .slide__img .full-image {
+        height: 340px !important;
     }
     .banner-new-saction .slick-dots {
         bottom: 7px !important;
@@ -1706,6 +2376,58 @@ img.card_img_gift {
         display: inline-block;
         width: 17%;
     }
+    .banner-new-saction .slick-prev.slick-arrow {
+        display: none !important;
+    }
+    .banner-new-saction .slick-next.slick-arrow {
+        display: none !important;
+    }
+    .banner-new-logo-2.fadeInRight.animated {
+        width: 19%;
+        height: auto;
+        margin-bottom: 12px;
+    }
+    .banner-button {
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+    .slide__content a {
+        padding: 6px 7px;
+        font-size: 12px;
+        margin: 4px 0 0 0;
+    }
+    .banner-new-logo {
+        height: 16% !important;
+        width: 14% !important;
+        margin: 18px 0 0 0;
+    }
+    .slide__content a img {
+        width: 18px !important;
+    }
+    .about-saction-new .col-md-6:nth-child(1) {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+    .about-saction-new .col-md-6:nth-child(2) {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 @media (min-width: 992px) and (max-width: 1190px) {

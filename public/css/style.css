@@ -14637,10 +14637,6 @@ p.color-black {
 	color: black;
 }
 
-.product-logo img {
-	width: 100% !important;
-}
-
 .product-slider-2 {
     display: flex;
     align-items: center;
@@ -15071,9 +15067,14 @@ line-height: 32.74px;
 }
 
 .menu-item {
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: 600;
+	margin-bottom: 10px;
+	font-size: 12px;
+	font-weight: 600;
+}
+.breadcrumb-links li {
+	font-size: 14px;
+	font-family: 'Nunito Sans';
+	font-weight: 600;
 }
 
 .menu-item > a {
@@ -17198,4 +17199,51 @@ label.error {
 	text-align: center;
 	font-weight: 800;
 	font-family: "Nunito Sans";
+}
+.right-shop-details .disc p {
+	font-family: "Nunito Sans" !important;
+	margin: 0;
+}
+.tabContent h5 {
+	font-size: 14px;
+	font-weight: 900;
+	font-family: "Nunito Sans";
+	display: inline-block;
+	width: 100%;
+}
+.tabContent ul {
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+	margin: 10px 0 0 0;
+}
+.tabContent ul li {
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 10px 0;
+	font-size: 12px;
+	font-family: "Nunito Sans";
+}
+.tabContent .tab-table {
+	display: inline-block;
+	width: 100%;
+	margin: 20px 0 0 0;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+}
+.tabContent .tab-table th {
+	background-color: #dcdcdc !important;
+	border-bottom: 1px solid #b9b9b9 !important;
+}
+.tabContent .tab-table table {
+	width: 100% !important;
+}
+.wps_wpr_apply_custom_points {
+	display: inline-block;
+	width: 100%;
+}
+.banner-new-saction .banner-new-logo-2 {
+	width: 35%;
+	height: auto !important;
+	margin-bottom: 30px;
 }
