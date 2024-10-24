@@ -436,9 +436,38 @@ class DashboardController extends Controller
         } 
     }
 
-    //export gift cards
-    public function export_gift_cards($id)
-    {
+    //Export All Gift Cards Acording to Id
+    public function export_gift_cards($id){
         return Excel::download(new GiftCardsExport($id), 'gift_cards.xlsx');
+    }
+
+    //Function to issued coupon code
+    public function submit_company_send_all_card(Request $request){
+        $gift_card_id = $request->gift_card_id;
+        $email = $request->email ?? "";
+
+        //Get gift card detail
+        $purchased_gift_card_detail = PurchagedGiftCard::Where('id', $gift_card_id)->with('user_detail','gift_card_detail','coupon_code_list')->first()->ToArray(); 
+        /*echo "<pre>"; print_r($purchased_gift_card_detail);  
+        echo "yes"; exit;
+       
+        //Chekc if coupon code is exist or not
+        if($purchased_gift_card_detail){
+            //Mail data
+            $mail_data = [
+                'coupon_code_list' => $coupon_code_detail->code
+            ];
+
+            //Send Email 
+            $send_email = Mail::to($email)->send(new CompanyIssuedCouponCodeEmail($mail_data));
+
+            //Check  if emaul is sent ot not
+            if($send_email){
+                echo '<p style="color:green;">Coupon code has been sent in email.</p>';
+                 echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+            } else {
+                echo '<p style="color:green;">Oops something wrong!</p>';
+            }
+        }*/
     }
 } 

@@ -112,6 +112,7 @@ Route::group(['middleware' => ['auth', 'company']], function () {
     Route::get('company/management-gift-cards', [App\Http\Controllers\Company\DashboardController::class, 'management_gift_cards']);
     Route::post('company/sent-link-coupon-code', [App\Http\Controllers\Company\DashboardController::class, 'sent_link_coupon_code']);
     Route::post('company/submit-issued-coupon-code', [App\Http\Controllers\Company\DashboardController::class, 'submit_issued_coupon_code']);
+    Route::post('company/submit-company-send-all-card', [App\Http\Controllers\Company\DashboardController::class, 'submit_company_send_all_card']);
 });
 //Admin routes
 Route::group(['middleware' => ['auth', 'admin']], function () {

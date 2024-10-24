@@ -322,9 +322,10 @@ class CartController extends Controller
         if($my_balance >= 1 AND $apply_credit <= $my_balance) {
             $cart_sub_total_amount = 0;
             foreach(session('cart', []) as $key => $item){
-                $cart_sub_total_amount += $item['price'] * $item['quantity']; 
+                $cart_sub_total_amount += $item['price'] * $item['quantity'];
+                $cart_sub_total_amount += $item['shipping_price'];  
             }
-    
+           
             //Check if cart items subtotal is less than or equal to apply credit
             if($apply_credit < $cart_sub_total_amount){
                 // Optionally, store coupon details in the session
