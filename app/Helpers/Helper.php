@@ -249,7 +249,7 @@ class Helper
                 //Create logs List
                 PointsLogList::create([
                     'user_point_log_id' => $user_log->id,
-                    'name' => $name ?? "Redeem Coupon",
+                    'name' => $name ?? "Redeem Credit",
                     'description' => "Gift Voucher Logs",
                     'point_type' => $point_type,
                     'points' => $new_points,
@@ -274,10 +274,13 @@ class Helper
                     'points' => $new_points,
                 ]);
             } else if($tab_type == "order_spend_points"){
+                //Update User points
+                User::Where('id', $user_id)->Update(['total_points' => $new_total_points]);
+
                 //Create logs
                 $user_log = UserPointsLog::create([
                     'user_id' => $user_id,
-                    'tab_name' => "Per Order Spend Points",
+                    'tab_name' => "Per Order Spend Credit",
                     'tab_type' => "order_spend_points",
                 ]);
 

@@ -1,13 +1,8 @@
 @extends('layouts.master')
 @section('content')
-@if (!Auth::check()) 
-  <script type="text/javascript">
-    window.location = "{{ url('redeem-center') }}";
-  </script> 
-@endif
 @if(count(session('cart', [])) == 0)
     <script>
-        window.location.href = '{{ url("/shop"); }}';
+        window.location.href = '{{ url("/"); }}';
     </script>
 @endif
 
@@ -24,10 +19,10 @@
 
    // Initialize the applied gift card amount
    $applied_cart_amount = 0;
-   // Check if the applied gift card coupon exists in the session
-   if (session()->has('applied_cart_coupon')) {
-      // Get the discount value from the session
-      $applied_cart_amount = session('applied_cart_coupon')['discount'];
+   // Check if the applied credit
+   if (session()->has('applied_cart_credit')) {
+      // Get the amount value from the session
+      $applied_cart_amount = session('applied_cart_credit')['amount'];
    }
 
    //Total calculate
@@ -52,7 +47,7 @@
    $international_local_insurance = number_format($discount_amount, 2, '.', ','); 
    
    //Cal Sub total
-   $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance;
+   $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount;
    $sub_total_amount = $sub_total_amount2-$applied_cart_amount;
 
    //Cal Tax
@@ -71,7 +66,6 @@
             <div class="col-md-8">
                <div class="left-box-cart">
                   <div class="remove_cart_item_res"></div>
-                  <div class="remove_cart_points_res"></div>
                   <table>
                      <tr>
                         <th>Product</th>
@@ -101,15 +95,16 @@
                       </tr>
                      @endforeach
                   </table>
-                  <form action="#" method="POST" id="submit_cart_coupon_code_form">
+                  <form action="#" method="POST" id="submit_cart_apply_credit_form">
                      <div class="box-shoping-continew">
-                        <!--<p>Continue Shopping</p>-->
                         <a href="{{ url('gift-cards') }}" class="update-cart">Continue Shopping</a>
                         <div class="wps_wpr_apply_custom_points">
-                           <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon Code">
-                           <button type="submit" class="button disable-button">Apply Coupon Code</button>
-                           <!--<p class="wps_wpr_restrict_user_message">Your available points:2500</p>-->
-                           <div class="submit_cart_coupon_code_form_res"></div>
+                           @if(Auth::check())
+                              <p class="wps_wpr_restrict_user_message">Your Available Balance: ${{ number_format(Auth::user()->total_points, 2, '.', ',') }} </p>
+                           @endif
+                           <input type="text" name="apply_credit" class="input-text" id="apply_credit" value="" placeholder="Apply Credit">
+                           <button type="submit" class="button disable-button">Apply Credit</button>
+                           <div class="submit_cart_apply_credit_form_res"></div>
                         </div>
                      </div>
                   <form>
@@ -117,33 +112,25 @@
             </div>
             <div class="col-md-4">
                <div class="cart-right-box">
-                  <!--<h3>Coupon apply</h3>
-                  <div class="coupon-apply">
-                     <input type="text" placeholder="Enter coupon code here..." />
-                     <button>Apply</button>
-                  </div>-->
                   <div class="cart-totals">
                      <h3>Cart totals</h3>
+                     <div class="remove_cart_credit_res"></div>
                      <table>
                         <tbody>
                            <tr>
                               <td>Item Price</td>
                               <td class="price-td td-text-right">${{ number_format($cart_sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
-                           <!--<tr>
-                              <td>Shipping</td>
-                              <td class="td-text-right">Flat rate including handling and<br />
-                                 insurance: $49.95
-                              </td>
-                           </tr>
+                           @if(session()->has('applied_cart_credit'))
+                              <tr>
+                                 <td>Applied Credit Amount</td>
+                                 <td class="price-td td-text-right">${{ number_format($applied_cart_amount, 2, '.', ',') }}<a href="javascript:void()" class="remove_cart_credit">[Remove Credit]</a></td>
+                              </tr>
+                           @endif
                            <tr>
-                              <td></td>
-                              <td class="td-text-right">Shipping to Victoria.</td>
+                              <td class="totle-sub">Sub Total</td>
+                              <td class="price-td td-text-right totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
-                           <tr>
-                              <td></td>
-                              <td class="td-text-right change-address">Change address <i class="fa fa-truck" aria-hidden="true"></i></td>
-                           </tr>-->
                            <tr>
                               <td>Postage And Handling Charges</td>
                               <td class="price-td td-text-right">${{ $postage_handling_charges }}</td>
@@ -155,16 +142,6 @@
                            <tr>
                               <td>Admin Fees</td>
                               <td class="price-td td-text-right">${{ $table_admin_fee; }}</td>
-                           </tr>
-                           @if(session()->has('applied_cart_coupon'))
-                              <tr>
-                                 <td>Coupon Amount</td>
-                                 <td class="price-td td-text-right">-${{ $applied_cart_amount }}</td>
-                              </tr>
-                           @endif
-                           <tr>
-                              <td class="totle-sub">Sub Total</td>
-                              <td class="price-td td-text-right totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
                            <tr>
                               <td>GST <span class="inc">Incl<span></td>
@@ -184,4 +161,12 @@
       </div>
    </div>
 </div>
+<script>
+   //apply_credit_input
+   const apply_credit_input = document.getElementById('apply_credit');
+   apply_credit_input.addEventListener('input', function () {
+      // Remove any non-numeric characters except for decimal points
+      this.value = this.value.replace(/[^0-9.]/g, '');
+   });
+</script>
 @endsection

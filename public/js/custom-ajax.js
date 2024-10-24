@@ -131,22 +131,22 @@ $(document).ready(function(){
         });
     }); 
 
-    //Function to handle remove_cart_points
-    $('body').on('click', '.remove_cart_points', function() { 
+    //Function to handle remove_cart_credit
+    $('body').on('click', '.remove_cart_credit', function() { 
 
         // AJAX request
         $.ajax({
             type: 'POST',
-            url: base_url+'/remove-cart-points', 
+            url: base_url+'/remove-cart-credit', 
             data: {
                 _token: $('meta[name="csrf-token"]').attr('content')
             },
             beforeSend: function () {
-                $(".remove_cart_points").prop('disabled', true);
+                $(".remove_cart_credit").prop('disabled', true);
             },
             success: function(response) {
-                $('.remove_cart_points_res').html(response);
-                $(".remove_cart_points").prop('disabled', false);
+                $('.remove_cart_credit_res').html(response);
+                $(".remove_cart_credit").prop('disabled', false);
             }
         });
     }); 
@@ -456,9 +456,9 @@ $(document).ready(function(){
 
 
     //Submit submit redeem gift card form
-    $("#submit_gift_card_coupon_code_form").validate({
+    $("#submit_gift_card_credit_cart_form").validate({
         rules: {
-            coupon_code: {
+            apply_credit: {
                 required: true,
             },
         },
@@ -471,14 +471,14 @@ $(document).ready(function(){
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }, 
-                url: base_url+'/submit-gift-card-apply-coupon-code',  
+                url: base_url+'/submit-gift-card-apply-credit',  
                 data: formDataArray,
                 beforeSend: function () {
                     $(".disable-button").prop('disabled', true);
                 },
                 mimeType: "multipart/form-data",
                 success: function(response) {
-                    $('.submit_gift_card_coupon_code_form_res').html(response);
+                    $('.submit_gift_card_credit_cart_form_res').html(response);
                     $(".disable-button").prop('disabled', false);
                 }
             });
@@ -486,9 +486,9 @@ $(document).ready(function(){
     });
 
     //Submit submit card form
-    $("#submit_cart_coupon_code_form").validate({
+    $("#submit_cart_apply_credit_form").validate({
         rules: {
-            coupon_code: {
+            apply_credit: {
                 required: true,
             },
         },
@@ -501,14 +501,14 @@ $(document).ready(function(){
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }, 
-                url: base_url+'/submit-cart-apply-coupon-code',  
+                url: base_url+'/submit-cart-apply-credit-code',  
                 data: formDataArray,
                 beforeSend: function () {
                     $(".disable-button").prop('disabled', true);
                 },
                 mimeType: "multipart/form-data",
                 success: function(response) {
-                    $('.submit_cart_coupon_code_form_res').html(response);
+                    $('.submit_cart_apply_credit_form_res').html(response);
                     $(".disable-button").prop('disabled', false);
                 }
             });
