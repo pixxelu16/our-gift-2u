@@ -4484,12 +4484,6 @@ p.payment em {
 	width: 100%;
 }
 
-.serach_top_header_category_products_res ul li .product-ptice-li {
-	color: #F8991B;
-	font-weight: 800;
-	font-size: 18px;
-}
-
 .serach_top_header_category_products_res ul li strong {
 	display: inline-block;
 	width: 100%;
@@ -11022,7 +11016,8 @@ ul li ul:hover {
 	border-radius: 10px;
 }
 .my-account-right-box h2 {
-	font-size: 20px;
+	font-size: 16px;
+	font-family: "Nunito Sans";
 }
 
 .my-account-side-bar ul li:last-child a {
@@ -11913,7 +11908,7 @@ p.payment em {
 }
 
 .billing-edite-address h2 {
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: 700;
 	width: 100%;
 	display: inline-block;
@@ -12039,7 +12034,7 @@ p.payment em {
 
 .my-order-detail-box-inner h4 {
 	margin: 0;
-	font-size: 20px;
+	font-size: 14px;
 	font-weight: 600;
 	color: #000;
 	background-color: #f5f5f5;
@@ -12055,8 +12050,8 @@ p.payment em {
 	display: inline-block;
 	width: 100%;
 	color: #333;
-	margin: 0 0 15px 0;
-	font-size: 14px;
+	margin: 0 0 8px 0;
+	font-size: 12px;
 }
 
 .my-order-detail-box-inner ul li:last-child {
@@ -12065,6 +12060,7 @@ p.payment em {
 
 .my-order-detail-box-inner ul li img {
 	margin: 0 10px 0 0;
+	width: 19px;
 }
 
 .rating {
@@ -12425,7 +12421,7 @@ p.payment em {
 
 .serach_top_header_category_products_res ul li {
 	width: 100%;
-	display: inline-block;
+	display: flex;
 	list-style: none;
 	margin: 0;
 	border-top: 1px solid #dcdcdcdc;
@@ -12446,7 +12442,8 @@ p.payment em {
 .product-text-li {
 	float: left;
 	width: 70%;
-	padding: 9px 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 11px;
 }
 
 .product-ptice-li {
@@ -12462,9 +12459,9 @@ p.payment em {
 }
 
 .serach_top_header_category_products_res ul li .product-ptice-li {
-	color: #F35800;
-	font-weight: 800;
-	font-size: 18px;
+	color: #000;
+	font-size: 12px;
+	float: right;
 }
 
 .serach_top_header_category_products_res ul li strong {
@@ -12474,7 +12471,7 @@ p.payment em {
 
 .view-all-products {
 	text-align: center;
-	margin: 15px 0;
+	margin: 0px 0;
 	width: 100%;
 	display: inline-block;
 }
@@ -12482,7 +12479,7 @@ p.payment em {
 .view-all-products a {
 	color: #F35800 !important;
 	font-weight: 600;
-	font-size: 17px;
+	font-size: 12px;
 }
 
 .point-log-table h2 {
@@ -13270,11 +13267,11 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .slide .slide__img img {
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 	opacity: 1 !important;
-	-webkit-animation-duration: 3s;
-	animation-duration: 3s;
+	-webkit-animation-duration: 4s;
+	animation-duration: 4s;
 	transition: all 1s ease;
 }
 
@@ -17277,4 +17274,27 @@ label.error {
 }
 .all-logo-slider .logo-slider {
 	margin: 0 10px;
+}
+.point-log-table p:nth-child(1) {
+	font-size: 20px;
+	font-family: 'Helvetica Rounded LT Std';
+}
+.point-log-table .accordion {
+	margin-bottom: 15px;
+}
+.point-log-table .accordion-body {
+	padding: 10px 0;
+}
+.point-log-table .accordion-body th {
+	font-size: 12px;
+}
+.point-log-table .accordion-body td {
+	font-size: 12px;
+}
+.billing-edite-address-all .color-orenge {
+	color: #000;
+	font-size: 12px;
+}
+.billing-edite-address-all td {
+	font-size: 12px !important;
 }

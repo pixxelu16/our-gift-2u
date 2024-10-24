@@ -5,7 +5,7 @@
       window.location = "{{ url('customer/my-account') }}";
    </script>
 @endif
-<div class="banner-shop-saction">
+<div class="banner-shop-saction banner-mobile-image">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

@@ -1262,7 +1262,17 @@
 .banner-shop-saction {
 	padding: 50px 0;
 	text-align: center;
+	background: transparent;
 }
+
+.banner-mobile-image {
+	background: url('../../public/images/banner-mobile-image-shop.jpg');
+	height: 348px;
+	background-size: cover;
+	background-position: 100% -139px;
+    text-align: center;
+}
+
 .banner-shop-saction span {
 	font-size: 14px;
 }
@@ -1478,6 +1488,9 @@
 	width: 100%;
 	height: auto;
 	margin-bottom: 10px;
+}
+.category-banner-main h2 {
+	text-align: center;
 }
 .image-tow-grid {
 	width: 100%;
