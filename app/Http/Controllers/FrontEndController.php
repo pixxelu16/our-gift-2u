@@ -134,9 +134,6 @@ class FrontEndController extends Controller
 
     //Function for gift cards page
     public function gift_cards(){
-        //Call Redirection Url
-        Helper::redirect_check_login_user();
-
         $all_categories = ProductCategory::where('status', 'Active')->WhereNotIn('parent_category', [0])->inRandomOrder()->limit(12)->get();
         $all_logos = BrandLogos::Where('type', 'Logo')->inRandomOrder()->get()->ToArray();
         $card_category_product_list = ProductCategory::where('status', 'Active')->where('category_type','Card')->with('category_products')->get()->ToArray();

@@ -17,8 +17,6 @@ class ShopController extends Controller
 {
     //Function for shop page
     public function shop(){
-        //Call Redirection Url
-        Helper::redirect_check_login_user();
         //Get All Products
         $all_categories = ProductCategory::Where('status', 'Active')->get();
         $all_brands = BrandLogos::Where('type', 'Brand')->get();
