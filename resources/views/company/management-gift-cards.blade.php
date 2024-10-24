@@ -1,111 +1,29 @@
 @extends('layouts.master')
 @section('content')
-    <!-- First Breadcrumb Section Start -->
-    <div class="corporate-home">
-        <div class="container">
-            <div class="corporate-gift-card">
-                <ul class="breadcrumb">
-                    <li><a href="{{ url('/') }}">Home</a><span> <img src="{{ url('public/images/breadcrub.svg') }}"></span>
-                    </li>
-                    <li><span class="current">Ourgift2u  Management Gift Cards</span></li>
-                </ul>
-                <div class="corporate-gift-title">
-                    <h2>Promotional <span>Gift card </span> by <span>giftcard2u</span></h2>
-                </div>
+<div class="corporate-home">
+    <div class="container">
+        <div class="corporate-gift-card">
+            <ul class="breadcrumb">
+                <li><a href="{{ url('/') }}">Home</a><span> <img src="{{ url('public/images/breadcrub.svg') }}"></span>
+                </li>
+                <li><span class="current">Ourgift2u  Management Gift Cards</span></li>
+            </ul>
+            <div class="corporate-gift-title">
+                <h2>Promotional <span>Gift card </span> by <span>giftcard2u</span></h2>
             </div>
         </div>
-    </div>
-    <!-- First Breadcrumb Section End -->
+    </div> 
+</div>
 
-    <form id="submit_management_gift_card" action="#" method="POST">
-    <!-- Secound Quantity Section Start -->
+<form id="submit_management_gift_card" action="#" method="POST">
     <div class="corporate quantity_section">
         <div class="container">
             <div class="comrporate_description">
-                    <input type="text" name="company_name" placeholder="Name of company or event:" id="company_name" value="">
-                </div>
-            <div class="box_quentity_bg">
-                <p class="title">What purpose do you need the gift card for?</p>
-                <div class="grid">
-                    <div class="card-counter">
-                        <span>Christmas</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('christmas')">-</button>
-                            <span id="christmas" class="counter-value" data-quintity="1">1</span>
-                            <button type="button" onclick="increment('christmas')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>New Years</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('new-years')">-</button>
-                            <span id="new-years" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('new-years')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>Employees Birthday</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('birthday')">-</button>
-                            <span id="birthday" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('birthday')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>Target Bonus</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('target-bonus')">-</button>
-                            <span id="target-bonus" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('target-bonus')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>Maternity Leave</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('maternity-leave')">-</button>
-                            <span id="maternity-leave" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('maternity-leave')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>Customers</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('customers')">-</button>
-                            <span id="customers" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('customers')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>Cross Promotions</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('cross-promotions')">-</button>
-                            <span id="cross-promotions" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('cross-promotions')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter">
-                        <span>Events</span>
-                        <div class="flex-quientity buton-ehat">
-                            <button type="button" onclick="decrement('events')">-</button>
-                            <span id="events" class="counter-value" data-quintity="0">0</span>
-                            <button type="button" onclick="increment('events')">+</button>
-                        </div>
-                    </div>
-                    <div class="card-counter last_child_cards">
-                        <div class="total-gift-cards">
-                            <span>Total Gift Cards: </span>
-                        </div>
-                        <div class="total-gift-cards">
-                            <span id="total" data-need_total_cards="1">1</span>
-                        </div>
-                    </div>
-                </div>
+                <input type="text" name="company_name" placeholder="Name of company or event:" id="company_name" value="">
             </div>
         </div>
     </div>
-    <!-- Secound Quantity Section End -->
 
-    <!-- 3rd Quantity Section start -->
     <div class="slection_box_corporate">
         <div class="container">
             <div class="box-dynmic">
@@ -143,9 +61,7 @@
             </div>
         </div>
     </div>
-    <!-- 3rd Quantity Section End -->
 
-    <!-- 4rd Cart Area Section Start -->
     <div class="cart_area_section">
         <div class="container">
             <div class="cart-area">
@@ -164,16 +80,13 @@
                             <label for="amount-payable">AMOUNT PAYABLE TODAY</label>
                             <input type="text" value="0.00" name="payable_amount" id="payable_amount" disabled required>
                             <input type="hidden" value="0" name="final_payable_amount" id="final_payable_amount">
-                             <!--Stripe Payment-->
-                             <input type="hidden" name="payment_method" value="Stripe">
+                            <input type="hidden" name="payment_method" value="Stripe">
                         </div>
                     </div>
             </div>
         </div>
     </div>
-    <!-- 4rd Cart Area Section End -->
-
-    <!-- 4rd Payment Section Start -->
+    
     <div class="payment_section-cart">
         <div class="container">
             <div class="payment-form">
@@ -186,73 +99,25 @@
     </div>
 </form>
 <script>
-    // Quentity JQuery Start
-    function increment(id) {
-        const element = document.getElementById(id);
-        let value = parseInt(element.textContent);
-        value++;
-        element.textContent = value.toString();
-        element.dataset.quintity = value.toString(); 
-        updateTotal();
-    }
-    function decrement(id) {
-        const element = document.getElementById(id);
-        let value = parseInt(element.textContent);
-        if (value > 0) {
-            value--;
-            element.textContent = value.toString();
-            element.dataset.quintity = value.toString();
-        }
-        updateTotal();
-    }
-    function updateTotal() {
-        // Select all elements with the class 'counter-value'
-        const values = document.querySelectorAll('.counter-value');
-        let total = 0;
-        // Loop through each element and sum up the 'data-quintity' values
-        values.forEach((el) => {
-            total += parseInt(el.dataset.quintity || 0); // Use 'data-quintity' and ensure it defaults to 0 if not set
-        });
-    
-        // Update the total value in the element with the id 'total'
-        document.getElementById('total').textContent = total.toString();
-        // Update the 'data-need_total_cards' attribute using jQuery
-        $("#total").attr("data-need_total_cards", total);
-    } 
-
-     // Increment the number of selected cards
+    // Increment the number of selected cards
     function num_of_cards_increment(id, cardCount) {
-        // Get the current total cards remaining
-        const totalElement = $("#total");
-        let needCardTotal = parseInt(totalElement.attr("data-need_total_cards"));
+        const element = document.getElementById(id);
+        let currentValue = parseInt(element.textContent);
+        let cardAmount = parseFloat(element.dataset.amount);
 
-        // Allow increment only if the remaining total is greater than 0
-        if (needCardTotal > 0) {
-            const element = document.getElementById(id);
-            let currentValue = parseInt(element.textContent);
-            let cardAmount = parseFloat(element.dataset.amount);
+        currentValue++;
+        element.textContent = currentValue.toString();
+        element.dataset.quintity = currentValue.toString();
 
-            currentValue++;
-            element.textContent = currentValue.toString();
-            element.dataset.quintity = currentValue.toString();
+        // Update the hidden input value for the quantity
+        document.getElementById('gift_card_quantity_' + cardCount).value = currentValue;
 
-            // Decrease the available card total
-            needCardTotal--;
-            totalElement.attr("data-need_total_cards", needCardTotal.toString());
-            totalElement.text(needCardTotal.toString());
-
-            // Update the hidden input value for the quantity
-            document.getElementById('gift_card_quantity_' + cardCount).value = currentValue;
-
-            // Recalculate the total
-            updateTotalCart();
-        }
+        // Recalculate the total
+        updateTotalCart();
     }
 
     // Decrement the number of selected cards
     function num_of_cards_decrement(id, cardCount) {
-        const totalElement = $("#total");
-        let needCardTotal = parseInt(totalElement.attr("data-need_total_cards"));
         const element = document.getElementById(id);
         let currentValue = parseInt(element.textContent);
 
@@ -261,11 +126,6 @@
             currentValue--;
             element.textContent = currentValue.toString();
             element.dataset.quintity = currentValue.toString();
-
-            // Increase the available card total
-            needCardTotal++;
-            totalElement.attr("data-need_total_cards", needCardTotal.toString());
-            totalElement.text(needCardTotal.toString());
 
             // Update the hidden input value for the quantity
             document.getElementById('gift_card_quantity_' + cardCount).value = currentValue;

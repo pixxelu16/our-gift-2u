@@ -89,11 +89,10 @@ class Helper
         // Get all categories
         $all_categories = ProductCategory::where('status', 'Active')->Where('category_type','Normal')->get();
 
+
         // Check if categories exist
         if ($all_categories->count() >= 1) {
             foreach ($all_categories as $category) {
-                //Category Product Count
-                $category_products_count = ProductCatRelation::Where('category_id', $category->id)->count();
                 // Check for main categories (parent_category = 0)
                 if ($category->parent_category == 0) {
                     $subcategories = $all_categories->where('parent_category', $category->id);
@@ -103,7 +102,9 @@ class Helper
                     // If subcategories exist, display them under the main category
                     if ($subcategories->isNotEmpty()) {
                         foreach ($subcategories as $subcategory) {
-                            echo '<a class="sub_category dropdown-item" href="'.url("category")."/".$subcategory->slug.'">&nbsp;&nbsp;&nbsp;&nbsp;'.$subcategory->name . " (".$category_products_count.") ".'</a>';
+                            //Category Product Count
+                            $sub_cat_products_count = ProductCatRelation::Where('category_id', $subcategory->id)->count();
+                            echo '<a class="sub_category dropdown-item" href="'.url("category")."/".$subcategory->slug.'">&nbsp;&nbsp;&nbsp;&nbsp;'.$subcategory->name . " (".$sub_cat_products_count.") ".'</a>';
                         }
                     }
                     echo '</div>';
@@ -192,11 +193,122 @@ class Helper
 
             // If there are gift cards in the cart
             if(count(session('gift_card_cart', [])) >= 1) {
-                echo '<a href="' . url('gift-card-cart') . '" class="go-to-card">Go to Gift Cart</a>';
-                echo '<a href="' . url('gift-card-checkout') . '" class="meni-check">Gift Checkout</a>';
+                echo '<a href="' . url('gift-card-cart') . '" class="go-to-card">Go to Cart</a>';
+                echo '<a href="' . url('gift-card-checkout') . '" class="meni-check">Checkout</a>';
+            }
+            echo '</div>';
+        }
+    }
+
+    // Function to check the current login user and redirect based on conditions
+    public static function redirect_check_login_user(){
+        // Check if the user is logged in
+        if (Auth::check()) {
+            // Get the logged-in user
+            $user = auth()->user();
+
+            // Check the user type and is_user_payble flag
+            if ($user->user_type == "Company" && $user->is_user_payble == "No") {
+                $url = url('company/my-account');
+                echo '<script> window.location.href = "' . $url . '"; </script>';   
+            } elseif ($user->user_type == "Company" && $user->is_user_payble == "Yes") {
+                $url = url('company/my-account');
+                echo '<script> window.location.href = "' . $url . '"; </script>';   
+            } 
+        } else {
+            $url = url('login');
+            echo '<script> window.location.href = "' . $url . '"; </script>';  
+        }
+    }
+
+    //Funtion to manage user points
+    public static function manage_user_points($user_id,$tab_type,$new_points,$point_type,$name){
+        //Get user details
+        $user_detail = User::Select('id','total_points')->where('id', $user_id)->first();
+        //Check if use if exits or not
+        if($user_detail){
+            $old_total_points = $user_detail->total_points;
+            //Check if point_type is plus or minus
+            if($point_type == "Plus"){
+                $new_total_points = $old_total_points+$new_points;
+            } else {
+                $new_total_points = $old_total_points-$new_points;
             }
 
-            echo '</div>';
+            //Check if tab_type
+            if($tab_type == "apply_coupon"){
+                //Update User points
+                User::Where('id', $user_id)->Update(['total_points' => $new_total_points]);
+                //Create logs
+                $user_log = UserPointsLog::create([
+                    'user_id' => $user_id,
+                    'tab_name' => "Gift Voucher",
+                    'tab_type' => "apply_coupon",
+                ]);
+
+                //Create logs List
+                PointsLogList::create([
+                    'user_point_log_id' => $user_log->id,
+                    'name' => $name ?? "Redeem Coupon",
+                    'description' => "Gift Voucher Logs",
+                    'point_type' => $point_type,
+                    'points' => $new_points,
+                ]);
+            } else if($tab_type == "manual_invoice"){
+                //Update User points
+                User::Where('id', $user_id)->Update(['total_points' => $new_total_points]); 
+
+                //Create logs
+                $user_log = UserPointsLog::create([
+                    'user_id' => $user_id,
+                    'tab_name' => "Upload Invoice Reward",
+                    'tab_type' => "normal_upload_invoice",
+                ]);
+
+                //Create logs List
+                PointsLogList::create([
+                    'user_point_log_id' => $user_log->id,
+                    'name' => $name ?? "Upload Invoice Reward",
+                    'description' => $name ?? "Upload Invoice Reward",
+                    'point_type' => $point_type,
+                    'points' => $new_points,
+                ]);
+            } else if($tab_type == "order_spend_points"){
+                //Create logs
+                $user_log = UserPointsLog::create([
+                    'user_id' => $user_id,
+                    'tab_name' => "Per Order Spend Points",
+                    'tab_type' => "order_spend_points",
+                ]);
+
+                //Create logs List again
+                PointsLogList::create([
+                    'user_point_log_id' => $user_log->id,
+                    'name' => $name,
+                    'description' => $name,
+                    'point_type' => $point_type,
+                    'points' => $new_points,
+                ]); 
+            } else if($tab_type == "order_rewards"){
+                //Update User points
+                User::Where('id', $user_id)->Update(['total_points' => $new_total_points]); 
+
+                //Create logs
+                $user_log = UserPointsLog::create([
+                    'user_id' => $user_id,
+                    'tab_name' => "Order Reward Points",
+                    'tab_type' => "order_rewards",
+                ]);
+
+                //Create logs List
+                PointsLogList::create([
+                    'user_point_log_id' => $user_log->id,
+                    'name' => $name,
+                    'description' => $name,
+                    'point_type' => $point_type,
+                    'points' => $new_points,
+                ]); 
+            }
         }
     }
 }

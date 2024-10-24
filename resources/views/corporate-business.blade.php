@@ -8,7 +8,9 @@
           <em>Gift Card,</em> you'll be<br>
           giving a gift, too.</h2>
         <p>“When your company purchases a gift card on our website, we will donate an equal amount to the 52 Degree Foundation, helping support children and their families. Together, let's make every purchase meaningful!”</p>
-        <div class="banner-buton"> <a href="{{ url('/corporate-business') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a> </div>
+        @if(!Auth::check())
+          <div class="banner-buton"> <a href="{{ url('/business-register') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a> </div>
+        @endif
       </div>
     </div>
   </div>
@@ -43,7 +45,9 @@
         </div>
       </div>
     </div>
-    <div class="button-canetr"> <a href="{{ url('/corporate-business') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a></div>
+    @if(!Auth::check())
+      <div class="button-canetr"> <a href="{{ url('/business-register') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a></div>
+    @endif
   </div>
 </div>
 @if ($all_categories)
@@ -85,7 +89,9 @@
         </div>
       </div>
     </div>
-    <div class="button-canetr"> <a href="{{ url('/corporate-business') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a></div>
+    @if(!Auth::check())
+      <div class="button-canetr"> <a href="{{ url('/business-register') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a></div>
+    @endif
   </div>
 </div>
 @if ($all_categories)
@@ -116,7 +122,9 @@
           <a href="#">Download <img src="{{ url('public/images/slider-right-i.png') }}"></a> </div>
       </div>
     </div>
-    <div class="button-canetr"> <a href="{{ url('/corporate-business') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a></div>
+    @if(!Auth::check())
+      <div class="button-canetr"> <a href="{{ url('/business-register') }}">business Center <img src="{{ url('public/images/wight-erow.png') }}"></a></div>
+    @endif
   </div>
 </div>
 @if ($all_categories)
@@ -197,7 +205,7 @@
             </tr>
           </table>
           @if (!Auth::check())
-            <a href="{{ url('/redeem-center') }}">Join in <img src="{{ url('public/images/slider-right-i.png') }}"></a>
+            <a href="{{ url('/business-register') }}">Join in <img src="{{ url('public/images/slider-right-i.png') }}"></a>
           @endif
          </div>
       </div>

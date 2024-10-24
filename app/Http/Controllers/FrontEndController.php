@@ -11,6 +11,7 @@ use App\Models\ProductCategory;
 use App\Models\CountryList;
 use App\Models\Pagesetting;
 use Carbon\Carbon;
+use App\Helpers\Helper;
 
 class FrontEndController extends Controller
 {
@@ -133,6 +134,9 @@ class FrontEndController extends Controller
 
     //Function for gift cards page
     public function gift_cards(){
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
+
         $all_categories = ProductCategory::where('status', 'Active')->WhereNotIn('parent_category', [0])->inRandomOrder()->limit(12)->get();
         $all_logos = BrandLogos::Where('type', 'Logo')->inRandomOrder()->get()->ToArray();
         $card_category_product_list = ProductCategory::where('status', 'Active')->where('category_type','Card')->with('category_products')->get()->ToArray();
@@ -143,6 +147,9 @@ class FrontEndController extends Controller
 
     //Function for all brands page
     public function all_brands(){
+        //Call Redirection Url
+        Helper::redirect_check_login_user();
+        
         $all_brands = BrandLogos::Where('type', 'Brand')->inRandomOrder()->get()->ToArray();
         return view('all-brands', compact('all_brands')); 
     }

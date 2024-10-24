@@ -20,6 +20,11 @@
                 <img src="{{ url('public/images/account-details.svg') }}" />Account details
             </a>
         </li>
+        <li class="{{ Request::is('customer/my-balance') ? 'active' : '' }}">
+            <a href="{{ url('/customer/my-balance') }}">
+                <img src="{{ url('public/images/account-details.svg') }}" />My Balance
+            </a>
+        </li>
         <li class="{{ Request::is('customer/my-gift-cards') ? 'active' : '' }}">
             <a href="{{ url('/customer/my-gift-cards') }}">
                 <img src="{{ url('public/images/my-gifts-cards.svg') }}" />My Gift Cards

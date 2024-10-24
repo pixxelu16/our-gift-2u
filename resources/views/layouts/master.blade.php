@@ -184,10 +184,8 @@
                            <li><a href="{{ url('cookies') }}">Cookies</a></li>
                            <li><a href="{{ url('about-us') }}">About Us</a></li>
                            <li><a href="{{ url('about-us/#our-team') }}">Our Team</a></li>
-                           @if (Auth::check() && Auth::user()->user_type == 'Company')
+                           @if (!Auth::check())
                              <li><a href="{{ url('corporate-business') }}">Business Center</a></li>
-                           @else
-                            <li><a href="{{ url('business-register') }}">Business Center</a></li>
                            @endif
                            <li><a href="{{ url('help-center') }}">Help Center</a></li>
                            <li><a href="{{ url('gift-cards') }}">Gift Cards</a></li>
