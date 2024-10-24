@@ -290,7 +290,7 @@ class CartController extends Controller
             }
     
             //Check if cart items subtotal is less than or equal to apply credit
-            if($apply_credit < $cart_sub_total_amount){
+            if($apply_credit <= $cart_sub_total_amount){
                 // Optionally, store coupon details in the session
                 Session::put('applied_gift_card_credit', ['amount' => $apply_credit]);
     
@@ -327,7 +327,7 @@ class CartController extends Controller
             }
            
             //Check if cart items subtotal is less than or equal to apply credit
-            if($apply_credit < $cart_sub_total_amount){
+            if($apply_credit <= $cart_sub_total_amount){
                 // Optionally, store coupon details in the session
                 Session::put('applied_cart_credit', ['amount' => $apply_credit]);
     
@@ -422,7 +422,7 @@ class CartController extends Controller
                 $international_local_insurance = number_format($discount_amount, 2, '.', ','); 
                 
                 //Cal Sub total
-                $sub_total_amount2 = $cart_total_amount;
+                $sub_total_amount2 = $cart_total_amount+$postage_handling_charges;
                 $sub_total_amount = $sub_total_amount2-$applied_cart_amount;
 
                 //Cal Tax

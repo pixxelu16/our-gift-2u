@@ -95,6 +95,7 @@
                       </tr>
                      @endforeach
                   </table>
+                  @if(!session()->has('applied_gift_card_credit'))
                   <form action="#" method="POST" id="submit_gift_card_credit_cart_form">
                      <div class="box-shoping-continew">
                         <a href="{{ url('gift-cards') }}" class="update-cart">Continue Shopping</a>
@@ -108,6 +109,7 @@
                         </div>
                      </div>
                   <form>
+                  @endif
                </div>
             </div>
             <div class="col-md-4">
@@ -128,9 +130,10 @@
                               </tr>
                            @endif
                            <tr>
-                              <td>Sub Total</td>
-                              <td class="price-td td-text-right">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
+                              <td class="totle-sub">Sub Total</td>
+                              <td class="price-td td-text-right totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
+                           @if(session()->has('applied_gift_card_credit'))
                            <tr>
                               <td>International And Local Insurance</td>
                               <td class="price-td td-text-right">${{ $international_local_insurance; }}</td>
@@ -144,9 +147,10 @@
                               <td class="price-td td-text-right">${{ $tax_total_amount; }}</td>
                            </tr>
                            <tr>
-                              <td>Total</td>
-                              <td class="price-td td-text-right">${{ number_format($total_amount, 2, '.', ',') }}</td>
-                           </tr>
+                                 <td class="totle-sub">Total</td>
+                                 <td class="price-td td-text-right totle-sub">${{ number_format($total_amount, 2, '.', ',') }}</td>
+                              </tr>
+                           @endif
                         </tbody>
                      </table>
                      <a href="{{ url('gift-card-checkout') }}"><button type="button">Proceed to checkout</button></a>

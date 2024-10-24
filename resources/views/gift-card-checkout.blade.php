@@ -196,18 +196,6 @@
                         </div>
                      @endforeach
                   </div> 
-                  <form action="#" method="POST" id="submit_gift_card_credit_cart_form">
-                     <div class="box-shoping-continew">
-                        <div class="wps_wpr_apply_custom_points">
-                           @if(Auth::check())
-                              <p class="wps_wpr_restrict_user_message">Your Available Balance: ${{ number_format(Auth::user()->total_points, 2, '.', ',') }} </p>
-                           @endif
-                           <input type="text" name="apply_credit" class="input-text" id="apply_credit" value="" placeholder="Apply Credit">
-                           <button type="submit" class="button disable-button">Apply Credit</button>
-                           <div class="submit_gift_card_credit_cart_form_res"></div>
-                        </div>
-                     </div>
-                  <form>
                   <div class="table-price">
                      <div class="remove_cart_credit_res"></div>
                      <table>
@@ -219,7 +207,7 @@
                            @if(session()->has('applied_gift_card_credit'))
                               <tr>
                                  <td>Applied Credit Amount</td>
-                                 <td class="price-td td-text-right">${{ number_format($applied_gift_card_amount, 2, '.', ',') }}<a href="javascript:void()" class="remove_cart_credit">[Remove Credit]</a></td>
+                                 <td class="price-td td-text-right">${{ number_format($applied_gift_card_amount, 2, '.', ',') }}</td>
                               </tr>
                            @endif
                            <tr>
