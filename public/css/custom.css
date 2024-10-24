@@ -386,12 +386,15 @@ section.our_company {
 		grid-template-columns: repeat(2, 2fr);
 	}
 	.carees-opport-saction {
-		padding: 40px 0;
+		padding: 30px 0;
 	}
 	.carees_options_tabs .tab-content {
-		padding: 50px 0;
+		padding: 15px 0 0;
 		text-align: center;
 	}
+    .carees_options_tabs .tab-content p {
+        font-size: 14px;
+    }
 
 	section.banner_about_sec_code {
 		height: auto;
@@ -405,6 +408,13 @@ section.our_company {
 	body .color-orange {
 		font-size: 24px !important;
 	}
+    .carees-opport-saction h2 {
+        font-size: 24px;
+    }
+    .carees_options_tabs .tabs button {
+        padding: 15px 10px;
+        font-size: 12px;
+    }
 	section.clientslogoes {
 		padding: 30px 0;
 	}
@@ -569,14 +579,14 @@ section.our_company {
 
   
     .full-text-box .form-control {
-        margin-top: 30px;
-        height: 150px;
+        margin-top: 0;
+        height: auto;
     }
     
     textarea::placeholder {
-        font-size: 16px;
+        font-size: 12px;
         text-transform: capitalize;
-        letter-spacing: 1px;
+        letter-spacing: 0;
     }
     
     .button-full-box {
@@ -598,7 +608,7 @@ section.our_company {
     
     .help-childern-saction a {
         font-size: 16px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 0 0 !important;
         font-weight: 700;
     }
     
@@ -608,7 +618,7 @@ section.our_company {
         padding-top: 12px;
     }
     .padding-less-contact {
-        padding: 20px;
+        padding: 0px;
     }
 
     .padding-less {
@@ -622,11 +632,11 @@ section.our_company {
         margin-bottom: 15px;
     }
     .right-side-contact {
-        padding-top: 20px;
+        padding-top: 0px;
     }
     .right-side-contact h2 {
         margin: 20px 0 0 0;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .login-all-screen .login-all-inner {
@@ -681,22 +691,25 @@ section.our_company {
     }
     .menu {
         width: 100%;
-        margin-bottom: 22px;
-        padding: 20px;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    .master-tab h2 {
+        font-size: 14px !important;
     }
     .category {
         padding: 20px 0px 0;
     }
     .breadcrumb-text {
-        font-size: 16px;
+        font-size: 12px;
     }
     .menu-item > a {
-        padding: 5px;
-        font-size: 15px;
+        padding: 3px 0;
+        font-size: 12px;
     }
 
     .my-account-saction {
-        margin: 40px 0;
+        margin: 20px 0;
     }
     body .two_columns_box_logo img {
         width: 30%;
@@ -723,7 +736,7 @@ section.our_company {
         background-size: 10px!important;
     }
     button.custom-accordion-button {
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
     .info-sectionbg {
         padding: 15px;
@@ -735,7 +748,25 @@ section.our_company {
         margin: 0;
         width: 100%;
     }
-
+    .title_faq_btm h2 {
+        font-size: 20px;
+    }
+    .brands-selection-row {
+        padding: 0 0 0 0 !important;
+    }
+    .brands-selection-row h2 {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
+    .title_faq_btm h2 {
+        font-size: 20px !important;
+        margin: 0;
+    }
+    .custom-accordion-body p {
+        font-family: Nunito Sans;
+        font-size: 12px;
+        margin: 15px 0 0 0;
+    }
 
 
 
