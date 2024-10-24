@@ -718,7 +718,15 @@
     .logo-icon-row .slider-cetageory li {
         margin: 0 10px;
     }
-
+    .acc-login ul li ul {
+        margin-top: 7px;
+        width: 110px;
+        border: none;
+    }
+    .acc-login ul li ul a {
+        padding: 6px 6px;
+        font-size: 11px;
+    }
 
 
 
