@@ -6,7 +6,7 @@
    </script>
 @endif
 @php
-   //Other Setting
+//Other Setting
    $table_admin_fee = 0;
    $table_insurance_fee = 0;
    $table_tax = 0;
@@ -28,16 +28,10 @@
    $cart_sub_total_amount = 0;
    $cart_total_amount = 0;
    $postage_handling_charges = 0;
-   $cart_points_total_amount = 0;
    foreach(session('cart', []) as $key => $item){
       $cart_sub_total_amount += $item['price'] * $item['quantity']; 
       $cart_total_amount += $item['price'] * $item['quantity'];  
       $postage_handling_charges += $item['shipping_price'];  
-
-      //Check if points apply
-      if(isset($item['is_points_apply']) && count($item['is_points_apply']) >= 1){
-         $cart_points_total_amount += $item['is_points_apply']['points_price'];
-      }
    }
 
    //Cal Postage Handling Charges Fees
@@ -46,7 +40,7 @@
    $international_local_insurance = number_format($discount_amount, 2, '.', ','); 
    
    //Cal Sub total
-   $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount;
+   $sub_total_amount2 = $cart_total_amount+$postage_handling_charges;
    $sub_total_amount = $sub_total_amount2-$applied_cart_amount;
 
    //Cal Tax
@@ -54,7 +48,7 @@
    $tax_total_amount = number_format($tax_discount_amount, 2, '.', ','); 
 
    //Call Total Amount
-   $total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance+$tax_total_amount;
+   $total_amount2 = $cart_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance+$tax_total_amount;
    $total_amount = $total_amount2-$applied_cart_amount;
 @endphp
 <div class="cart-page-saction">
@@ -198,20 +192,7 @@
                         </div>
                      @endforeach
                   </div> 
-                  <form action="#" method="POST" id="submit_cart_apply_credit_form">
-                     <div class="box-shoping-continew">
-                        <div class="wps_wpr_apply_custom_points">
-                           @if(Auth::check())
-                              <p class="wps_wpr_restrict_user_message">Your Available Balance: ${{ number_format(Auth::user()->total_points, 2, '.', ',') }} </p>
-                           @endif
-                           <input type="text" name="apply_credit" class="input-text" id="apply_credit" value="" placeholder="Apply Credit">
-                           <button type="submit" class="button disable-button">Apply Credit</button>
-                           <div class="submit_cart_apply_credit_form_res"></div>
-                        </div>
-                     </div>
-                  </form>
                   <div class="table-price">
-                     <div class="remove_cart_credit_res"></div>
                      <table>
                         <tbody>
                            <tr>
@@ -221,16 +202,16 @@
                            @if(session()->has('applied_cart_credit'))
                               <tr>
                                  <td>Applied Credit Amount</td>
-                                 <td>${{ number_format($applied_cart_amount, 2, '.', ',') }}<a href="javascript:void()" class="remove_cart_credit">[Remove Credit]</a></td>
+                                 <td>${{ number_format($applied_cart_amount, 2, '.', ',') }}</td>
                               </tr>
                            @endif
                            <tr>
-                              <td class="totle-sub">Sub Total</td>
-                              <td class="totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
-                           </tr>
-                           <tr>
                               <td>Postage And Handling Charges</td>
                               <td>${{ number_format($postage_handling_charges, 2, '.', ',') }} </td>
+                           </tr>
+                           <tr>
+                              <td class="totle-sub">Sub Total</td>
+                              <td class="totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
                            <tr>
                               <td>International And Local Insurance</td>
