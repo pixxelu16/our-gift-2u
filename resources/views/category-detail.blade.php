@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="category-banner">
+<div class="category-banner banner-mobile-image">
    <div class="container">
       <div class="category-banner-main">
          <span>Your Next Adventure Starts Here</span>
