@@ -947,6 +947,46 @@ $(document).ready(function(){
             });
         }
     });
+
+    //Submit Issued Coupon Code
+    $("#submit_company_send_all_card").validate({
+        rules: {
+            gift_card_id: {
+                required: true,
+            },
+            email: {
+                required: true,
+            },
+        },
+        messages: {
+            /*gift_card_id: {
+                required: "Required.",
+            },*/
+        },
+        submitHandler: function (form,e) {
+            // Serialize form data
+            var formDataArray = $("#submit_company_send_all_card").serialize();
+
+            // Proceed with the AJAX call to submit the form
+            jQuery.ajax({
+                type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: base_url + '/company/submit-company-send-all-card',
+                data: formDataArray,
+                beforeSend: function () {
+                    $(".disable-button").prop('disabled', true);
+                    $('.submit_company_send_all_card_res').html("Please Wait..");
+                },
+                mimeType: "multipart/form-data",
+                success: function (response) {
+                    $('.submit_company_send_all_card_res').html(response);
+                    $(".disable-button").prop('disabled', false);
+                }
+            });
+        }
+    });
 });
 
 //Code For Show sent_link_coupon_code
@@ -980,6 +1020,14 @@ $('body').on('click', '.issued_coupon_code', function() {
     $("#coupon_code_id").val(coupon_id); 
     //Open popup
     $('#issuedCouponCodeModel').modal('show');
+});
+
+//Code For Show send_all_card_to_email
+$('body').on('click', '.send_all_card_to_email', function() { 
+    var gift_card_id = $(this).data("gift_card_id");
+    $("#gift_card_id").val(gift_card_id); 
+    //Open popup
+    $('#sendAllCardToEmailModel').modal('show');
 });
 
 //Code For Show is_order_note
