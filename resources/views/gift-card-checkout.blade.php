@@ -18,10 +18,10 @@
 
    // Initialize the applied gift card amount
    $applied_gift_card_amount = 0;
-   // Check if the applied gift card coupon exists in the session
-   if (session()->has('applied_gift_card_coupon')) {
-      // Get the discount value from the session
-      $applied_gift_card_amount = session('applied_gift_card_coupon')['discount'];
+   // Check if the applied gift card credit exists in the session
+   if (session()->has('applied_gift_card_credit')) {
+      // Get the amount value from the session 
+      $applied_gift_card_amount = session('applied_gift_card_credit')['amount'];
    }
 
    //Total calculate
@@ -31,7 +31,7 @@
    $cart_points_total_amount = 0;
    foreach(session('gift_card_cart', []) as $key => $item){
       $cart_sub_total_amount += $item['price'] * $item['quantity']; 
-      $cart_total_amount += $item['price'] * $item['quantity'];   
+      $cart_total_amount += $item['price'] * $item['quantity'];  
    }
 
    //Cal Postage Handling Charges Fees
@@ -40,7 +40,7 @@
    $international_local_insurance = number_format($discount_amount, 2, '.', ','); 
    
    //Cal Sub total
-   $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance;
+   $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount;
    $sub_total_amount = $sub_total_amount2-$applied_gift_card_amount;
 
    //Cal Tax
@@ -191,42 +191,41 @@
                      @foreach(session('gift_card_cart', []) as $key => $item)
                         <div class="product-left-img">
                            <img src="{{ url('public/uploads/products/'.$item['image']) }}" alt="{{ $item['image'] }}">
-                        
                            <span>{{ $item['product_name'] }}</span>
                            <strong>${{ number_format($item['price'], 2, '.', ',') }}</strong>
                         </div>
                      @endforeach
                   </div> 
-                  <form action="#" method="POST" id="submit_gift_card_coupon_code_form">
+                  <form action="#" method="POST" id="submit_gift_card_credit_cart_form">
                      <div class="box-shoping-continew">
                         <div class="wps_wpr_apply_custom_points">
-                           <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon Code">
-                           <button type="submit" class="button disable-button">Apply Coupon Code</button>
-                           <div class="submit_gift_card_coupon_code_form_res"></div>
+                           @if(Auth::check())
+                              <p class="wps_wpr_restrict_user_message">Your Available Balance: ${{ number_format(Auth::user()->total_points, 2, '.', ',') }} </p>
+                           @endif
+                           <input type="text" name="apply_credit" class="input-text" id="apply_credit" value="" placeholder="Apply Credit">
+                           <button type="submit" class="button disable-button">Apply Credit</button>
+                           <div class="submit_gift_card_credit_cart_form_res"></div>
                         </div>
                      </div>
                   <form>
-                  <!--<div class="add-coupn"><a href="#">Add a coupon</a></div>-->
                   <div class="table-price">
+                     <div class="remove_cart_credit_res"></div>
                      <table>
                         <tbody>
                            <tr>
                               <td>Item Price</td>
                               <td>${{ number_format($cart_sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
-                           @if($cart_points_total_amount >= 1)
-                           <tr>
-                              <td>Points</td>
-                              <td>-${{ number_format($cart_points_total_amount, 2, '.', ',') }} </td>
-                           </tr>
+                           @if(session()->has('applied_gift_card_credit'))
+                              <tr>
+                                 <td>Applied Credit Amount</td>
+                                 <td class="price-td td-text-right">${{ number_format($applied_gift_card_amount, 2, '.', ',') }}<a href="javascript:void()" class="remove_cart_credit">[Remove Credit]</a></td>
+                              </tr>
                            @endif
-                           <!--<tr>
-                              <td>Shipping
-                                 <span>Flat rate including handling and insurance</span>
-                                 <span>Shipping to Victoria, Australia </span>
-                              </td>
-                              <td><strong>$49.95</strong></td>
-                           </tr>-->
+                           <tr>
+                              <td class="totle-sub">Sub Total</td>
+                              <td class="totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
+                           </tr>
                            <tr>
                               <td>International And Local Insurance</td>
                               <td>${{ number_format($international_local_insurance, 2, '.', ',') }} </td>
@@ -234,16 +233,6 @@
                            <tr>
                               <td>Admin Fees</td>
                               <td>${{ $table_admin_fee; }} </td>
-                           </tr>
-                           @if(session()->has('applied_gift_card_coupon'))
-                              <tr>
-                                 <td>Coupon Amount</td>
-                                 <td>-${{ $applied_gift_card_amount }}</td>
-                              </tr>
-                           @endif
-                           <tr>
-                              <td class="totle-sub">Sub Total</td>
-                              <td class="totle-sub">${{ number_format($sub_total_amount, 2, '.', ',') }}</td>
                            </tr>
                            <tr>
                               <td>GST Incl</td>
@@ -256,14 +245,6 @@
                         </tbody>
                      </table>
                   </div>
-                  <!--<div class="apyly-store">
-                     <h3>Apply store credit discounts?</h3>
-                     <span><strong>$0.00</strong> available store credits.</span>
-                     <p>Enter the amount of store credits you want to apply as discount for this order.</p>
-                     <input type="text" name="credit_amount" id="credit_amount" values="" placeholder="Enter amount" onkeypress="return onlyNumber(event)"/>
-                     <button type="submit" class="disable-button2">Apply</button>
-                     <div class="submit_store_credit_form_res"></div>
-                  </div>-->
                </div>
          </div>
       </div>
@@ -316,5 +297,12 @@
    });
    card.mount('#card-element');
    //Stripe Detail End
+
+   //apply_credit_input
+   const apply_credit_input = document.getElementById('apply_credit');
+   apply_credit_input.addEventListener('input', function () {
+      // Remove any non-numeric characters except for decimal points
+      this.value = this.value.replace(/[^0-9.]/g, '');
+   });
 </script>
 @endsection

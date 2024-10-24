@@ -222,102 +222,128 @@ class CartController extends Controller
         }
     } 
 
-    //Function to remove cart points from cart
-    public function remove_cart_points(Request $request) {  
-        // Retrieve the cart session
-        $cartItems = session('cart', []);
-    
-        // Update the session with the modified cart items
-        session(['cart' => $cartItems]);
-    
-        // Display success message and reload the page
-        echo '<p style="color:green;">Points Removed From Cart List.</p>';
-        echo '<script> 
-                setTimeout(function(){
-                    location.reload();
-                }, 3000); 
-            </script>';  
-    }  
-    
-    //Function to submit apply from cart
-    public function submit_apply_gift_card_coupon_code(Request $request) {
+    //Function to remove cart credit from cart
+    public function remove_cart_credit(Request $request) { 
         //Get Login user id
         $login_user_id = Auth::id();
-        $coupon_code = $request->coupon_code;
+        $applied_cart_amount = 0;
+        // Check if applied_cart_credit session is exist
+        if (session()->has('applied_cart_credit')) {
+            // Get the amount value from the session
+            $applied_cart_amount = session('applied_cart_credit')['amount'];
 
-        // Check if the coupon code exists and is valid
-        $coupon = CouponCodes::where('code', $coupon_code)->where('status', 'Active')->first();
-        // Check if the coupon exists
-        if (!$coupon) {
-            echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
-            exit;
-        }
+            //Call helper to manage user points
+            $tab_type = "order_spend_points";
+            $new_points = $applied_cart_amount;
+            $point_type = 'Plus';
+            $name = "Remove Credit";
+            Helper::manage_user_points($login_user_id,$tab_type,$new_points,$point_type,$name);
 
-        // Check if the coupon code id verifed or not
-        $is_coupon_verified = VerifyCoupon::where('user_id', $login_user_id)->where('coupon_id', $coupon->id)->count();
-        if($is_coupon_verified >= 1){
-            // Check if the coupon is expired
-            if (Carbon::now()->greaterThan($coupon->expire_date)) {
-                echo '<p style="color:red;">Coupon code has expired.</p>';
-                exit;
-            }
-            
-            // Apply the discount (adjust according to your logic)
-            $discount = $coupon->price; 
+            //distroy session
+            session()->forget('applied_cart_credit');
 
-            // Optionally, store coupon details in the session
-            Session::put('applied_gift_card_coupon', [
-                'code' => $coupon_code,
-                'discount' => $discount,
-                'expire_date' => $coupon->expire_date,
-            ]);
+            // Display success message and reload the page
+            echo '<p style="color:green;">Credit Removed From Cart Successfully.</p>';
+            echo '<script> 
+                    setTimeout(function(){
+                        location.reload();
+                    }, 3000); 
+                </script>';  
+        } elseif(session()->has('applied_gift_card_credit')) {
+            // Get the amount value from the session
+            $applied_cart_amount = session('applied_gift_card_credit')['amount'];
 
-            echo '<p style="color:green;">Coupon Applied Successfully.</p>';
-            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+            //Call helper to manage user points
+            $tab_type = "order_spend_points";
+            $new_points = $applied_cart_amount;
+            $point_type = 'Plus';
+            $name = "Remove Credit";
+            Helper::manage_user_points($login_user_id,$tab_type,$new_points,$point_type,$name);
+
+            //distroy session
+            session()->forget('applied_gift_card_credit');
+
+            // Display success message and reload the page
+            echo '<p style="color:green;">Credit Removed From Cart Successfully.</p>';
+            echo '<script> 
+                    setTimeout(function(){
+                        location.reload();
+                    }, 3000); 
+                </script>';  
         } else {
-            echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
-            exit;
+            echo '<p style="color:red;">Oops something wrong.</p>';
+        }
+    }  
+    
+    //Function to submit apply credit from cart
+    public function submit_apply_gift_card_apply_credit(Request $request) {
+        //Get Login user id
+        $login_user_id = Auth::id();
+        $my_balance = Auth::user()->total_points;
+        $apply_credit = $request->apply_credit;
+
+        //Check user has  enough balance or not
+        if($my_balance >= 1 AND $apply_credit <= $my_balance) {
+            $cart_sub_total_amount = 0;
+            foreach(session('gift_card_cart', []) as $key => $item){
+                $cart_sub_total_amount += $item['price'] * $item['quantity']; 
+            }
+    
+            //Check if cart items subtotal is less than or equal to apply credit
+            if($apply_credit < $cart_sub_total_amount){
+                // Optionally, store coupon details in the session
+                Session::put('applied_gift_card_credit', ['amount' => $apply_credit]);
+    
+                //Call helper to manage user points
+                $tab_type = "order_spend_points";
+                $new_points = $apply_credit;
+                $point_type = 'Minus';
+                $name = "Apply Credit";
+                Helper::manage_user_points($login_user_id,$tab_type,$new_points,$point_type,$name);
+    
+                echo '<p style="color:green;">Credit Applied Successfully.</p>';
+                echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+            } else {
+                echo '<p style="color:red;">Sorry your item subtotal is less than from applied credit.</p>';
+            }
+        } else {
+            echo '<p style="color:red;">Sorry you have not enough balance in your account.</p>';
         }
     }
 
-    //Function to submit apply from cart
-    public function submit_apply_cart_coupon_code(Request $request) {
+    //Function to submit apply credit from cart
+    public function submit_apply_credit_cart(Request $request) {
         //Get Login user id
         $login_user_id = Auth::id();
-        $coupon_code = $request->coupon_code;
+        $my_balance = Auth::user()->total_points;
+        $apply_credit = $request->apply_credit;
 
-        // Check if the coupon code exists and is valid
-        $coupon = CouponCodes::where('code', $coupon_code)->where('status', 'Active')->first();
-        // Check if the coupon exists
-        if (!$coupon) {
-            echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
-            exit;
-        }
-
-        // Check if the coupon code id verifed or not
-        $is_coupon_verified = VerifyCoupon::where('user_id', $login_user_id)->where('coupon_id', $coupon->id)->count();
-        if($is_coupon_verified >= 1){
-            // Check if the coupon is expired
-            if (Carbon::now()->greaterThan($coupon->expire_date)) {
-                echo '<p style="color:red;">Coupon code has expired.</p>';
-                exit;
+        //Check user has  enough balance or not
+        if($my_balance >= 1 AND $apply_credit <= $my_balance) {
+            $cart_sub_total_amount = 0;
+            foreach(session('cart', []) as $key => $item){
+                $cart_sub_total_amount += $item['price'] * $item['quantity']; 
             }
-            
-            // Apply the discount (adjust according to your logic)
-            $discount = $coupon->price; 
-
-            // Optionally, store coupon details in the session
-            Session::put('applied_cart_coupon', [
-                'code' => $coupon_code,
-                'discount' => $discount,
-                'expire_date' => $coupon->expire_date,
-            ]);
-
-            echo '<p style="color:green;">Coupon Applied Successfully.</p>';
-            echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+    
+            //Check if cart items subtotal is less than or equal to apply credit
+            if($apply_credit < $cart_sub_total_amount){
+                // Optionally, store coupon details in the session
+                Session::put('applied_cart_credit', ['amount' => $apply_credit]);
+    
+                //Call helper to manage user points
+                $tab_type = "order_spend_points";
+                $new_points = $apply_credit;
+                $point_type = 'Minus';
+                $name = "Apply Credit";
+                Helper::manage_user_points($login_user_id,$tab_type,$new_points,$point_type,$name);
+    
+                echo '<p style="color:green;">Credit Applied Successfully.</p>';
+                echo '<script>setTimeout(function() { window.location.href = ""; }, 3000);</script>';
+            } else {
+                echo '<p style="color:red;">Sorry your item subtotal is less than from applied credit.</p>';
+            }
         } else {
-            echo '<p style="color:red;">Invalid or inactive coupon code.</p>';
-            exit;
+            echo '<p style="color:red;">Sorry you have not enough balance in your account.</p>';
         }
     }
 
@@ -366,16 +392,15 @@ class CartController extends Controller
                 // Initialize the applied gift card amount
                 $applied_cart_amount = 0;
                 // Check if the applied gift card coupon exists in the session
-                if (session()->has('applied_cart_coupon')) {
+                if (session()->has('applied_cart_credit')) {
                     // Get the discount value from the session
-                    $applied_cart_amount = session('applied_cart_coupon')['discount'];
+                    $applied_cart_amount = session('applied_cart_credit')['amount'];
                 }
 
                 //cart Total Amount
                 $cartItems = session('cart', []);
                 $cart_total_amount = 0;
                 $postage_handling_charges = 0;
-                $cart_points_total_amount = 0;
                 $is_order_type = "simple_order";
                 // Calculate total amount
                 foreach($cartItems as $item) {
@@ -396,7 +421,7 @@ class CartController extends Controller
                 $international_local_insurance = number_format($discount_amount, 2, '.', ','); 
                 
                 //Cal Sub total
-                $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance;
+                $sub_total_amount2 = $cart_total_amount;
                 $sub_total_amount = $sub_total_amount2-$applied_cart_amount;
 
                 //Cal Tax
@@ -404,7 +429,7 @@ class CartController extends Controller
                 $tax_total_amount = number_format($tax_discount_amount, 2, '.', ','); 
 
                 //Call Total Amount
-                $total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance+$tax_total_amount;
+                $total_amount2 = $cart_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance+$tax_total_amount;
                 $total_amount = $total_amount2-$applied_cart_amount;
 
                 // Create a new order in database
@@ -416,7 +441,7 @@ class CartController extends Controller
                     'payment_method_type' => $request->payment_method,
                     'is_order_type' => $is_order_type,
                     'is_term_condition' => $request->is_term_condition,
-                    'point_price' => $cart_points_total_amount,
+                    'point_price' => $applied_cart_amount,
                     'shiping_charges' => $postage_handling_charges,
                     'insurance_fee' => $international_local_insurance,
                     'admin_fee' => $table_admin_fee,
@@ -522,7 +547,7 @@ class CartController extends Controller
                 );
                 // Clear the cart and image session after processing the order
                 session()->forget('cart');  
-                session()->forget('applied_cart_coupon');  
+                session()->forget('applied_cart_credit');  
                 
                 //Call Send Admin Place New Order Email Function
                 $this->send_admin_place_new_order_email($order_id,$request);
@@ -559,18 +584,17 @@ class CartController extends Controller
                 }
 
                 // Initialize the applied gift card amount
-                $applied_gift_card_amount = 0;
+                $applied_cart_amount = 0;
                 // Check if the applied gift card coupon exists in the session
-                if (session()->has('applied_gift_card_coupon')) {
+                if (session()->has('applied_gift_card_credit')) {
                     // Get the discount value from the session
-                    $applied_gift_card_amount = session('applied_gift_card_coupon')['discount'];
+                    $applied_cart_amount = session('applied_gift_card_credit')['amount'];
                 }
 
                 //cart Total Amount
                 $cartItems = session('gift_card_cart', []);
                 $cart_total_amount = 0;
                 $postage_handling_charges = 0;
-                $cart_points_total_amount = 0;
                 $is_order_type = "gift_card_order";
                 // Calculate total amount
                 foreach($cartItems as $item) {
@@ -582,16 +606,16 @@ class CartController extends Controller
                 $international_local_insurance = number_format($discount_amount, 2, '.', ','); 
                 
                 //Cal Sub total
-                $sub_total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance;
-                $sub_total_amount = $sub_total_amount2-$applied_gift_card_amount;
+                $sub_total_amount2 = $cart_total_amount;
+                $sub_total_amount = $sub_total_amount2-$applied_cart_amount;
 
                 //Cal Tax
                 $tax_discount_amount = ($sub_total_amount * $table_tax) / 100; 
                 $tax_total_amount = number_format($tax_discount_amount, 2, '.', ','); 
 
                 //Call Total Amount
-                $total_amount2 = $cart_total_amount-$cart_points_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance+$tax_total_amount;
-                $total_amount =  $total_amount2-$applied_gift_card_amount;
+                $total_amount2 = $cart_total_amount+$postage_handling_charges+$table_admin_fee+$international_local_insurance+$tax_total_amount;
+                $total_amount = $total_amount2-$applied_cart_amount;
 
 
                 // Create a new order in database
@@ -603,7 +627,7 @@ class CartController extends Controller
                     'payment_method_type' => $request->payment_method,
                     'is_order_type' => $is_order_type,
                     'is_term_condition' => $request->is_term_condition,
-                    'point_price' => $cart_points_total_amount,
+                    'point_price' => $applied_cart_amount,
                     'shiping_charges' => $postage_handling_charges,
                     'insurance_fee' => $international_local_insurance,
                     'admin_fee' => $table_admin_fee,
@@ -709,7 +733,7 @@ class CartController extends Controller
                 );
                 // Clear the cart and image session after processing the order
                 session()->forget('gift_card_cart');  
-                session()->forget('applied_gift_card_coupon');  
+                session()->forget('applied_gift_card_credit');  
                 
                 //Call Send Admin Place New Order Email Function
                 $this->send_admin_place_new_order_email($order_id,$request);

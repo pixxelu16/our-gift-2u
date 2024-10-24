@@ -39,10 +39,14 @@
                         @endforeach
                         @if($order_detail->point_price)
                         <tr>
-                           <td><strong>Points:</strong></td>
+                           <td><strong>Applied Credit Amount:</strong></td>
                            <td>
-                              <strong class="color-add">-${{ $order_detail->point_price }}</strong>
+                              <strong class="color-add">${{ $order_detail->point_price }}</strong>
                            </td>
+                        </tr>
+                        <tr>
+                           <td><strong>Subtotal:</strong></td>
+                           <td><strong class="color-add">${{ $order_detail->sub_total }}</strong></td>
                         </tr>
                         @endif
                         @if($order_detail->shiping_charges)
@@ -77,10 +81,6 @@
                            </td>
                         </tr>
                         @endif
-                        <tr>
-                           <td><strong>Subtotal:</strong></td>
-                           <td><strong class="color-add">${{ $order_detail->sub_total }}</strong></td>
-                        </tr>
                         <tr>
                            <td><strong>Total:</strong></td>
                            <td><strong class="color-add">${{ $order_detail->order_amount }}</strong></td>

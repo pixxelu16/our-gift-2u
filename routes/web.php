@@ -63,13 +63,13 @@ Route::get('gift-card-checkout', [App\Http\Controllers\ShopController::class, 'g
 Route::post('pre-order-add-to-cart', [App\Http\Controllers\CartController::class, 'pre_order_add_to_cart']);
 Route::post('add-to-cart', [App\Http\Controllers\CartController::class, 'add_to_cart']);
 Route::post('remove-cart-item', [App\Http\Controllers\CartController::class, 'remove_cart_item']);
-Route::post('remove-cart-points', [App\Http\Controllers\CartController::class, 'remove_cart_points']);
+Route::post('remove-cart-credit', [App\Http\Controllers\CartController::class, 'remove_cart_credit']);
 Route::post('submit-checkout', [App\Http\Controllers\CartController::class, 'submit_checkout']);
 Route::post('gift-card-add-to-cart', [App\Http\Controllers\CartController::class, 'gift_card_add_to_cart']);
 Route::post('remove-gift-card-cart-item', [App\Http\Controllers\CartController::class, 'remove_gift_card_cart_item']);
 Route::post('submit-gift-card-checkout', [App\Http\Controllers\CartController::class, 'submit_gift_card_checkout']);
-Route::post('submit-gift-card-apply-coupon-code', [App\Http\Controllers\CartController::class, 'submit_apply_gift_card_coupon_code']);
-Route::post('submit-cart-apply-coupon-code', [App\Http\Controllers\CartController::class, 'submit_apply_cart_coupon_code']);
+Route::post('submit-gift-card-apply-credit', [App\Http\Controllers\CartController::class, 'submit_apply_gift_card_apply_credit']);
+Route::post('submit-cart-apply-credit-code', [App\Http\Controllers\CartController::class, 'submit_apply_credit_cart']);
 Route::post('submit-rating', [App\Http\Controllers\ProductReviewsController::class, 'submit_rating']);
 Route::get('get-country-states', [App\Http\Controllers\CountryListController::class, 'get_country_states']);
 
