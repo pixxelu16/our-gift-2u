@@ -10,7 +10,7 @@
             <div class="my-account-right-box upload-invoice">
                 <h2>Verify Gift Card</h2>
                 <form method="POST" action="#" enctype="multipart/form-data" class="invoice-upload" id="verify_gift_card_form" novalidate="novalidate">
-                    <div class="billing-edite-left">
+                    <div class="redme-gift-card">
                         <input type="text" name="coupon_code" value="" placeholder="Enter Coupon Code">
                     </div>
                     <div class="upload-button-inv">
