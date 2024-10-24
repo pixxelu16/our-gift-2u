@@ -127,7 +127,7 @@
     @if ($home_logos)
         <div class="logo-icon-row">
             <div class="container">
-                <ul class="slider-cetageory cetagory-product-slider">
+                <ul class="slider-cetageory shop-cetageory-slider cetagory-product-slider">
                     @foreach ($home_logos as $logo)
                         <li class="logo-slider">
                             <img src="{{ url('public/uploads/brands-logos/' . $logo['main_logo']) }}">
